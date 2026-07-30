@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="introduction/">
+        <link rel="next" href="introduction/key-features/">
       
       
         
@@ -462,12 +462,6 @@
     
       
         
-          
-        
-      
-        
-      
-        
       
         
       
@@ -492,9 +486,8 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="introduction/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -508,14 +501,8 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
@@ -527,36 +514,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="introduction/what-is-displaylink-direct/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    What is DisplayLink Direct?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1407,6 +1364,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-displaylink-direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DisplayLink Direct?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In this section
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1426,7 +1413,31 @@
 
 
 <h1 id="displaylink-direct">DisplayLink Direct<a class="headerlink" href="#displaylink-direct" title="Permanent link">&para;</a></h1>
-<p>Welcome to the documentation for the <strong>DisplayLink Direct</strong> SDK — a software solution for connecting and driving multiple displays over USB using DisplayLink technology.</p>
+<p><strong>DisplayLink Direct</strong> is a software development kit (SDK) that lets applications
+render content directly to displays connected through DisplayLink&reg; hardware.
+DisplayLink (developed by Synaptics) is a software-aware hardware protocol that
+encodes and transmits video over standard data buses — USB 2.0, USB 3.0, and
+USB-C — without relying on native video pass-through such as DisplayPort Alt Mode
+or Thunderbolt.</p>
+<p>Instead of pushing raw, uncompressed pixels down a native display pipeline,
+DisplayLink compresses frame deltas on the host and packetizes that data over USB
+bulk transfers to a hardware decoder chip inside the dock or dongle, which drives
+the attached displays.</p>
+<h2 id="why-displaylink-direct">Why DisplayLink Direct?<a class="headerlink" href="#why-displaylink-direct" title="Permanent link">&para;</a></h2>
+<p>Unlike a traditional DisplayLink deployment, DisplayLink Direct <strong>does not require
+host-side graphics drivers or compositor integration</strong>. Your application talks to
+the SDK through a small, C-compatible API and submits frame buffers directly to
+each display. This makes it a lightweight, self-contained solution that is
+well-suited to embedded systems, kiosks, digital signage, and any application
+that needs deterministic, driver-free multi-display output.</p>
+<h2 id="in-this-section">In this section<a class="headerlink" href="#in-this-section" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="introduction/key-features/">Key Features</a></strong> — the SDK's main capabilities.</li>
+<li><strong><a href="introduction/supported-platforms/">Supported Platforms</a></strong> — operating
+  systems and architectures supported in this release.</li>
+<li><strong><a href="introduction/problems-solved/">What Problems Does It Solve?</a></strong> — the
+  challenges DisplayLink Direct addresses.</li>
+</ul>
 
 
 
@@ -1465,13 +1476,13 @@
         
         
           
-          <a href="introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="introduction/key-features/" class="md-footer__link md-footer__link--next" aria-label="Next: Key Features">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Key Features
               </div>
             </div>
             <div class="md-footer__button md-icon">

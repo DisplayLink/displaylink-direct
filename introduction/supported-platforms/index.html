@@ -466,12 +466,6 @@
     
       
         
-          
-        
-      
-        
-      
-        
       
         
       
@@ -496,9 +490,8 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -512,14 +505,8 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
@@ -531,36 +518,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../what-is-displaylink-direct/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    What is DisplayLink Direct?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -606,6 +563,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Platforms
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -622,6 +597,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operating-systems-and-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating systems and architectures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1421,6 +1448,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operating-systems-and-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating systems and architectures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1440,7 +1508,46 @@
 
 
 <h1 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h1>
-<p>The operating systems and hardware architectures currently supported by the DisplayLink Direct SDK (Linux x86_64 and aarch64).</p>
+<p>This release of DisplayLink Direct supports the following host platforms.</p>
+<h2 id="operating-systems-and-architectures">Operating systems and architectures<a class="headerlink" href="#operating-systems-and-architectures" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operating system</th>
+<th>Architectures</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>x86_64</code>, <code>aarch64</code></td>
+<td>Supported</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">More platforms coming</p>
+<p>Windows, macOS, and Linux <code>riscv64</code> are planned for future releases and are
+not yet supported.</p>
+</div>
+<h2 id="host-connection">Host connection<a class="headerlink" href="#host-connection" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A <strong>USB port</strong> is required to communicate with DisplayLink devices.</li>
+<li><strong>USB 3.0 or later</strong> is recommended for full display bandwidth.</li>
+</ul>
+<h2 id="programming-languages">Programming languages<a class="headerlink" href="#programming-languages" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>C / C++</strong> — the primary API. Client software interfaces with the
+  C-compatible API calls in the SDK.</li>
+<li><strong>Python</strong> — an optional wrapper for Python client code, requiring
+  <strong>Python 3.10 or higher</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Swift bindings are planned for a future release and will be added once
+macOS support lands. The initial release supports C/C++ and Python only.</p>
+</div>
 
 
 
