@@ -27,7 +27,7 @@
     
     
       
-        <title>DisplayLink Device Requirements - DisplayLink Direct</title>
+        <title>Supported Devices - DisplayLink Direct</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DisplayLink Device Requirements
+              Supported Devices
             
           </span>
         </div>
@@ -651,7 +651,7 @@
   <span class="md-ellipsis">
     
   
-    Embedded vs Non-Embedded Mode
+    Embedded Mode
   
 
     
@@ -757,6 +757,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Devices
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -764,7 +782,7 @@
   <span class="md-ellipsis">
     
   
-    DisplayLink Device Requirements
+    Supported Devices
   
 
     
@@ -773,6 +791,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-device-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported device categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1378,6 +1448,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-device-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported device categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1397,7 +1508,35 @@
 
 
 <h1 id="displaylink-device-requirements">DisplayLink Device Requirements<a class="headerlink" href="#displaylink-device-requirements" title="Permanent link">&para;</a></h1>
-<p>The supported DisplayLink devices and firmware needed to use the SDK.</p>
+<p>DisplayLink Direct supports DisplayLink-enabled devices that are available on
+the market. A representative set of products can be found on the Synaptics
+<a href="https://www.synaptics.com/products/displaylink-graphics/displaylink-products-list?field_displaylink_category_value=universal_docking_stations">DisplayLink products list</a>.</p>
+<h2 id="supported-device-categories">Supported device categories<a class="headerlink" href="#supported-device-categories" title="Permanent link">&para;</a></h2>
+<p>DisplayLink Direct can be used with DisplayLink devices across common product
+categories, including:</p>
+<ul>
+<li>PCIe 3.0 extension cards.</li>
+<li>USB monitors.</li>
+<li>USB adapters.</li>
+<li>Docking stations.</li>
+</ul>
+<h2 id="choosing-a-device">Choosing a device<a class="headerlink" href="#choosing-a-device" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Confirm that the product uses DisplayLink technology.</li>
+<li>Choose a device with display outputs and maximum resolutions that match your
+    target deployment.</li>
+<li>For higher resolutions, multiple displays, or video-heavy workloads, prefer
+    devices paired with USB 3.0 or better host connectivity.</li>
+</ul>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Supported host-side operating systems and architectures for this SDK release
+    are listed in the Supported Platforms section.</li>
+<li>Actual display capabilities depend on the specific DisplayLink device,
+    connected displays, host performance, and available USB bandwidth.</li>
+<li>Device capabilities may be constrained when embedded mode is selected. See
+    Embedded Mode for details on behavior and limits.</li>
+</ul>
 
 
 

@@ -27,7 +27,7 @@
     
     
       
-        <title>Embedded vs Non-Embedded Mode - DisplayLink Direct</title>
+        <title>Embedded Mode - DisplayLink Direct</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#embedded-vs-non-embedded-mode" class="md-skip">
+        <a href="#embedded-mode" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Embedded vs Non-Embedded Mode
+              Embedded Mode
             
           </span>
         </div>
@@ -653,6 +653,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Mode
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -660,7 +678,7 @@
   <span class="md-ellipsis">
     
   
-    Embedded vs Non-Embedded Mode
+    Embedded Mode
   
 
     
@@ -669,6 +687,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#non-embedded-mode-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-embedded mode (default)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-mode_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolution-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-embedded-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling embedded mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -763,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    DisplayLink Device Requirements
+    Supported Devices
   
 
     
@@ -1376,6 +1474,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#non-embedded-mode-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-embedded mode (default)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-mode_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolution-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-embedded-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling embedded mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1394,8 +1561,144 @@
   
 
 
-<h1 id="embedded-vs-non-embedded-mode">Embedded vs Non-Embedded Mode<a class="headerlink" href="#embedded-vs-non-embedded-mode" title="Permanent link">&para;</a></h1>
-<p>A comparison of the embedded and non-embedded operating modes and guidance on when to use each.</p>
+<h1 id="embedded-mode">Embedded Mode<a class="headerlink" href="#embedded-mode" title="Permanent link">&para;</a></h1>
+<p>DisplayLink Direct can run in two modes, selected at initialization time through
+the SDK's configuration. The mode controls how the SDK manages memory at runtime,
+letting you trade flexibility for determinism depending on your target system.</p>
+<div class="admonition warning">
+<p class="admonition-title">Hardware support required</p>
+<p>Embedded mode is supported only on selected DisplayLink devices based on the
+<strong>DL-7xxx</strong> family chipset. It is not available on other devices. For details
+on compatible hardware and enabling this feature, please
+<strong><a href="https://www.synaptics.com/company/contact-us">contact Synaptics</a></strong>.</p>
+</div>
+<h2 id="non-embedded-mode-default">Non-embedded mode (default)<a class="headerlink" href="#non-embedded-mode-default" title="Permanent link">&para;</a></h2>
+<p>In the default mode, the SDK allocates memory dynamically at runtime as needed.
+This is the most flexible option and is appropriate for general-purpose hosts
+such as desktops, laptops, and servers, where dynamic allocation is not a concern.</p>
+<ul>
+<li>Simplest to use — no special hardware requirements.</li>
+<li>Suitable for the majority of applications.</li>
+<li>Memory usage adapts to the current workload.</li>
+<li>Higher performance at high display modes (resolution and refresh rate).</li>
+</ul>
+<h2 id="embedded-mode_1">Embedded mode<a class="headerlink" href="#embedded-mode_1" title="Permanent link">&para;</a></h2>
+<p>In embedded mode, <strong>the SDK does not use dynamic memory at runtime</strong>. This gives
+predictable, deterministic resource usage, which is important for embedded and
+resource-constrained systems, long-running deployments, and environments where
+runtime allocation is undesirable.</p>
+<ul>
+<li>No runtime dynamic memory allocation.</li>
+<li>Predictable, deterministic memory footprint.</li>
+<li>Well-suited to embedded, industrial, and safety-conscious deployments.</li>
+<li>May be constrained at high display modes compared to non-embedded mode.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Firmware update not available</p>
+<p>Automatic and manual firmware update is <strong>not available in embedded mode</strong>.
+Ensure the device is running compatible firmware before using embedded mode.</p>
+</div>
+<h3 id="resolution-limits">Resolution limits<a class="headerlink" href="#resolution-limits" title="Permanent link">&para;</a></h3>
+<p>In embedded mode, the maximum supported resolution depends on how many outputs
+are driven:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Max width</th>
+<th>Max height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single output</td>
+<td>5120 px</td>
+<td>2160 px</td>
+</tr>
+<tr>
+<td>Multiple outputs</td>
+<td>1920 px</td>
+<td>1080 px</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feature-comparison">Feature Comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Consideration</th>
+<th>Non-embedded (default)</th>
+<th>Embedded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runtime memory allocation</td>
+<td>Dynamic</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Resource predictability</td>
+<td>Adapts to workload</td>
+<td>Deterministic</td>
+</tr>
+<tr>
+<td>High display modes</td>
+<td>Higher performance</td>
+<td>May be constrained</td>
+</tr>
+<tr>
+<td>Hardware requirement</td>
+<td>Any supported device</td>
+<td>DL-7xxx family only</td>
+</tr>
+<tr>
+<td>Typical hosts</td>
+<td>Desktop, laptop, server</td>
+<td>Embedded, industrial</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enabling-embedded-mode">Enabling embedded mode<a class="headerlink" href="#enabling-embedded-mode" title="Permanent link">&para;</a></h2>
+<p>Embedded mode is enabled through the SDK configuration when initializing the
+system. Set the <code>embeddedMode</code> flag in the configuration before initialization:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C</label><label for="__tabbed_1_2">C++</label><label for="__tabbed_1_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dlsdk/dlsdk.h&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">dlsdk_config</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">config</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">config</span><span class="p">.</span><span class="n">embeddedMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">dlsdk_initialise_with_config</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dlsdk/dlsdk.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// firmwarePath = nullptr, firmware update not supported in embedded mode</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">dl</span><span class="o">::</span><span class="n">sdk</span><span class="o">::</span><span class="n">Config</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="cm">/*embeddedMode=*/</span><span class="nb">true</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">dl</span><span class="o">::</span><span class="n">sdk</span><span class="o">::</span><span class="n">System</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dlsdk</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">config</span> <span class="o">=</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Config</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">config</span><span class="o">.</span><span class="n">embedded_mode</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">dlsdk</span><span class="o">.</span><span class="n">create_system</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the connected device does not support embedded mode, enabling this flag
+will not have the intended effect. Ensure you are using a compatible DL-7xxx
+family device — <a href="https://www.synaptics.com/company/contact-us">contact Synaptics</a>
+if you are unsure.</p>
+</div>
 
 
 

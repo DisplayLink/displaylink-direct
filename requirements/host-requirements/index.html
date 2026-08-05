@@ -651,7 +651,7 @@
   <span class="md-ellipsis">
     
   
-    Embedded vs Non-Embedded Mode
+    Embedded Mode
   
 
     
@@ -755,7 +755,7 @@
   <span class="md-ellipsis">
     
   
-    DisplayLink Device Requirements
+    Supported Devices
   
 
     
@@ -785,6 +785,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -801,6 +819,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-host-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended host specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-host-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal host specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1378,6 +1448,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-host-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended host specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-host-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal host specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1397,7 +1508,39 @@
 
 
 <h1 id="host-requirements">Host Requirements<a class="headerlink" href="#host-requirements" title="Permanent link">&para;</a></h1>
-<p>The host operating system, dependencies, and hardware needed to run the SDK.</p>
+<p>The performance of DisplayLink Direct depends on the processing power available
+on the host. More capable systems provide better performance, but the final
+experience depends strongly on the specific workload, display topology, content
+type, and update rate.</p>
+<p>The following recommended specification was tested with these use cases:</p>
+<ul>
+<li>2 x 4K displays with a desktop workload.</li>
+<li>2 x 4K displays with single FullHD video playback.</li>
+</ul>
+<h2 id="recommended-host-specification">Recommended host specification<a class="headerlink" href="#recommended-host-specification" title="Permanent link">&para;</a></h2>
+<p>For the tested use cases above, Synaptics recommends a host with:</p>
+<ul>
+<li>CPU: 2 GHz or faster with support for NEON, SSE2, or AVX.</li>
+<li>RAM: 4 GB or more recommended for 2 or more DisplayLink displays.</li>
+<li>USB: USB 3.0 port.</li>
+</ul>
+<h2 id="minimal-host-specification">Minimal host specification<a class="headerlink" href="#minimal-host-specification" title="Permanent link">&para;</a></h2>
+<p>For a basic or reduced-performance experience, the host should meet at least
+the following:</p>
+<ul>
+<li>Processor: 1.2 GHz single-core CPU or higher.</li>
+<li>RAM: 1 GB for 1 DisplayLink display. For 2 or more DisplayLink displays,
+    2 GB or more is recommended.</li>
+<li>USB: USB 2.0 port.</li>
+</ul>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>These requirements describe host capability only. Supported operating systems
+    and CPU architectures for this release are listed in the Supported Platforms
+    section.</li>
+<li>Higher resolutions, multiple displays, video playback, and frequent frame
+    updates increase CPU, memory, and USB bandwidth requirements.</li>
+</ul>
 
 
 
@@ -1435,7 +1578,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../device-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DisplayLink Device Requirements">
+          <a href="../device-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Supported Devices">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1445,7 +1588,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                DisplayLink Device Requirements
+                Supported Devices
               </div>
             </div>
           </a>
