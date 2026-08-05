@@ -691,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    What Problems Does It Solve?
+    Why DisplayLink Direct?
   
 
     
@@ -1558,6 +1558,9 @@ displays without host-side drivers. Its main capabilities include:</p>
 <ul>
 <li><strong>No host graphics drivers or compositor integration required.</strong> The SDK
   communicates with DisplayLink hardware directly over USB.</li>
+<li><strong>No host GPU required.</strong> Frames are encoded on the CPU and decoded by the
+  DisplayLink device, so the SDK runs on headless servers, GPU-less
+  single-board computers, and minimal embedded systems.</li>
 <li><strong>Embedded mode</strong> for resource-constrained systems: when enabled, the SDK does
   not allocate dynamic memory at runtime, making its footprint predictable and
   suitable for embedded deployments.</li>
