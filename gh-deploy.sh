@@ -4,7 +4,7 @@
 #
 # This runs `mkdocs gh-deploy`, which builds the site and force-pushes the
 # result to the `gh-pages` branch of the origin remote. GitHub Pages then
-# serves it at https://displaylink.github.io/displaylink-direct/.
+# serves it at https://miniature-adventure-pzr6znk.pages.github.io/.
 #
 # Usage:
 #   ./docs/gh-deploy.sh              # build and deploy to gh-pages
