@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -69,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -124,7 +126,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
@@ -134,7 +136,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
@@ -944,6 +946,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -960,6 +980,633 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contact-and-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact and Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_rect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_rect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_status-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_status status codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_pixel_format-pixel-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_pixel_format pixel formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_aux_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_aux_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_event_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_event_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_callback_fn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_callback_fn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_initialise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_initialise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_initialise_with_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_initialise_with_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_teardown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_teardown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_get_devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_get_devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_free_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_free_device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_restart_and_free_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_restart_and_free_device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_register_hotplug_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_register_hotplug_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_unregister_hotplug_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_unregister_hotplug_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_firmware_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_firmware_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_get_displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_get_displays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_get_dpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_get_dpaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_update_firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_update_firmware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_edid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_edid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_preferred_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_preferred_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_on_with_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_on_with_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_off
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_wait_on_show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_wait_on_show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_wait_on_show_for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_wait_on_show_for
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_get_dpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_get_dpaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-aux-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP AUX API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DP AUX API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_write_and_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_write_and_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_begin_exclusive_access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_begin_exclusive_access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_end_exclusive_access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_end_exclusive_access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_detect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal usage example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1289,6 +1936,622 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contact-and-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact and Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_rect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_rect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_status-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_status status codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_pixel_format-pixel-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_pixel_format pixel formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_aux_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_aux_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_event_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_event_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_hotplug_callback_fn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_hotplug_callback_fn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_initialise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_initialise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_initialise_with_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_initialise_with_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_teardown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_teardown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_get_devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_get_devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_free_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_free_device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_restart_and_free_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_restart_and_free_device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_register_hotplug_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_register_hotplug_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_unregister_hotplug_callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_unregister_hotplug_callback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_firmware_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_firmware_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_get_displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_get_displays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_get_dpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_get_dpaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_device_update_firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_device_update_firmware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_edid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_edid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_preferred_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_preferred_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_on_with_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_on_with_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_power_off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_power_off
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_wait_on_show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_wait_on_show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_wait_on_show_for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_wait_on_show_for
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_display_get_dpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_display_get_dpaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-aux-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP AUX API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DP AUX API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_i2c_write_and_read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_i2c_write_and_read
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_begin_exclusive_access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_begin_exclusive_access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_end_exclusive_access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_end_exclusive_access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdk_dpaux_detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_dpaux_detect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal usage example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1308,7 +2571,759 @@
 
 
 <h1 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h1>
-<p>Reference documentation for the C/C++ and Python bindings of DisplayLink Direct.</p>
+<p>This file contains the C-API and C++ API wrapper available to display
+a pixel buffer across multiple displays.</p>
+<h2 id="contact-and-support">Contact and Support<a class="headerlink" href="#contact-and-support" title="Permanent link">&para;</a></h2>
+<p>For support please contact your DisplayLink representative or email "technical-enquiries@synaptics.com"</p>
+<h2 id="c-api">C API<a class="headerlink" href="#c-api" title="Permanent link">&para;</a></h2>
+<p>The C API is declared in <code>include/dlsdk/dlsdk.h</code> and is the primary,
+ABI-stable interface exposed by DisplayLink Direct. The C++ helper classes
+(<code>dl::sdk::System</code>, <code>dl::sdk::DeviceHandle</code>, <code>dl::sdk::DisplayHandle</code>, ...) are
+thin wrappers around these same functions.</p>
+<p>All functions are exported via <code>DLSDK_EXPORT</code> and are safe to call from C or
+C++ (the header wraps declarations in <code>extern "C"</code>).</p>
+<p>Objects are created in the following order: a <code>System</code> is initialized first,
+which is then used to enumerate <code>Device</code>s, which in turn expose their
+attached <code>Display</code>s. This section documents the API in that same order:
+System, Device, Display, then DP AUX.</p>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<p>Custom types used across the API.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dlsdk_config</code></td>
+<td>Configuration struct used to initialise the SDK with custom options</td>
+</tr>
+<tr>
+<td><code>dlsdk_rect</code></td>
+<td>An abstract representation of a rectangular area, used for display resolution and size information</td>
+</tr>
+<tr>
+<td><code>dlsdk_display_mode</code></td>
+<td>A display mode represents a specific resolution and refresh rate that a display can operate at</td>
+</tr>
+<tr>
+<td><code>dlsdk_status</code></td>
+<td>API method status return codes</td>
+</tr>
+<tr>
+<td><code>dlsdk_pixel_format</code></td>
+<td>API supported pixel formats</td>
+</tr>
+<tr>
+<td><code>dlsdk_aux_status</code></td>
+<td>DP Aux channel return codes</td>
+</tr>
+<tr>
+<td><code>dlsdk_hotplug_callback_handle</code></td>
+<td>Opaque handle to a hotplug callback registration, used for unregistering callbacks</td>
+</tr>
+<tr>
+<td><code>dlsdk_display_handle</code></td>
+<td>Opaque handle to a Display object</td>
+</tr>
+<tr>
+<td><code>dlsdk_device_handle</code></td>
+<td>Opaque handle to a Device object</td>
+</tr>
+<tr>
+<td><code>dlsdk_dpaux_handle</code></td>
+<td>Opaque handle to a DP AUX channel object</td>
+</tr>
+<tr>
+<td><code>dlsdk_hotplug_event</code></td>
+<td>Hotplug event types</td>
+</tr>
+<tr>
+<td><code>dlsdk_hotplug_event_data</code></td>
+<td>Data provided to hotplug callbacks when a hotplug event occurs</td>
+</tr>
+<tr>
+<td><code>dlsdk_hotplug_callback_fn</code></td>
+<td>Hotplug callback function type</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_config"><code>dlsdk_config</code><a class="headerlink" href="#dlsdk_config" title="Permanent link">&para;</a></h4>
+<p>Configuration struct used to initialise the SDK with custom options.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td>Size of the struct, should be set to sizeof(dlsdk_config)</td>
+</tr>
+<tr>
+<td><code>firmwarePath</code></td>
+<td>Firmware directory path, used to automatically update the firmware if required. Set to NULL or empty string to disable automatic firmware update. If automatic firmware update is disabled, user should ensure the firmware on the device is compatible with the SDK version, otherwise the device may not function properly or at all.</td>
+</tr>
+<tr>
+<td><code>embeddedMode</code></td>
+<td>In embedded mode (embeddedMode=1), the SDK will not use dynamic memory at runtime.</td>
+</tr>
+<tr>
+<td><code>reserved</code></td>
+<td>Reserved for future use, should be set to 0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_rect"><code>dlsdk_rect</code><a class="headerlink" href="#dlsdk_rect" title="Permanent link">&para;</a></h4>
+<p>An abstract representation of a rectangular area, used for display resolution and size information: <code>width</code>, <code>height</code>.</p>
+<h4 id="dlsdk_display_mode"><code>dlsdk_display_mode</code><a class="headerlink" href="#dlsdk_display_mode" title="Permanent link">&para;</a></h4>
+<p>A display mode represents a specific resolution and refresh rate that a display can operate at: <code>resolution</code> (<code>dlsdk_rect</code>), <code>refreshRateHz</code>.</p>
+<h4 id="dlsdk_status-status-codes"><code>dlsdk_status</code> status codes<a class="headerlink" href="#dlsdk_status-status-codes" title="Permanent link">&para;</a></h4>
+<p>API method status return codes.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DLSDK_SUCCESS</code></td>
+<td>The call completed successfully.</td>
+</tr>
+<tr>
+<td><code>DLSDK_NOT_ENOUGH_SPACE</code></td>
+<td>The provided output buffer is too small; reallocate using the returned required size and call again.</td>
+</tr>
+<tr>
+<td><code>DLSDK_UNSUCCESSFUL</code></td>
+<td>Generic failure.</td>
+</tr>
+<tr>
+<td><code>DLSDK_UNSUCCESSFUL_NO_DEVICE</code></td>
+<td>No device was found (e.g. after a firmware update, within the expected wait window).</td>
+</tr>
+<tr>
+<td><code>DLSDK_UNSUCCESSFUL_NO_MONITOR</code></td>
+<td>The display is not ready / no monitor detected.</td>
+</tr>
+<tr>
+<td><code>DLSDK_UNSUCCESSFUL_MONITOR_OFF</code></td>
+<td>The monitor is powered off.</td>
+</tr>
+<tr>
+<td><code>DLSDK_INVALID_HANDLE</code></td>
+<td>The provided handle is invalid or unknown.</td>
+</tr>
+<tr>
+<td><code>DLSDK_INVALID_ARGS</code></td>
+<td>One or more arguments are invalid.</td>
+</tr>
+<tr>
+<td><code>DLSDK_TIMEOUT</code></td>
+<td>The operation timed out.</td>
+</tr>
+<tr>
+<td><code>DLSDK_NOT_IMPLEMENTED</code></td>
+<td>The requested functionality is not implemented.</td>
+</tr>
+<tr>
+<td><code>DLSDK_BUSY</code></td>
+<td>The device aborted a previously submitted frame due to resource constraints; retry <code>dlsdk_display_show()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_pixel_format-pixel-formats"><code>dlsdk_pixel_format</code> pixel formats<a class="headerlink" href="#dlsdk_pixel_format-pixel-formats" title="Permanent link">&para;</a></h4>
+<p>API supported pixel formats.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Bytes per pixel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_XRGB</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_XBGR</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_ARGB</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_ABGR</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_UKWN</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_NM32</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_NM24</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_NM16</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_YU10</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_24BG</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_FP16</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>DLSDK_PIXEL_FORMAT_NM30</code></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_aux_status"><code>dlsdk_aux_status</code><a class="headerlink" href="#dlsdk_aux_status" title="Permanent link">&para;</a></h4>
+<p>DP Aux channel return codes.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DLSDK_AUX_ACK</code> (0x0)</td>
+<td>Standard DP response code</td>
+</tr>
+<tr>
+<td><code>DLSDK_AUX_NATIVE_NAK</code> (0x1)</td>
+<td>Standard DP response code</td>
+</tr>
+<tr>
+<td><code>DLSDK_AUX_NATIVE_DEFER</code> (0x2)</td>
+<td>Standard DP response code</td>
+</tr>
+<tr>
+<td><code>DLSDK_AUX_TIMEOUT</code> (0x10)</td>
+<td>Timeout, no response from downstream</td>
+</tr>
+<tr>
+<td><code>DLSDK_AUX_ERROR</code> (0x11)</td>
+<td>Error detected by DP hardware</td>
+</tr>
+<tr>
+<td><code>DLSDK_AUX_DETACHED</code> (0x12)</td>
+<td>Sink connection no longer present</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_hotplug_event"><code>dlsdk_hotplug_event</code><a class="headerlink" href="#dlsdk_hotplug_event" title="Permanent link">&para;</a></h4>
+<p>Hotplug event types: <code>DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED</code>, <code>DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED</code>, <code>DLSDK_HOTPLUG_EVENT_DISPLAY_ARRIVED</code>, <code>DLSDK_HOTPLUG_EVENT_DISPLAY_REMOVED</code>.</p>
+<h4 id="dlsdk_hotplug_event_data"><code>dlsdk_hotplug_event_data</code><a class="headerlink" href="#dlsdk_hotplug_event_data" title="Permanent link">&para;</a></h4>
+<p>Data provided to hotplug callbacks when a hotplug event occurs.</p>
+<p>Handle validity rules:</p>
+<ul>
+<li>On <code>DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED</code>, <code>device</code> is valid during the callback and will remain valid until a corresponding <code>DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED</code> event is received for the same device.</li>
+<li>On <code>DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED</code>, <code>device</code> is informational only and must not be used with device API calls.</li>
+<li>On <code>DLSDK_HOTPLUG_EVENT_DISPLAY_ARRIVED</code>, <code>display</code> is valid during the callback. Will be NULL if the event is not for a display (e.g. device hotplug event).</li>
+<li>On <code>DLSDK_HOTPLUG_EVENT_DISPLAY_REMOVED</code>, <code>display</code> is informational only and must not be used with display API calls.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>Struct version set by the SDK.</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>The type of hotplug event that occurred.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>Handle to the device on which the event occurred.</td>
+</tr>
+<tr>
+<td><code>device_id</code></td>
+<td>Unique identifier for the device involved in the event. Valid for the duration of the callback.</td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td>Handle to the display involved in the event if applicable.</td>
+</tr>
+<tr>
+<td><code>display_id</code></td>
+<td>Unique identifier for the display involved in the event. Valid for the duration of the callback.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdk_hotplug_callback_fn"><code>dlsdk_hotplug_callback_fn</code><a class="headerlink" href="#dlsdk_hotplug_callback_fn" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">dlsdk_hotplug_callback_fn</span><span class="p">)(</span><span class="n">dlsdk_hotplug_event_data</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+<p>Hotplug callback function type.</p>
+<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callbacks are invoked on an internal SDK worker thread. Callbacks are serialized and delivered in event order.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>data</code> — Non-null pointer to a struct containing event data.</li>
+<li><code>user_data</code> — User data pointer provided at registration.</li>
+</ul>
+<h3 id="system-api">System API<a class="headerlink" href="#system-api" title="Permanent link">&para;</a></h3>
+<p>Functions not related to a particular device or display.</p>
+<h4 id="dlsdk_initialise"><code>dlsdk_initialise</code><a class="headerlink" href="#dlsdk_initialise" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_initialise</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to initialise the internals of the SDK.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<h4 id="dlsdk_initialise_with_config"><code>dlsdk_initialise_with_config</code><a class="headerlink" href="#dlsdk_initialise_with_config" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_initialise_with_config</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_config</span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to initialise the SDK with a specific firmware path.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>config</code> — The configuration structure containing the firmware path and other settings. See <code>dlsdk_config</code> for details.</li>
+</ul>
+<h4 id="dlsdk_teardown"><code>dlsdk_teardown</code><a class="headerlink" href="#dlsdk_teardown" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_teardown</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to clean up the SDK internals when a user no longer requires its use.</p>
+<p><strong>Details:</strong> This method must be called by the user prior the application exiting. In OO parlance, it can be thought of as an SDK destructor</p>
+<h4 id="dlsdk_version"><code>dlsdk_version</code><a class="headerlink" href="#dlsdk_version" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_version</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the version of the SDK.</p>
+<p><strong>Returns:</strong> A string containing the sdk version in python PEP 440 specification</p>
+<h4 id="dlsdk_get_devices"><code>dlsdk_get_devices</code><a class="headerlink" href="#dlsdk_get_devices" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_get_devices</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="o">*</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the attached devices.</p>
+<p><strong>Details:</strong> The caller must allocate enough memory to store the device handles (dlsdk_device_handle) before calling this method. If there are more attached devices than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>devices</code> — A pointer to a contiguous piece of memory big enough to store the number of connected device handles. If NULL is passed, the function will only return the number of connected devices in size parameter.</li>
+<li><code>size</code> — [in]: the number of device handles that can be stored in the devices parameter. [out]: The number of attached devices.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_NOT_ENOUGH_SPACE if there are more attached devices than allocated memory for storing <code>dlsdk_device_handle</code>.</p>
+<h4 id="dlsdk_free_device"><code>dlsdk_free_device</code><a class="headerlink" href="#dlsdk_free_device" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_free_device</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to release a device handle obtained from <code>dlsdk_get_devices()</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="dlsdk_restart_and_free_device"><code>dlsdk_restart_and_free_device</code><a class="headerlink" href="#dlsdk_restart_and_free_device" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_restart_and_free_device</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to restart a device and free the device handle.</p>
+<p><strong>Details:</strong> After calling this function, the device will no longer be accessible through the provided handle and the user must call dlsdk_get_devices() again to obtain a new handle for the restarted device.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+</ul>
+<h4 id="dlsdk_register_hotplug_callback"><code>dlsdk_register_hotplug_callback</code><a class="headerlink" href="#dlsdk_register_hotplug_callback" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_register_hotplug_callback</span><span class="p">(</span><span class="n">dlsdk_hotplug_callback_fn</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_hotplug_callback_handle</span><span class="o">*</span><span class="w"> </span><span class="n">outHandle</span><span class="p">);</span>
+</code></pre></div>
+<p>Register a hotplug callback function.</p>
+<p><strong>Details:</strong> This function registers a callback to be invoked when a hotplug event occurs and returns a registration handle for later unregistration. Only one callback can be registered, and registering a new callback will overwrite the previous one. The callback will be invoked for all hotplug events from the moment the callback is registered. When a system is destroyed, all hotplug callbacks will be automatically unregistered and their handles invalidated.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>cb</code> — the function to be invoked when a hotplug event occurs. Must be non-NULL.</li>
+<li><code>user_data</code> — user data to pass to the callback function. Can be NULL if not needed.</li>
+<li><code>outHandle</code> — Callback registration handle. Must be non-NULL. On success, receives a non-NULL handle.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code.</p>
+<h4 id="dlsdk_unregister_hotplug_callback"><code>dlsdk_unregister_hotplug_callback</code><a class="headerlink" href="#dlsdk_unregister_hotplug_callback" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_unregister_hotplug_callback</span><span class="p">(</span><span class="n">dlsdk_hotplug_callback_handle</span><span class="w"> </span><span class="n">handle</span><span class="p">);</span>
+</code></pre></div>
+<p>Unregisters a hotplug callback.</p>
+<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callback will not be invoked after this function returns successfully. If the callback is currently running, this function will block until it completes before unregistering and returning.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>handle</code> — The callback registration handle returned during registration.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, DLSDK_INVALID_HANDLE if handle is unknown or already unregistered, otherwise an error code.</p>
+<h3 id="device-api">Device API<a class="headerlink" href="#device-api" title="Permanent link">&para;</a></h3>
+<p>Functions for manipulating/controlling attached devices.</p>
+<h4 id="dlsdk_device_id"><code>dlsdk_device_id</code><a class="headerlink" href="#dlsdk_device_id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_device_id</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the unique identifier of the device.</p>
+<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID and 10096418 is the serial number. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> A string containing the unique device identifier.</p>
+<p><strong>Example:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C</label><label for="__tabbed_1_2">C++</label><label for="__tabbed_1_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dlsdk_device_id</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w"> </span><span class="c1">// e.g. USB_6015-10096418</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">device</span><span class="p">.</span><span class="n">id</span><span class="p">();</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// e.g. USB_6015-10096418</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">device_id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>  <span class="c1"># e.g. USB_6015-10096418</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="dlsdk_device_firmware_version"><code>dlsdk_device_firmware_version</code><a class="headerlink" href="#dlsdk_device_firmware_version" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_device_firmware_version</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the firmware version of the device.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> A string containing the firmware version of the device.</p>
+<h4 id="dlsdk_device_get_displays"><code>dlsdk_device_get_displays</code><a class="headerlink" href="#dlsdk_device_get_displays" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_device_get_displays</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_handle</span><span class="o">*</span><span class="w"> </span><span class="n">displays</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the attached displays for a given device.</p>
+<p><strong>Details:</strong> The caller must allocate enough memory to store the display handles (dlsdk_display_handle) before calling this method. If there are more attached displays than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again. Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is released with dlsdk_free_device() or dlsdk_restart_and_free_device().</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>displays</code> — A pointer to a contiguous piece of memory big enough to store the number of display handles connected to the device. If NULL, the function will only return the number of attached displays in size parameter.</li>
+<li><code>size</code> — [in]: the number of display handles that can be stored in the displays parameter. [out]: The number of attached displays.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_NOT_ENOUGH_SPACE if there are more attached displays than allocated memory for storing <code>dlsdk_display_handle</code>.</p>
+<h4 id="dlsdk_device_get_dpaux"><code>dlsdk_device_get_dpaux</code><a class="headerlink" href="#dlsdk_device_get_dpaux" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="nf">dlsdk_device_get_dpaux</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain a handle to the DP AUX channel available on a given device.</p>
+<p><strong>Details:</strong> Some devices may not have a DP AUX channel, in which case this function will return NULL. This function is useful when low-level access to the DP AUX channel is required and display is not enumerated automatically. Otherwise, it is recommended to obtain the DP AUX channel handle via the display object using dlsdk_display_get_dpaux().</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>output</code> — The output index for which to obtain the DP AUX channel handle</li>
+</ul>
+<p><strong>Returns:</strong> A handle to the DP AUX channel or NULL if the device does not support it, output is not DP type or it does not exist.</p>
+<h4 id="dlsdk_device_update_firmware"><code>dlsdk_device_update_firmware</code><a class="headerlink" href="#dlsdk_device_update_firmware" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_device_update_firmware</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to update the firmware of a device.</p>
+<p><strong>Details:</strong> Synchronous function used to update the firmware on a specific device. This function will block until the firmware update process is complete, which may take up to 30seconds on the device. This method must be called by the user to update the firmware on a specific device. This is required when the SDK is initialised with null firmware path, and can be used to update the firmware on demand. It is advised to keep the firmware up to date to ensure the best performance and reliability of the device, as well as access to the latest features. After a successful firmware update, the device or display handle is still valid, but keep in mind that the rendering pipeline must be established and the display has to be powered on again.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>device</code> — The device handle. Must be valid and non-NULL.</li>
+<li><code>firmwarePath</code> — The path to the firmware directory provided by DisplayLink. Must be valid and non-NULL.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code. DLSDK_UNSUCCESSFUL_NO_DEVICE if the device is not found within 15seconds after firmware update</p>
+<p>See <a href="../../getting-started/firmware-update/">Firmware Update</a> for more on
+firmware-related workflows.</p>
+<h3 id="display-api">Display API<a class="headerlink" href="#display-api" title="Permanent link">&para;</a></h3>
+<p>Functions for manipulating/controlling displays attached to a device.</p>
+<h4 id="dlsdk_display_id"><code>dlsdk_display_id</code><a class="headerlink" href="#dlsdk_display_id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_display_id</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the unique identifier of the display.</p>
+<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID, 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> A string containing the device and head identifiers.</p>
+<p><strong>Example:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C</label><label for="__tabbed_2_2">C++</label><label for="__tabbed_2_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dlsdk_display_id</span><span class="p">(</span><span class="n">display</span><span class="p">);</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w"> </span><span class="c1">// e.g. USB_6015-10096418^0</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">display</span><span class="p">.</span><span class="n">id</span><span class="p">();</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// e.g. USB_6015-10096418^0</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">display_id</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">display_id</span><span class="p">)</span>  <span class="c1"># e.g. USB_6015-10096418^0</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="dlsdk_display_size"><code>dlsdk_display_size</code><a class="headerlink" href="#dlsdk_display_size" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">dlsdk_rect</span><span class="w"> </span><span class="n">dlsdk_display_size</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the resolution of the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> The resolution of the display</p>
+<h4 id="dlsdk_display_edid"><code>dlsdk_display_edid</code><a class="headerlink" href="#dlsdk_display_edid" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_edid</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the EDID of the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>data</code> — Buffer to store the EDID data. If null, the function will return the required buffer size in len.</li>
+<li><code>len</code> — Length of the data buffer. On input, should be set to the size of the data buffer. On output, will be set to the actual length of the EDID data written to the buffer, or the required buffer size if buffer is null. If the buffer is too small, the data will be truncated.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if EDID was successfully obtained, reason for failure otherwise</p>
+<h4 id="dlsdk_display_modes"><code>dlsdk_display_modes</code><a class="headerlink" href="#dlsdk_display_modes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_modes</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to retrieve list of supported display modes for the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>modes</code> — Buffer to store the display modes. If null, the function will return the required buffer size in count.</li>
+<li><code>count</code> — Number of display modes that can be stored in the modes buffer. On input, should be set to the size of the modes buffer. On output, will be set to the actual number of display modes written to the buffer, or the required buffer size if buffer is null.</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if display modes were successfully obtained, reason for failure otherwise</p>
+<h4 id="dlsdk_display_preferred_mode"><code>dlsdk_display_preferred_mode</code><a class="headerlink" href="#dlsdk_display_preferred_mode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_preferred_mode</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain the preferred display mode for the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>mode</code> — Buffer to store the preferred display mode</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if preferred display mode was successfully obtained, reason for failure otherwise</p>
+<h4 id="dlsdk_display_power_on"><code>dlsdk_display_power_on</code><a class="headerlink" href="#dlsdk_display_power_on" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_power_on</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to power on the display.</p>
+<p><strong>Details:</strong> The display will be powered on with the preferred display mode</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="dlsdk_display_power_on_with_mode"><code>dlsdk_display_power_on_with_mode</code><a class="headerlink" href="#dlsdk_display_power_on_with_mode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_power_on_with_mode</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to power on the display with specific display mode.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified mode, DLSDK_UNSUCCESSFUL if the display failed to power on with the specified mode, DLSDK_INVALID_ARGS if the provided mode is not valid, null, or not supported by the display.</p>
+<h4 id="dlsdk_display_power_off"><code>dlsdk_display_power_off</code><a class="headerlink" href="#dlsdk_display_power_off" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_power_off</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to power off the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="dlsdk_display_show"><code>dlsdk_display_show</code><a class="headerlink" href="#dlsdk_display_show" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_show</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="p">);</span>
+</code></pre></div>
+<p>Function to present the contents of a pixel buffer on the display.</p>
+<p><strong>Details:</strong> This is a non-blocking call and will return before the pixels are displayed. If the user wishes notification of when the pixels have been displayed, they should call dlsdk_display_wait_on_show()</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>format</code> — The pixel format contained in the pixel buffer</li>
+<li><code>pixels</code> — The buffer containing the pixels to be displayed</li>
+<li><code>stride</code> — Number of bytes that needed to add to the address of the first pixel of a row in order to go to the address of the first pixel of the next row. If a value of 0 is given then it will be automatically calculated as bytes per pixel * display width</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with dlsdk_display_wait_on_show().</p>
+<h4 id="dlsdk_display_wait_on_show"><code>dlsdk_display_wait_on_show</code><a class="headerlink" href="#dlsdk_display_wait_on_show" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_wait_on_show</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to block for notification that pixels have been displayed after calling dlsdk_display_show().</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>DLSDK_SUCCESS when the pixels have been displayed</li>
+<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready</li>
+<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry dlsdk_display_show() with the frame to be displayed, which will typically involve more aggressive compression, or proceed with new frame if the previous frame is no longer relevant.</li>
+<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out</li>
+<li>DLSDK_UNSUCCESSFUL on unknown error</li>
+</ul>
+<h4 id="dlsdk_display_wait_on_show_for"><code>dlsdk_display_wait_on_show_for</code><a class="headerlink" href="#dlsdk_display_wait_on_show_for" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_wait_on_show_for</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to block for notification that pixels have been displayed after calling dlsdk_display_show(), with timeout option.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>timeoutMs</code> — Maximum time to wait in milliseconds</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>DLSDK_SUCCESS when the pixels have been displayed</li>
+<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready</li>
+<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry dlsdk_display_show() with the frame to be displayed, which will typically involve more aggressive compression, or proceed with new frame if the previous frame is no longer relevant.</li>
+<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out</li>
+<li>DLSDK_UNSUCCESSFUL on unknown error</li>
+</ul>
+<h4 id="dlsdk_display_clear"><code>dlsdk_display_clear</code><a class="headerlink" href="#dlsdk_display_clear" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_display_clear</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to clear the display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<h4 id="dlsdk_display_get_dpaux"><code>dlsdk_display_get_dpaux</code><a class="headerlink" href="#dlsdk_display_get_dpaux" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="nf">dlsdk_display_get_dpaux</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain a handle to the DP AUX channel associated with this display.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> A handle to the DP AUX channel or NULL if the display is not connected via DisplayPort</p>
+<h3 id="dp-aux-api">DP AUX API<a class="headerlink" href="#dp-aux-api" title="Permanent link">&para;</a></h3>
+<p>Low-level access to the DisplayPort AUX channel, useful when direct AUX/I2C
+access is required beyond the automatic display enumeration.</p>
+<h4 id="dlsdk_dpaux_read"><code>dlsdk_dpaux_read</code><a class="headerlink" href="#dlsdk_dpaux_read" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+<p>Reads a burst of data from native DP aux registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>auxRegAddress</code> — DP register address</li>
+<li><code>data</code> — Buffer for incoming data</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+</ul>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="dlsdk_dpaux_write"><code>dlsdk_dpaux_write</code><a class="headerlink" href="#dlsdk_dpaux_write" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+<p>Writes a burst of data to native DP aux registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>auxRegAddress</code> — DP register address</li>
+<li><code>data</code> — Buffer of write data</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+</ul>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="dlsdk_dpaux_i2c_read"><code>dlsdk_dpaux_i2c_read</code><a class="headerlink" href="#dlsdk_dpaux_i2c_read" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
+</code></pre></div>
+<p>Read I2C data by an Aux transaction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
+<li><code>data</code> — Read data buffer</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+</ul>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="dlsdk_dpaux_i2c_write"><code>dlsdk_dpaux_i2c_write</code><a class="headerlink" href="#dlsdk_dpaux_i2c_write" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
+</code></pre></div>
+<p>Write I2C data in an Aux transaction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
+<li><code>data</code> — Write data buffer</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+</ul>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="dlsdk_dpaux_i2c_write_and_read"><code>dlsdk_dpaux_i2c_write_and_read</code><a class="headerlink" href="#dlsdk_dpaux_i2c_write_and_read" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_write_and_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
+</code></pre></div>
+<p>Write and read I2C data by an Aux transaction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
+<li><code>writeData</code> — Write data buffer</li>
+<li><code>writeLength</code> — Write data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>readData</code> — Read data buffer</li>
+<li><code>readLength</code> — Read data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+</ul>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="dlsdk_dpaux_begin_exclusive_access"><code>dlsdk_dpaux_begin_exclusive_access</code><a class="headerlink" href="#dlsdk_dpaux_begin_exclusive_access" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_begin_exclusive_access</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
+</code></pre></div>
+<p>Begin exclusive access to the DP AUX channel.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>timeoutMs</code> — Maximum time to wait to acquire exclusive access, in milliseconds</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<h4 id="dlsdk_dpaux_end_exclusive_access"><code>dlsdk_dpaux_end_exclusive_access</code><a class="headerlink" href="#dlsdk_dpaux_end_exclusive_access" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_end_exclusive_access</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
+</code></pre></div>
+<p>End exclusive access to the DP AUX channel.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+</ul>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<h4 id="dlsdk_dpaux_detect"><code>dlsdk_dpaux_detect</code><a class="headerlink" href="#dlsdk_dpaux_detect" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_detect</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to detect if a monitor is connected to the DP AUX channel, and force training.</p>
+<h3 id="minimal-usage-example">Minimal usage example<a class="headerlink" href="#minimal-usage-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dlsdk/dlsdk.h&gt;</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">dlsdk_initialise</span><span class="p">();</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">devices</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">device_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dlsdk_get_devices</span><span class="p">(</span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">device_count</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">DLSDK_SUCCESS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">device_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">    </span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">displays</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">display_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dlsdk_device_get_displays</span><span class="p">(</span><span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">displays</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">display_count</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">DLSDK_SUCCESS</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">display_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">        </span><span class="n">dlsdk_display_power_on</span><span class="p">(</span><span class="n">displays</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="w">        </span><span class="c1">// dlsdk_display_show(displays[0], DLSDK_PIXEL_FORMAT_XRGB, pixels, 0);</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="w">        </span><span class="c1">// dlsdk_display_wait_on_show(displays[0]);</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="p">}</span>
+<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>
+<a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="n">dlsdk_teardown</span><span class="p">();</span>
+</code></pre></div>
+<p>See <a href="../code-samples/">Code Samples</a> for side-by-side C, C++, and Python
+examples, and <a href="../../getting-started/firmware-update/">Firmware Update</a> for
+firmware-specific workflows.</p>
 
 
 
