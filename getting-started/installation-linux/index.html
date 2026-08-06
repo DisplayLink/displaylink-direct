@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for the DisplayLink Direct SDK — connect and drive multiple displays over USB using DisplayLink technology.">
+        <meta name="description" content="Documentation for DisplayLink Direct — connect and drive multiple displays over USB using DisplayLink technology.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../api-reference/">
+        <link rel="next" href="../python-bindings/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Installation on Linux - DisplayLink Direct</title>
+        <title>Running on Linux - DisplayLink Direct</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation-on-linux" class="md-skip">
+        <a href="#running-on-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation on Linux
+              Running on Linux
             
           </span>
         </div>
@@ -675,6 +675,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -748,6 +752,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running on Linux
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -755,7 +777,7 @@
   <span class="md-ellipsis">
     
   
-    Installation on Linux
+    Running on Linux
   
 
     
@@ -765,6 +787,164 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-architectures-and-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported architectures and distributions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download the library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-with-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building with CMake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-the-standard-displaylink-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable the standard DisplayLink driver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-bindings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Bindings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1229,6 +1409,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-architectures-and-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported architectures and distributions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download the library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-with-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building with CMake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-the-standard-displaylink-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable the standard DisplayLink driver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1247,8 +1518,78 @@
   
 
 
-<h1 id="installation-on-linux">Installation on Linux<a class="headerlink" href="#installation-on-linux" title="Permanent link">&para;</a></h1>
-<p>Step-by-step instructions for installing and configuring the DisplayLink Direct SDK on Linux.</p>
+<h1 id="running-on-linux">Running on Linux<a class="headerlink" href="#running-on-linux" title="Permanent link">&para;</a></h1>
+<h2 id="supported-architectures-and-distributions">Supported architectures and distributions<a class="headerlink" href="#supported-architectures-and-distributions" title="Permanent link">&para;</a></h2>
+<p>DisplayLink Direct supports the following Linux platforms:</p>
+<ul>
+<li><strong>x86_64</strong> (Intel/AMD 64-bit)</li>
+<li><strong>aarch64</strong> (ARM 64-bit)</li>
+</ul>
+<p>The SDK is compatible with most modern Linux distributions. Ensure your system
+meets the minimum C runtime and library requirements before installation.</p>
+<h2 id="runtime-dependencies">Runtime dependencies<a class="headerlink" href="#runtime-dependencies" title="Permanent link">&para;</a></h2>
+<p>The following system libraries are required to run DisplayLink Direct:</p>
+<ul>
+<li><strong>libusb &gt;= 1.0.16</strong> — for USB device communication</li>
+<li><strong>libc6 &gt;= 2.31</strong> — C runtime library</li>
+</ul>
+<p>These libraries are typically pre-installed on most Linux distributions. If your
+system is missing them, install using your distribution's package manager:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian/Ubuntu</label><label for="__tabbed_1_2">RHEL/CentOS/Fedora</label><label for="__tabbed_1_3">Alpine</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libc6
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>libusb<span class="w"> </span>libc
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apk<span class="w"> </span>add<span class="w"> </span>libusb<span class="w"> </span>libc6
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="download-the-library">Download the library<a class="headerlink" href="#download-the-library" title="Permanent link">&para;</a></h2>
+<p>Download the pre-built library package for your architecture from the GitHub
+<a href="https://github.com/syna-isd/displaylink-direct/releases">Release Assets</a>.</p>
+<h2 id="building-with-cmake">Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permanent link">&para;</a></h2>
+<p>To integrate the SDK into your CMake project, use <code>find_package</code> to locate the
+SDK and link against the <code>dlsdk::dlsdk</code> target:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">dlsdk</span><span class="w"> </span><span class="s">1.6.0</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">my-app</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">my-app</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">dlsdk::dlsdk</span><span class="p">)</span>
+</code></pre></div>
+<p>Then configure and build, passing the SDK installation path via
+<code>CMAKE_PREFIX_PATH</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cmake<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/dlsdk<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build
+</code></pre></div>
+<p>Replace <code>/path/to/dlsdk</code> with the path to your DisplayLink Direct
+installation.</p>
+<h2 id="running-applications">Running applications<a class="headerlink" href="#running-applications" title="Permanent link">&para;</a></h2>
+<h3 id="disable-the-standard-displaylink-driver">Disable the standard DisplayLink driver<a class="headerlink" href="#disable-the-standard-displaylink-driver" title="Permanent link">&para;</a></h3>
+<p>If the standard DisplayLink driver (<code>displaylink-driver</code>) is installed on your
+system, it must be stopped and masked before using DisplayLink Direct, as both
+cannot manage the device simultaneously:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>displaylink-driver
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>mask<span class="w"> </span>displaylink-driver
+</code></pre></div>
+<h3 id="usb-permissions">USB permissions<a class="headerlink" href="#usb-permissions" title="Permanent link">&para;</a></h3>
+<p>By default, access to DisplayLink USB devices requires root privileges. To run
+applications without root, set up udev rules to grant access to users in the
+<code>displaylink</code> group:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>displaylink
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>displaylink<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;SUBSYSTEM==&quot;usb&quot;, MODE=&quot;0660&quot;, GROUP=&quot;displaylink&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/00-usb-permissions.rules
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
+</code></pre></div>
+<p>Log out and log back in for group membership changes to take effect. Then you
+can run applications without the <code>sudo</code> prefix.</p>
 
 
 
@@ -1303,13 +1644,13 @@
         
         
           
-          <a href="../../api-reference/" class="md-footer__link md-footer__link--next" aria-label="Next: API Reference">
+          <a href="../python-bindings/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Bindings">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                API Reference
+                Python Bindings
               </div>
             </div>
             <div class="md-footer__button md-icon">

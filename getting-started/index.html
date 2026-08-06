@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for the DisplayLink Direct SDK — connect and drive multiple displays over USB using DisplayLink technology.">
+        <meta name="description" content="Documentation for DisplayLink Direct — connect and drive multiple displays over USB using DisplayLink technology.">
       
       
       
@@ -675,6 +675,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -746,7 +750,63 @@
   <span class="md-ellipsis">
     
   
-    Installation on Linux
+    Running on Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python-bindings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Bindings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="firmware-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
   
 
     
@@ -1219,6 +1279,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting the package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In this section
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1238,7 +1350,38 @@
 
 
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>Everything you need to install, configure, and run the DisplayLink Direct SDK.</p>
+<p>Everything you need to install, configure, and run DisplayLink Direct is
+published as <a href="https://github.com/syna-isd/displaylink-direct/releases/">GitHub Release Assets</a>.</p>
+<h2 id="getting-the-package">Getting the package<a class="headerlink" href="#getting-the-package" title="Permanent link">&para;</a></h2>
+<p>Check out the release tag of this repository, or download the <strong>Source Code</strong>
+archive (<code>.zip</code> or <code>.tar.gz</code>) for the release you want to use. The repository
+provides:</p>
+<ul>
+<li>C/C++ headers (<a href="https://github.com/syna-isd/displaylink-direct/tree/main/include"><code>include/</code></a>).</li>
+<li>Supporting files — license, third-party licenses, CMake config files
+  (<code>dlsdkConfig.cmake</code>), release notes, and package metadata.</li>
+</ul>
+<h2 id="core-libraries">Core libraries<a class="headerlink" href="#core-libraries" title="Permanent link">&para;</a></h2>
+<p>The core libraries are proprietary and closed source, distributed as pre-built
+binaries via GitHub Release Assets. They are not included in the source
+archive and must be downloaded separately.</p>
+<p>For Linux, download <code>linux.zip</code> from the
+<a href="https://github.com/syna-isd/displaylink-direct/releases/">release assets</a> and
+unzip it into the
+<a href="https://github.com/syna-isd/displaylink-direct/tree/main/libs"><code>libs/</code></a>
+directory of your checkout.</p>
+<h2 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h2>
+<p>For proper operation, the DisplayLink device firmware must be up to date.
+Download the firmware package <code>firmware.zip</code> from the release assets and unpack
+it into the
+<a href="https://github.com/syna-isd/displaylink-direct/tree/main/DL-firmware"><code>DL-firmware/</code></a>
+directory. See <a href="firmware-update/">Firmware Update</a> for the update process.</p>
+<h2 id="in-this-section">In this section<a class="headerlink" href="#in-this-section" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="installation-linux/">Running on Linux</a></li>
+<li><a href="firmware-update/">Firmware Update</a></li>
+<li><a href="python-bindings/">Python Bindings</a></li>
+</ul>
 
 
 
@@ -1293,13 +1436,13 @@
         
         
           
-          <a href="installation-linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation on Linux">
+          <a href="installation-linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Running on Linux">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Installation on Linux
+                Running on Linux
               </div>
             </div>
             <div class="md-footer__button md-icon">
