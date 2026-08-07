@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://miniature-adventure-pzr6znk.pages.github.io/api-reference/api-documentation/">
       
       
-        <link rel="prev" href="../code-samples/">
+        <link rel="prev" href="../../getting-started/python-bindings/">
       
       
         <link rel="next" href="../api-cpp-documentation/">
@@ -274,7 +274,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -836,10 +836,6 @@
     
       
         
-          
-        
-      
-        
       
         
       
@@ -868,9 +864,8 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -884,14 +879,8 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
@@ -903,36 +892,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../code-samples/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Code Samples
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1603,17 +1562,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#minimal-usage-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimal usage example
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1671,6 +1619,34 @@
     
   
     Python API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minimal-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimal Example
   
 
     
@@ -2616,17 +2592,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#minimal-usage-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimal usage example
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2653,6 +2618,10 @@
 
 
 <h1 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See <a href="../minimal-example/">Minimal Example</a> for a minimal usage example that powers on a display and presents a solid-color frame.</p>
+</div>
 <p>This file contains the C-API and C++ API wrapper available to display
 a pixel buffer across multiple displays.</p>
 <h2 id="contact-and-support">Contact and Support<a class="headerlink" href="#contact-and-support" title="Permanent link">&para;</a></h2>
@@ -3385,29 +3354,6 @@ access is required beyond the automatic display enumeration.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_detect</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to detect if a monitor is connected to the DP AUX channel, and force training.</p>
-<h3 id="minimal-usage-example">Minimal usage example<a class="headerlink" href="#minimal-usage-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dlsdk/dlsdk.h&gt;</span>
-<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
-<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">dlsdk_initialise</span><span class="p">();</span>
-<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
-<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">devices</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
-<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">device_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dlsdk_get_devices</span><span class="p">(</span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">device_count</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">DLSDK_SUCCESS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">device_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">    </span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">displays</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
-<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">display_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dlsdk_device_get_displays</span><span class="p">(</span><span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">displays</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">display_count</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">DLSDK_SUCCESS</span>
-<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">display_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">        </span><span class="n">dlsdk_display_power_on</span><span class="p">(</span><span class="n">displays</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="w">        </span><span class="c1">// dlsdk_display_show(displays[0], DLSDK_PIXEL_FORMAT_XRGB, pixels, 0);</span>
-<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="w">        </span><span class="c1">// dlsdk_display_wait_on_show(displays[0]);</span>
-<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="p">}</span>
-<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>
-<a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="n">dlsdk_teardown</span><span class="p">();</span>
-</code></pre></div>
-<p>See <a href="../code-samples/">Code Samples</a> for side-by-side C, C++, and Python
-examples, and <a href="../../getting-started/firmware-update/">Firmware Update</a> for
-firmware-specific workflows.</p>
 
 
 
@@ -3445,7 +3391,7 @@ firmware-specific workflows.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../code-samples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Code Samples">
+          <a href="../../getting-started/python-bindings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python Bindings">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3455,7 +3401,7 @@ firmware-specific workflows.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Code Samples
+                Python Bindings
               </div>
             </div>
           </a>
