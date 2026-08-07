@@ -16,7 +16,7 @@
         <link rel="prev" href="../code-samples/">
       
       
-        <link rel="next" href="../qt-platform-plugin/">
+        <link rel="next" href="../api-cpp-documentation/">
       
       
         
@@ -845,6 +845,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1001,6 +1005,17 @@
     <span class="md-ellipsis">
       
         Contact and Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Safety
       
     </span>
   </a>
@@ -1620,6 +1635,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../api-cpp-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-python-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../qt-platform-plugin/" class="md-nav__link">
         
   
@@ -1947,6 +2018,17 @@
     <span class="md-ellipsis">
       
         Contact and Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Safety
       
     </span>
   </a>
@@ -2575,6 +2657,8 @@
 a pixel buffer across multiple displays.</p>
 <h2 id="contact-and-support">Contact and Support<a class="headerlink" href="#contact-and-support" title="Permanent link">&para;</a></h2>
 <p>For support please contact your DisplayLink representative or email "technical-enquiries@synaptics.com"</p>
+<h2 id="thread-safety">Thread Safety<a class="headerlink" href="#thread-safety" title="Permanent link">&para;</a></h2>
+<p>API calls made on the same handle (e.g. <code>dlsdk_device_handle</code>, <code>dlsdk_display_handle</code>, <code>dlsdk_dpaux_handle</code>) are generally not thread-safe. The user should avoid calling the API with the same handle concurrently from multiple threads, unless the user provides their own synchronization to serialize access to that handle.</p>
 <h2 id="c-api">C API<a class="headerlink" href="#c-api" title="Permanent link">&para;</a></h2>
 <p>The C API is declared in <code>include/dlsdk/dlsdk.h</code> and is the primary,
 ABI-stable interface exposed by DisplayLink Direct. The C++ helper classes
@@ -2618,7 +2702,7 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 <tr>
 <td><code>dlsdk_aux_status</code></td>
-<td>DP Aux channel return codes</td>
+<td>DP AUX channel return codes</td>
 </tr>
 <tr>
 <td><code>dlsdk_hotplug_callback_handle</code></td>
@@ -2799,7 +2883,7 @@ System, Device, Display, then DP AUX.</p>
 </tbody>
 </table>
 <h4 id="dlsdk_aux_status"><code>dlsdk_aux_status</code><a class="headerlink" href="#dlsdk_aux_status" title="Permanent link">&para;</a></h4>
-<p>DP Aux channel return codes.</p>
+<p>DP AUX channel return codes.</p>
 <table>
 <thead>
 <tr>
@@ -2899,7 +2983,7 @@ System, Device, Display, then DP AUX.</p>
 <h4 id="dlsdk_initialise_with_config"><code>dlsdk_initialise_with_config</code><a class="headerlink" href="#dlsdk_initialise_with_config" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_initialise_with_config</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_config</span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to initialise the SDK with a specific firmware path.</p>
+<p>Function used to initialise the SDK with a specific configuration.</p>
 <p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -3214,7 +3298,7 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="dlsdk_dpaux_read"><code>dlsdk_dpaux_read</code><a class="headerlink" href="#dlsdk_dpaux_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Reads a burst of data from native DP aux registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p>Reads a burst of data from native DP AUX registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
@@ -3226,7 +3310,7 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="dlsdk_dpaux_write"><code>dlsdk_dpaux_write</code><a class="headerlink" href="#dlsdk_dpaux_write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Writes a burst of data to native DP aux registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p>Writes a burst of data to native DP AUX registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
@@ -3378,13 +3462,13 @@ firmware-specific workflows.</p>
         
         
           
-          <a href="../qt-platform-plugin/" class="md-footer__link md-footer__link--next" aria-label="Next: Qt Platform Plugin">
+          <a href="../api-cpp-documentation/" class="md-footer__link md-footer__link--next" aria-label="Next: C++ API Documentation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Qt Platform Plugin
+                C++ API Documentation
               </div>
             </div>
             <div class="md-footer__button md-icon">

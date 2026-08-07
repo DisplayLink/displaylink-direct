@@ -1,0 +1,3246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for DisplayLink Direct — connect and drive multiple displays over USB using DisplayLink technology.">
+      
+      
+      
+        <link rel="canonical" href="https://miniature-adventure-pzr6znk.pages.github.io/api-reference/api-cpp-documentation/">
+      
+      
+        <link rel="prev" href="../api-documentation/">
+      
+      
+        <link rel="next" href="../api-python-documentation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../dl_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>C++ API Documentation - DisplayLink Direct</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DisplayLink Direct" class="md-header__button md-logo" aria-label="DisplayLink Direct" data-md-component="logo">
+      
+  <img src="../../dl_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DisplayLink Direct
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++ API Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/syna-isd/displaylink-direct" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    syna-isd/displaylink-direct
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../code-samples/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Code Samples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../troubleshooting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DisplayLink Direct" class="md-nav__button md-logo" aria-label="DisplayLink Direct" data-md-component="logo">
+      
+  <img src="../../dl_logo.svg" alt="logo">
+
+    </a>
+    DisplayLink Direct
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/syna-isd/displaylink-direct" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    syna-isd/displaylink-direct
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/key-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/supported-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/problems-solved/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why DisplayLink Direct?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embedded-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/device-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/host-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running on Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/firmware-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/python-bindings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Bindings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ API Documentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Safety
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkrect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::Rect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkhotplugeventdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::HotplugEventData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkcallbackhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::CallbackHandle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkcallbackfn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::CallbackFn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdksystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemconst-config-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System(const Config&amp; config)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ~System()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDevices()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerhotplugcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registerHotplugCallback()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregisterhotplugcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unregisterHotplugCallback()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdevicehandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DeviceHandle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DeviceHandle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        release()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restartandfreedevice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restartAndFreeDevice()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        id()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmwareversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        firmwareVersion()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdisplays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDisplays()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDpAux()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatefirmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        updateFirmware()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdisplayhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DisplayHandle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DisplayHandle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        id()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        size()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edid()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modes()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferredmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        preferredMode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOn()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweronwithmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOnWithMode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweroff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOff()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        show()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waitonshow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        waitOnShow()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdpaux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDpAux()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dp-aux-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP AUX API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DP AUX API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DpAux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DpAux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auxreaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxwritedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxWriteData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2creaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2cwritedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cWriteData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2cwriteandreaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cWriteAndReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        beginExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        endExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detect()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdpauxexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DpAuxExclusiveAccess
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DpAuxExclusiveAccess">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpauxexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DpAuxExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpauxexclusiveaccess_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ~DpAuxExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        status()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-python-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qt-platform-plugin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt Platform Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../code-samples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Samples
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Code Samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-samples/video-wall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Wall Sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-samples/read-edid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read EDID Sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../troubleshooting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Issues and Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting Bugs and Requesting Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Safety
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkrect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::Rect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkhotplugeventdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::HotplugEventData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkcallbackhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::CallbackHandle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkcallbackfn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::CallbackFn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdksystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemconst-config-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System(const Config&amp; config)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ~System()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdevices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDevices()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerhotplugcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registerHotplugCallback()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregisterhotplugcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unregisterHotplugCallback()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdevicehandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DeviceHandle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DeviceHandle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        release()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restartandfreedevice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restartAndFreeDevice()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        id()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmwareversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        firmwareVersion()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdisplays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDisplays()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDpAux()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatefirmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        updateFirmware()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdisplayhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DisplayHandle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DisplayHandle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        id()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        size()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edid()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modes()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferredmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        preferredMode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOn()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweronwithmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOnWithMode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poweroff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOff()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        show()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waitonshow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        waitOnShow()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdpaux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getDpAux()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dp-aux-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP AUX API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DP AUX API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdpaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DpAux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DpAux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auxreaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxwritedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxWriteData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2creaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2cwritedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cWriteData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxi2cwriteandreaddata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auxI2cWriteAndReadData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        beginExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        endExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detect()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlsdkdpauxexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dl::sdk::DpAuxExclusiveAccess
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dl::sdk::DpAuxExclusiveAccess">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpauxexclusiveaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DpAuxExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpauxexclusiveaccess_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ~DpAuxExclusiveAccess()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        status()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="c-api-documentation">C++ API Documentation<a class="headerlink" href="#c-api-documentation" title="Permanent link">&para;</a></h1>
+<p>The C++ helper classes are declared in <code>include/dlsdk/dlsdk.h</code>, in the
+<code>dl::sdk</code> namespace. They are thin wrappers around the <a href="../api-documentation/">C API</a>
+and are provided as example code, built directly on top of the same
+<code>dlsdk_*</code> functions documented there.</p>
+<p>Objects are created in the following order: a <code>dl::sdk::System</code> is
+initialized first, which is then used to enumerate <code>dl::sdk::DeviceHandle</code>
+objects, which in turn expose their attached <code>dl::sdk::DisplayHandle</code>
+objects. This page documents the API in that same order: System, Device,
+Display, then DP AUX.</p>
+<h2 id="thread-safety">Thread Safety<a class="headerlink" href="#thread-safety" title="Permanent link">&para;</a></h2>
+<p>API calls made on the same handle object (e.g. <code>dl::sdk::DeviceHandle</code>, <code>dl::sdk::DisplayHandle</code>, <code>dl::sdk::DpAux</code>) are generally not thread-safe. The user should avoid calling the API with the same handle concurrently from multiple threads, unless the user provides their own synchronization to serialize access to that handle.</p>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
+<p>Custom types used across the C++ API wrapper.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dl::sdk::Rect</code></td>
+<td>Alias for <code>dlsdk_rect</code>, an abstract representation of a rectangular area</td>
+</tr>
+<tr>
+<td><code>dl::sdk::Config</code></td>
+<td>Configuration struct used to construct a <code>dl::sdk::System</code> with custom options</td>
+</tr>
+<tr>
+<td><code>dl::sdk::HotplugEventData</code></td>
+<td>Data provided to hotplug callbacks when a hotplug event occurs</td>
+</tr>
+<tr>
+<td><code>dl::sdk::CallbackHandle</code></td>
+<td>Alias for <code>dlsdk_hotplug_callback_handle</code>, used to unregister a hotplug callback</td>
+</tr>
+<tr>
+<td><code>dl::sdk::CallbackFn</code></td>
+<td><code>std::function</code> signature used for hotplug callbacks</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdkrect"><code>dl::sdk::Rect</code><a class="headerlink" href="#dlsdkrect" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dlsdk_rect</span><span class="p">;</span>
+</code></pre></div>
+<p>Alias for <code>dlsdk_rect</code>, an abstract representation of a rectangular area, used for display resolution and size information: <code>width</code>, <code>height</code>.</p>
+<h4 id="dlsdkconfig"><code>dl::sdk::Config</code><a class="headerlink" href="#dlsdkconfig" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">Config</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">Config</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">embeddedMode</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">embeddedMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">};</span>
+</code></pre></div>
+<p>Configuration struct used to construct a <code>dl::sdk::System</code> with custom options.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>firmwarePath</code></td>
+<td>Firmware directory path, used to automatically update the firmware if required. Leave empty to disable automatic firmware update. If automatic firmware update is disabled, user should ensure the firmware on the device is compatible with the SDK version, otherwise the device may not function properly or at all.</td>
+</tr>
+<tr>
+<td><code>embeddedMode</code></td>
+<td>In embedded mode (<code>embeddedMode = true</code>), the SDK will not use dynamic memory at runtime.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdkhotplugeventdata"><code>dl::sdk::HotplugEventData</code><a class="headerlink" href="#dlsdkhotplugeventdata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HotplugEventData</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">dlsdk_hotplug_event</span><span class="w"> </span><span class="n">event</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">DeviceHandle</span><span class="w"> </span><span class="n">device</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">device_id</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="n">DisplayHandle</span><span class="w"> </span><span class="n">display</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">display_id</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">};</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>See <code>dlsdk_hotplug_event_data.version</code>.</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>See <code>dlsdk_hotplug_event_data.event</code>.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>See <code>dlsdk_hotplug_event_data.device</code>.</td>
+</tr>
+<tr>
+<td><code>device_id</code></td>
+<td>See <code>dlsdk_hotplug_event_data.device_id</code>.</td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td>See <code>dlsdk_hotplug_event_data.display</code>.</td>
+</tr>
+<tr>
+<td><code>display_id</code></td>
+<td>See <code>dlsdk_hotplug_event_data.display_id</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dlsdkcallbackhandle"><code>dl::sdk::CallbackHandle</code><a class="headerlink" href="#dlsdkcallbackhandle" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">using</span><span class="w"> </span><span class="n">CallbackHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dlsdk_hotplug_callback_handle</span><span class="p">;</span>
+</code></pre></div>
+<p>Alias for <code>dlsdk_hotplug_callback_handle</code>, the opaque handle returned by <code>System::registerHotplugCallback()</code> and passed to <code>System::unregisterHotplugCallback()</code>.</p>
+<h4 id="dlsdkcallbackfn"><code>dl::sdk::CallbackFn</code><a class="headerlink" href="#dlsdkcallbackfn" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">using</span><span class="w"> </span><span class="n">CallbackFn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HotplugEventData</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p><code>std::function</code> signature used for hotplug callbacks registered with <code>System::registerHotplugCallback()</code>.</p>
+<h2 id="system-api">System API<a class="headerlink" href="#system-api" title="Permanent link">&para;</a></h2>
+<h3 id="dlsdksystem"><code>dl::sdk::System</code><a class="headerlink" href="#dlsdksystem" title="Permanent link">&para;</a></h3>
+<p>Class methods not related to a particular device or display.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">System</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">System</span><span class="p">();</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">System</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Config</span><span class="o">&amp;</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="o">~</span><span class="n">System</span><span class="p">();</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DeviceHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDevices</span><span class="p">();</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">registerHotplugCallback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CallbackFn</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackHandle</span><span class="o">*</span><span class="w"> </span><span class="n">outHandle</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">unregisterHotplugCallback</span><span class="p">(</span><span class="n">CallbackHandle</span><span class="w"> </span><span class="n">handle</span><span class="p">);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">};</span>
+</code></pre></div>
+<h4 id="system"><code>System()</code><a class="headerlink" href="#system" title="Permanent link">&para;</a></h4>
+<p>Function used to initialise the internals of the SDK.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<h4 id="systemconst-config-config"><code>System(const Config&amp; config)</code><a class="headerlink" href="#systemconst-config-config" title="Permanent link">&para;</a></h4>
+<p>Function used to initialise the SDK with a specific configuration.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<p><strong>Parameters:</strong>
+- <code>config</code> — The configuration structure containing the firmware path and other settings. See <code>Config</code> for details.</p>
+<h4 id="system_1"><code>~System()</code><a class="headerlink" href="#system_1" title="Permanent link">&para;</a></h4>
+<p>Function used to clean up the SDK internals when a user no longer requires its use.</p>
+<p><strong>Details:</strong> This method must be called by the user prior the application exiting. In OO parlance, it can be thought of as an SDK destructor</p>
+<h4 id="getdevices"><code>getDevices()</code><a class="headerlink" href="#getdevices" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DeviceHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDevices</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to obtain the attached devices.</p>
+<p><strong>Returns:</strong> A <code>std::vector</code> of <code>DeviceHandle</code> objects, one for each device currently attached.</p>
+<h4 id="registerhotplugcallback"><code>registerHotplugCallback()</code><a class="headerlink" href="#registerhotplugcallback" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">registerHotplugCallback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CallbackFn</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackHandle</span><span class="o">*</span><span class="w"> </span><span class="n">outHandle</span><span class="p">);</span>
+</code></pre></div>
+<p>Register a hotplug callback function.</p>
+<p><strong>Details:</strong> This function registers a callback to be invoked when a hotplug event occurs and returns a registration handle for later unregistration. Only one callback can be registered, and registering a new callback will overwrite the previous one. The callback will be invoked for all hotplug events from the moment the callback is registered. When a system is destroyed, all hotplug callbacks will be automatically unregistered and their handles invalidated.</p>
+<p><strong>Parameters:</strong>
+- <code>cb</code> — the function to be invoked when a hotplug event occurs. Must be non-NULL.
+- <code>outHandle</code> — Callback registration handle. Must be non-NULL. On success, receives a non-NULL handle.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code.</p>
+<h4 id="unregisterhotplugcallback"><code>unregisterHotplugCallback()</code><a class="headerlink" href="#unregisterhotplugcallback" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">unregisterHotplugCallback</span><span class="p">(</span><span class="n">CallbackHandle</span><span class="w"> </span><span class="n">handle</span><span class="p">);</span>
+</code></pre></div>
+<p>Unregisters a hotplug callback.</p>
+<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callback will not be invoked after this function returns successfully. If the callback is currently running, this function will block until it completes before unregistering and returning.</p>
+<p><strong>Parameters:</strong>
+- <code>handle</code> — The callback registration handle returned during registration.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, DLSDK_INVALID_HANDLE if <code>handle</code> is unknown or already unregistered, otherwise an error code.</p>
+<h2 id="device-api">Device API<a class="headerlink" href="#device-api" title="Permanent link">&para;</a></h2>
+<h3 id="dlsdkdevicehandle"><code>dl::sdk::DeviceHandle</code><a class="headerlink" href="#dlsdkdevicehandle" title="Permanent link">&para;</a></h3>
+<p>Class methods for manipulating/controlling attached displays.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DeviceHandle</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">release</span><span class="p">();</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">restartAndFreeDevice</span><span class="p">();</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">firmwareVersion</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DisplayHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDisplays</span><span class="p">();</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">updateFirmware</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">};</span>
+</code></pre></div>
+<h4 id="release"><code>release()</code><a class="headerlink" href="#release" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">release</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to release a device handle obtained from <code>System::getDevices()</code>.</p>
+<h4 id="restartandfreedevice"><code>restartAndFreeDevice()</code><a class="headerlink" href="#restartandfreedevice" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">restartAndFreeDevice</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to restart a device and free the device handle.</p>
+<p><strong>Details:</strong> After calling this function, the device will no longer be accessible through the provided handle and the user must call <code>System::getDevices()</code> again to obtain a new handle for the restarted device.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="id"><code>id()</code><a class="headerlink" href="#id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the unique identifier of the device.</p>
+<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID and 10096418 is the serial number. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Returns:</strong> A string containing the unique device identifier.</p>
+<h4 id="firmwareversion"><code>firmwareVersion()</code><a class="headerlink" href="#firmwareversion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">firmwareVersion</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the firmware version of the device.</p>
+<p><strong>Returns:</strong> A string containing the firmware version of the device.</p>
+<h4 id="getdisplays"><code>getDisplays()</code><a class="headerlink" href="#getdisplays" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DisplayHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDisplays</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to obtain the attached displays for a given device.</p>
+<p><strong>Details:</strong> Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is released with <code>DeviceHandle::release()</code> or <code>DeviceHandle::restartAndFreeDevice()</code>.</p>
+<p><strong>Returns:</strong> A <code>std::vector</code> of <code>DisplayHandle</code> objects, one for each display currently attached to the device.</p>
+<h4 id="getdpaux"><code>getDpAux()</code><a class="headerlink" href="#getdpaux" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to obtain a handle to the DP AUX channel available on a given device.</p>
+<p><strong>Details:</strong> Some devices may not have a DP AUX channel, in which case this function will return an invalid <code>DpAux</code>. This function is useful when low-level access to the DP AUX channel is required and display is not enumerated automatically. Otherwise, it is recommended to obtain the DP AUX channel via <code>DisplayHandle::getDpAux()</code>.</p>
+<p><strong>Parameters:</strong>
+- <code>output</code> — The output index for which to obtain the DP AUX channel handle.</p>
+<p><strong>Returns:</strong> A <code>DpAux</code> object, or an invalid one if the device does not support it, output is not DP type or it does not exist.</p>
+<h4 id="updatefirmware"><code>updateFirmware()</code><a class="headerlink" href="#updatefirmware" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">updateFirmware</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to update the firmware of a device.</p>
+<p><strong>Details:</strong> Synchronous function used to update the firmware on a specific device. This function will block until the firmware update process is complete, which may take up to 30seconds on the device. This method must be called by the user to update the firmware on a specific device. This is required when the SDK is initialised with null firmware path, and can be used to update the firmware on demand. It is advised to keep the firmware up to date to ensure the best performance and reliability of the device, as well as access to the latest features. After a successful firmware update, the device or display handle is still valid, but keep in mind that the rendering pipeline must be established and the display has to be powered on again.</p>
+<p><strong>Parameters:</strong>
+- <code>firmwarePath</code> — The path to the firmware directory provided by DisplayLink. Must be valid and non-NULL.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code. DLSDK_UNSUCCESSFUL_NO_DEVICE if the device is not found within 15seconds after firmware update.</p>
+<p>See <a href="../../getting-started/firmware-update/">Firmware Update</a> for more on
+firmware-related workflows.</p>
+<h2 id="display-api">Display API<a class="headerlink" href="#display-api" title="Permanent link">&para;</a></h2>
+<h3 id="dlsdkdisplayhandle"><code>dl::sdk::DisplayHandle</code><a class="headerlink" href="#dlsdkdisplayhandle" title="Permanent link">&para;</a></h3>
+<p>Class methods for manipulating/controlling displays attached to a device.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DisplayHandle</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="n">Rect</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">edid</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">};</span>
+</code></pre></div>
+<h4 id="id_1"><code>id()</code><a class="headerlink" href="#id_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the unique identifier of the display.</p>
+<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID, 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Returns:</strong> A string containing the device and head identifiers.</p>
+<h4 id="size"><code>size()</code><a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Rect</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the resolution of the display.</p>
+<p><strong>Returns:</strong> The resolution of the display</p>
+<h4 id="edid"><code>edid()</code><a class="headerlink" href="#edid" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">edid</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the EDID of the display.</p>
+<p><strong>Parameters:</strong>
+- <code>data</code> — Buffer to store the EDID data. If null, the function will return the required buffer size in len.
+- <code>len</code> — Length of the data buffer. On input, should be set to the size of the data buffer. On output, will be set to the actual length of the EDID data written to the buffer, or the required buffer size if buffer is null. If the buffer is too small, the data will be truncated.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if EDID was successfully obtained, reason for failure otherwise</p>
+<h4 id="modes"><code>modes()</code><a class="headerlink" href="#modes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to retrieve list of supported display modes for the display.</p>
+<p><strong>Parameters:</strong>
+- <code>modes</code> — Buffer to store the display modes. If null, the function will return the required buffer size in count.
+- <code>count</code> — Number of display modes that can be stored in the modes buffer. On input, should be set to the size of the modes buffer. On output, will be set to the actual number of display modes written to the buffer, or the required buffer size if buffer is null.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if display modes were successfully obtained, reason for failure otherwise</p>
+<h4 id="preferredmode"><code>preferredMode()</code><a class="headerlink" href="#preferredmode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain the preferred display mode for the display.</p>
+<p><strong>Parameters:</strong>
+- <code>mode</code> — Buffer to store the preferred display mode</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if preferred display mode was successfully obtained, reason for failure otherwise</p>
+<h4 id="poweron"><code>powerOn()</code><a class="headerlink" href="#poweron" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to power on the display.</p>
+<p><strong>Details:</strong> The display will be powered on with the preferred display mode</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="poweronwithmode"><code>powerOnWithMode()</code><a class="headerlink" href="#poweronwithmode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to power on the display with specific display mode.</p>
+<p><strong>Parameters:</strong>
+- <code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified mode, DLSDK_UNSUCCESSFUL if the display failed to power on with the specified mode, DLSDK_INVALID_ARGS if the provided mode is not valid, null, or not supported by the display.</p>
+<h4 id="poweroff"><code>powerOff()</code><a class="headerlink" href="#poweroff" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to power off the display.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
+<h4 id="show"><code>show()</code><a class="headerlink" href="#show" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+<p>Function to present the contents of a pixel buffer on the display.</p>
+<p><strong>Details:</strong> This is a non-blocking call and will return before the pixels are displayed. If the user wishes notification of when the pixels have been displayed, they should call <code>DisplayHandle::waitOnShow()</code></p>
+<p><strong>Parameters:</strong>
+- <code>format</code> — The pixel format contained in the pixel buffer
+- <code>pixels</code> — The buffer containing the pixels to be displayed
+- <code>stride</code> — Number of bytes that needed to add to the address of the first pixel of a row in order to go to the address of the first pixel of the next row. If a value of 0 is given then it will be automatically calculated as bytes per pixel * display width</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with <code>DisplayHandle::waitOnShow()</code>.</p>
+<h4 id="waitonshow"><code>waitOnShow()</code><a class="headerlink" href="#waitonshow" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
+</code></pre></div>
+<p>Function used to block for notification that pixels have been displayed after calling <code>DisplayHandle::show()</code>, with an optional timeout.</p>
+<p><strong>Parameters:</strong>
+- <code>timeout</code> — Maximum time to wait. Defaults to waiting indefinitely (<code>std::chrono::milliseconds::max()</code>).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>DLSDK_SUCCESS when the pixels have been displayed</li>
+<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready</li>
+<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry <code>DisplayHandle::show()</code> with the frame to be displayed, which will typically involve more aggressive compression, or proceed with new frame if the previous frame is no longer relevant.</li>
+<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out</li>
+<li>DLSDK_UNSUCCESSFUL on unknown error</li>
+</ul>
+<h4 id="clear"><code>clear()</code><a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to clear the display.</p>
+<h4 id="getdpaux_1"><code>getDpAux()</code><a class="headerlink" href="#getdpaux_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to obtain a handle to the DP AUX channel associated with this display.</p>
+<p><strong>Returns:</strong> A <code>DpAux</code> object, or an invalid one if the display is not connected via DisplayPort</p>
+<h2 id="dp-aux-api">DP AUX API<a class="headerlink" href="#dp-aux-api" title="Permanent link">&para;</a></h2>
+<p>Low-level access to the DisplayPort AUX channel, useful when direct AUX/I2C
+access is required beyond the automatic display enumeration.</p>
+<h3 id="dlsdkdpaux"><code>dl::sdk::DpAux</code><a class="headerlink" href="#dlsdkdpaux" title="Permanent link">&para;</a></h3>
+<p>Class methods for the DP AUX channel.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAux</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="p">{</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAux</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="p">};</span>
+</code></pre></div>
+<h4 id="auxreaddata"><code>auxReadData()</code><a class="headerlink" href="#auxreaddata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+<p>Reads a burst of data from native DP AUX registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p><strong>Parameters:</strong>
+- <code>auxRegAddress</code> — DP register address
+- <code>data</code> — Buffer for incoming data
+- <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</p>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="auxwritedata"><code>auxWriteData()</code><a class="headerlink" href="#auxwritedata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+<p>Writes a burst of data to native DP AUX registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p><strong>Parameters:</strong>
+- <code>auxRegAddress</code> — DP register address
+- <code>data</code> — Buffer of write data
+- <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</p>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="auxi2creaddata"><code>auxI2cReadData()</code><a class="headerlink" href="#auxi2creaddata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p>Read I2C data by an Aux transaction.</p>
+<p><strong>Parameters:</strong>
+- <code>deviceAddress</code> — I2C device address (bits 6:0)
+- <code>data</code> — Read data buffer
+- <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)
+- <code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop
+- <code>timeout</code> — Allowed timeout per transaction</p>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="auxi2cwritedata"><code>auxI2cWriteData()</code><a class="headerlink" href="#auxi2cwritedata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p>Write I2C data in an Aux transaction.</p>
+<p><strong>Parameters:</strong>
+- <code>deviceAddress</code> — I2C device address (bits 6:0)
+- <code>data</code> — Write data buffer
+- <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)
+- <code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop
+- <code>timeout</code> — Allowed timeout per transaction</p>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="auxi2cwriteandreaddata"><code>auxI2cWriteAndReadData()</code><a class="headerlink" href="#auxi2cwriteandreaddata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p>Write and read I2C data by an Aux transaction.</p>
+<p><strong>Parameters:</strong>
+- <code>deviceAddress</code> — I2C device address (bits 6:0)
+- <code>writeData</code> — Write data buffer
+- <code>writeLength</code> — Write data buffer length (0 &lt;= length &lt; 256)
+- <code>readData</code> — Read data buffer
+- <code>readLength</code> — Read data buffer length (0 &lt;= length &lt; 256)
+- <code>timeout</code> — Allowed timeout per transaction</p>
+<p><strong>Returns:</strong> status response from DP peer</p>
+<h4 id="beginexclusiveaccess"><code>beginExclusiveAccess()</code><a class="headerlink" href="#beginexclusiveaccess" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p>Begin exclusive access to the DP AUX channel.</p>
+<p><strong>Parameters:</strong>
+- <code>timeout</code> — Maximum time to wait to acquire exclusive access</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<h4 id="endexclusiveaccess"><code>endExclusiveAccess()</code><a class="headerlink" href="#endexclusiveaccess" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
+</code></pre></div>
+<p>End exclusive access to the DP AUX channel.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<h4 id="detect"><code>detect()</code><a class="headerlink" href="#detect" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to detect if a monitor is connected to the DP AUX channel, and force training.</p>
+<h3 id="dlsdkdpauxexclusiveaccess"><code>dl::sdk::DpAuxExclusiveAccess</code><a class="headerlink" href="#dlsdkdpauxexclusiveaccess" title="Permanent link">&para;</a></h3>
+<p>RAII helper that begins exclusive access to a <code>DpAux</code> channel on construction and ends it on destruction, if it was successfully acquired.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAuxExclusiveAccess</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="p">{</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">  </span><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="p">};</span>
+</code></pre></div>
+<h4 id="dpauxexclusiveaccess"><code>DpAuxExclusiveAccess()</code><a class="headerlink" href="#dpauxexclusiveaccess" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p>Calls <code>DpAux::beginExclusiveAccess()</code> on the given <code>dpaux</code> with the given <code>timeout</code>, storing the resulting status for later retrieval via <code>status()</code>.</p>
+<p><strong>Parameters:</strong>
+- <code>dpaux</code> — Pointer to the <code>DpAux</code> channel to acquire exclusive access to.
+- <code>timeout</code> — Maximum time to wait to acquire exclusive access.</p>
+<h4 id="dpauxexclusiveaccess_1"><code>~DpAuxExclusiveAccess()</code><a class="headerlink" href="#dpauxexclusiveaccess_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
+</code></pre></div>
+<p>Calls <code>DpAux::endExclusiveAccess()</code> on the associated <code>dpaux</code>, if exclusive access was successfully acquired by the constructor.</p>
+<h4 id="status"><code>status()</code><a class="headerlink" href="#status" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Returns:</strong> The status returned by <code>DpAux::beginExclusiveAccess()</code> when this object was constructed.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../api-documentation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API Documentation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                API Documentation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../api-python-documentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Python API Documentation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Python API Documentation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Synaptics Incorporated
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
