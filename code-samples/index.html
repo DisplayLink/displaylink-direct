@@ -324,7 +324,7 @@
   
     
   
-  Troubleshooting
+  Contact & Support
 
         </a>
       </li>
@@ -1054,6 +1054,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1125,7 +1129,35 @@
   <span class="md-ellipsis">
     
   
-    Video Wall Sample
+    Video Wall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="video-clone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Clone
   
 
     
@@ -1153,7 +1185,35 @@
   <span class="md-ellipsis">
     
   
-    Read EDID Sample
+    Read EDID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="py-displaylink-screensaver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyDisplayLinkScreensaver
   
 
     
@@ -1187,10 +1247,6 @@
           
         
       
-        
-      
-        
-      
     
     
     
@@ -1215,7 +1271,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting
+    Contact & Support
   
 
     
@@ -1225,11 +1281,6 @@
 
             </a>
             
-              
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
@@ -1237,68 +1288,12 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Troubleshooting
+    Contact & Support
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting/common-issues/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Common Issues and Solutions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting/reporting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reporting Bugs and Requesting Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -1328,6 +1323,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Samples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building and Running
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1347,7 +1394,24 @@
 
 
 <h1 id="code-samples">Code Samples<a class="headerlink" href="#code-samples" title="Permanent link">&para;</a></h1>
-<p>Ready-to-run examples demonstrating common DisplayLink Direct use cases in C/C++ and Python.</p>
+<p>Practical, ready-to-run examples demonstrating how to use the DisplayLink Direct API for common scenarios.</p>
+<h2 id="available-samples">Available Samples<a class="headerlink" href="#available-samples" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Video Wall Sample</strong>: Distribute a single image or video across multiple displays in a seamless grid layout</li>
+<li><strong>Video Clone Sample</strong>: Display identical content simultaneously on all connected DisplayLink displays</li>
+<li><strong>Read EDID Sample</strong>: Query and retrieve display identification data from connected monitors (DL-7xxx devices only)</li>
+<li><strong>PyLogo Sample (Python)</strong>: Render a bouncing DisplayLink logo and stream frames to a connected display using Python bindings</li>
+</ul>
+<h2 id="building-and-running">Building and Running<a class="headerlink" href="#building-and-running" title="Permanent link">&para;</a></h2>
+<p>All samples are written in C/C++ and can be built using CMake with the DisplayLink Direct SDK. Each sample includes:
+- Complete source code with detailed comments
+- Build instructions with CMake
+- Command-line options for flexible usage
+- Examples demonstrating various features</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>The code samples are provided under the <strong>MIT License</strong>, allowing you to freely use, modify, and distribute them in your own projects. See <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/LICENSE">samples/LICENSE</a> for details.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>Click on any sample from the navigation to view detailed documentation, source code links, build instructions, and usage examples.</p>
 
 
 
@@ -1402,13 +1466,13 @@
         
         
           
-          <a href="video-wall/" class="md-footer__link md-footer__link--next" aria-label="Next: Video Wall Sample">
+          <a href="video-wall/" class="md-footer__link md-footer__link--next" aria-label="Next: Video Wall">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Video Wall Sample
+                Video Wall
               </div>
             </div>
             <div class="md-footer__button md-icon">

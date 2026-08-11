@@ -324,7 +324,7 @@
   
     
   
-  Troubleshooting
+  Contact & Support
 
         </a>
       </li>
@@ -1126,6 +1126,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1194,7 +1198,35 @@
   <span class="md-ellipsis">
     
   
-    Video Wall Sample
+    Video Wall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-samples/video-clone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Clone
   
 
     
@@ -1222,7 +1254,35 @@
   <span class="md-ellipsis">
     
   
-    Read EDID Sample
+    Read EDID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-samples/py-displaylink-screensaver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyDisplayLinkScreensaver
   
 
     
@@ -1256,10 +1316,6 @@
           
         
       
-        
-      
-        
-      
     
     
     
@@ -1284,7 +1340,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting
+    Contact & Support
   
 
     
@@ -1294,11 +1350,6 @@
 
             </a>
             
-              
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
@@ -1306,68 +1357,12 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Troubleshooting
+    Contact & Support
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Common Issues and Solutions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/reporting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reporting Bugs and Requesting Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -1448,9 +1443,10 @@
 <h1 id="qt-platform-plugin">Qt Platform Plugin<a class="headerlink" href="#qt-platform-plugin" title="Permanent link">&para;</a></h1>
 <p>How to use the DisplayLink Direct Qt platform plugin to render Qt applications to DisplayLink displays.</p>
 <p>The <code>qdlsdk</code> plugin is a <a href="https://doc.qt.io/qt-6/qpa.html">Qt Platform Abstraction (QPA)</a> plugin that lets an
-unmodified Qt GUI application render directly onto DisplayLink Direct displays, without an X11/Wayland compositor
-or a GPU. It registers itself under the platform name <code>dlsdk</code> and is selected the same way as any other QPA
-plugin, via the <code>-platform</code> command-line argument or the <code>QT_QPA_PLATFORM</code> environment variable.</p>
+unmodified Qt GUI application render directly onto DisplayLink Direct displays, without requiring a Linux graphical
+environment such as X11, Wayland, GNOME, or any other compositor. Qt applications can run directly from a virtual
+terminal (VT) without a GPU. It registers itself under the platform name <code>dlsdk</code> and is selected the same way as any
+other QPA plugin, via the <code>-platform</code> command-line argument or the <code>QT_QPA_PLATFORM</code> environment variable.</p>
 <div class="admonition note">
 <p class="admonition-title">Distributed separately</p>
 <p>The Qt platform plugin is built and distributed from its own repository, separate from the core

@@ -34,3 +34,13 @@
   --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
 }
 
+/* Frame sample screenshots with the active primary brand color so captures
+   remain visually tied to the DisplayLink Direct palette. */
+.md-typeset img.sample-screenshot-frame {
+  border: 4px solid var(--md-primary-fg-color);
+  border-radius: 10px;
+  padding: 6px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
