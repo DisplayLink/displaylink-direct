@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://miniature-adventure-pzr6znk.pages.github.io/code-samples/py-displaylink-screensaver/">
+        <link rel="canonical" href="https://miniature-adventure-pzr6znk.pages.github.io/code-samples/screensaver/">
       
       
         <link rel="prev" href="../read-edid/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>PyScreensaver - DisplayLink Direct</title>
+        <title>Screensaver (python) - DisplayLink Direct</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pyscreensaver" class="md-skip">
+        <a href="#screensaver" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PyScreensaver
+              Screensaver (python)
             
           </span>
         </div>
@@ -1222,7 +1222,7 @@
   <span class="md-ellipsis">
     
   
-    PyScreensaver
+    Screensaver (python)
   
 
     
@@ -1240,7 +1240,7 @@
   <span class="md-ellipsis">
     
   
-    PyScreensaver
+    Screensaver (python)
   
 
     
@@ -1528,13 +1528,13 @@
   
 
 
-<h1 id="pyscreensaver">PyScreensaver<a class="headerlink" href="#pyscreensaver" title="Permanent link">&para;</a></h1>
-<p><img alt="PyDisplayLinkScreensaver Application" class="sample-screenshot-frame" src="../py-displaylink-screensaver-screenshot.png" /></p>
+<h1 id="screensaver">Screensaver<a class="headerlink" href="#screensaver" title="Permanent link">&para;</a></h1>
+<p><img alt="Screensaver Application" class="sample-screenshot-frame" src="../screensaver-screenshot.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The PyDisplayLinkScreensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses pygame to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.</p>
+<p>The Screensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses pygame to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.</p>
 <p>This sample is useful for validating end-to-end Python rendering performance, checking display connectivity, and learning how to push RGB frame buffers from Python.</p>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The complete implementation of the PyDisplayLinkScreensaver sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/PyDisplayLinkScreensaver/pylogo.py">samples/PyDisplayLinkScreensaver/pylogo.py</a>.</p>
+<p>The complete implementation of the Screensaver sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/screensaver/screensaver.py">samples/screensaver/screensaver.py</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>DisplayLink Direct Python wheel installed (from the <code>python/</code> directory in this repository)</li>
@@ -1543,13 +1543,13 @@
 </ul>
 <h2 id="setup-and-running">Setup and Running<a class="headerlink" href="#setup-and-running" title="Permanent link">&para;</a></h2>
 <p>Create a virtual environment and install dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>samples/PyDisplayLinkScreensaver
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>samples/screensaver
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 <p>Run the sample:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>pylogo.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>screensaver.py
 </code></pre></div>
 <h2 id="runtime-behavior">Runtime Behavior<a class="headerlink" href="#runtime-behavior" title="Permanent link">&para;</a></h2>
 <ul>
