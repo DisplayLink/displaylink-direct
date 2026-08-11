@@ -1892,7 +1892,7 @@
   <span class="md-ellipsis">
     
   
-    PyDisplayLinkScreensaver
+    PyScreensaver
   
 
     
@@ -2869,7 +2869,7 @@ Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </code></pre></div>
 <p>Function used to obtain the unique identifier of the device.</p>
-<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID and 10096418 is the serial number. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID (in hex) and 10096418 is the serial number. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Returns:</strong> A string containing the unique device identifier.</p>
 <h4 id="firmwareversion"><code>firmwareVersion()</code><a class="headerlink" href="#firmwareversion" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">firmwareVersion</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -2923,7 +2923,7 @@ firmware-related workflows.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </code></pre></div>
 <p>Function used to obtain the unique identifier of the display.</p>
-<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID, 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID (in hex), 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Returns:</strong> A string containing the device and head identifiers.</p>
 <h4 id="size"><code>size()</code><a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Rect</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>

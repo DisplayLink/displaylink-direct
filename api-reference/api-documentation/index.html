@@ -1868,7 +1868,7 @@
   <span class="md-ellipsis">
     
   
-    PyDisplayLinkScreensaver
+    PyScreensaver
   
 
     
@@ -3020,7 +3020,7 @@ System, Device, Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_device_id</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the unique identifier of the device.</p>
-<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID and 10096418 is the serial number. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID (in hex) and 10096418 is the serial number. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>device</code> — Device handle. Must be valid and non-NULL</li>
@@ -3059,7 +3059,7 @@ System, Device, Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_device_get_displays</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_handle</span><span class="o">*</span><span class="w"> </span><span class="n">displays</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the attached displays for a given device.</p>
-<p><strong>Details:</strong> The caller must allocate enough memory to store the display handles (dlsdk_display_handle) before calling this method. If there are more attached displays than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again. Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is released with dlsdk_free_device() or dlsdk_restart_and_free_device().</p>
+<p><strong>Details:</strong> The caller must allocate enough memory to store the display handles (dlsdk_display_handle) before calling this method. If there are more attached displays than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again. Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is released with dlsdk_free_device(), dlsdk_restart_and_free_device() or dlsdk_teardown().</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>device</code> — Device handle. Must be valid and non-NULL</li>
@@ -3088,7 +3088,7 @@ System, Device, Display, then DP AUX.</p>
 <li><code>device</code> — The device handle. Must be valid and non-NULL.</li>
 <li><code>firmwarePath</code> — The path to the firmware directory provided by DisplayLink. Must be valid and non-NULL.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code. DLSDK_UNSUCCESSFUL_NO_DEVICE if the device is not found within 15seconds after firmware update</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code. DLSDK_UNSUCCESSFUL_NO_DEVICE if the device is not found within 15 seconds after firmware update.</p>
 <p>See <a href="../../getting-started/firmware-update/">Firmware Update</a> for more on
 firmware-related workflows.</p>
 <h3 id="display-api">Display API<a class="headerlink" href="#display-api" title="Permanent link">&para;</a></h3>
@@ -3097,7 +3097,7 @@ firmware-related workflows.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_display_id</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the unique identifier of the display.</p>
-<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID, 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (17e9) is not included.</p>
+<p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID (in hex), 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>display</code> — Display handle. Must be valid and non-NULL</li>
@@ -3262,7 +3262,7 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="dlsdk_dpaux_read"><code>dlsdk_dpaux_read</code><a class="headerlink" href="#dlsdk_dpaux_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Reads a burst of data from native DP AUX registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p>Reads data from native DP AUX registers using 16-byte burst transactions. Larger requests are serviced by chaining multiple burst reads into the provided buffer. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
@@ -3274,7 +3274,7 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="dlsdk_dpaux_write"><code>dlsdk_dpaux_write</code><a class="headerlink" href="#dlsdk_dpaux_write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Writes a burst of data to native DP AUX registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
+<p>Writes data to native DP AUX registers using 16-byte burst transactions. Larger requests are split into multiple burst writes from the provided buffer. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
