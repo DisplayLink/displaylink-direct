@@ -1341,28 +1341,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core libraries
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firmware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firmware
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#in-this-section" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1397,29 +1375,34 @@
 <p>Everything you need to install, configure, and run DisplayLink Direct is
 published as <a href="https://github.com/syna-isd/displaylink-direct/releases/">GitHub Release Assets</a>.</p>
 <h2 id="getting-the-package">Getting the package<a class="headerlink" href="#getting-the-package" title="Permanent link">&para;</a></h2>
-<p>Check out the release tag of this repository, or download the <strong>Source Code</strong>
-archive (<code>.zip</code> or <code>.tar.gz</code>) for the release you want to use. The repository
-provides:</p>
+<p>Download all necessary components (Source Code, Core Libraries, and Firmware) from the <a href="https://github.com/syna-isd/displaylink-direct/releases/latest">latest release</a> or a <a href="https://github.com/syna-isd/displaylink-direct/releases">specific release tag</a>.</p>
+<p>The repository provides:</p>
 <ul>
-<li>C/C++ headers (<a href="https://github.com/syna-isd/displaylink-direct/tree/main/include"><code>include/</code></a>).</li>
-<li>Supporting files — license, third-party licenses, CMake config files
-  (<code>dlsdkConfig.cmake</code>), release notes, and package metadata.</li>
+<li><strong>Source Code</strong>: C/C++ headers (<a href="https://github.com/syna-isd/displaylink-direct/tree/main/include"><code>include/</code></a>), supporting files (license, third-party licenses, CMake config files), release notes, and package metadata</li>
+<li><strong>Core Libraries</strong>: Proprietary pre-built binaries distributed via GitHub Release Assets (download into <a href="https://github.com/syna-isd/displaylink-direct/tree/main/libs"><code>libs/</code></a>)</li>
+<li><strong>Firmware</strong>: DisplayLink device firmware packages distributed via GitHub Release Assets (download into <a href="https://github.com/syna-isd/displaylink-direct/tree/main/firmware"><code>firmware/</code></a>). See <a href="firmware-update/">Firmware Update</a> for the update process.</li>
 </ul>
-<h2 id="core-libraries">Core libraries<a class="headerlink" href="#core-libraries" title="Permanent link">&para;</a></h2>
-<p>The core libraries are proprietary and closed source, distributed as pre-built
-binaries via GitHub Release Assets. They are not included in the source
-archive and must be downloaded separately.</p>
-<p>For Linux, download <code>linux.zip</code> from the
-<a href="https://github.com/syna-isd/displaylink-direct/releases/">release assets</a> and
-unzip it into the
-<a href="https://github.com/syna-isd/displaylink-direct/tree/main/libs"><code>libs/</code></a>
-directory of your checkout.</p>
-<h2 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h2>
-<p>For proper operation, the DisplayLink device firmware must be up to date.
-Download the firmware package <code>firmware.zip</code> from the release assets and unpack
-it into the
-<a href="https://github.com/syna-isd/displaylink-direct/tree/main/firmware"><code>firmware/</code></a>
-directory. See <a href="firmware-update/">Firmware Update</a> for the update process.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Set the release tag (e.g., v1.6.0)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">RELEASE_TAG</span><span class="o">=</span><span class="s2">&quot;v1.6.0&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Download source code archive</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/syna-isd/displaylink-direct/releases/download/<span class="si">${</span><span class="nv">RELEASE_TAG</span><span class="si">}</span>/<span class="si">${</span><span class="nv">RELEASE_TAG</span><span class="si">}</span>.tar.gz<span class="w"> </span>-o<span class="w"> </span>displaylink-direct.tar.gz
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>displaylink-direct.tar.gz
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Download and extract core libraries</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/syna-isd/displaylink-direct/releases/download/<span class="si">${</span><span class="nv">RELEASE_TAG</span><span class="si">}</span>/binaries.tar.gz<span class="w"> </span>-o<span class="w"> </span>binaries.tar.gz
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>binaries.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct/libs/
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Download and extract firmware</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/syna-isd/displaylink-direct/releases/download/<span class="si">${</span><span class="nv">RELEASE_TAG</span><span class="si">}</span>/firmware.tar.gz<span class="w"> </span>-o<span class="w"> </span>firmware.tar.gz
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>firmware.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct/firmware/
+</code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="in-this-section">In this section<a class="headerlink" href="#in-this-section" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="installation-linux/">Running on Linux</a></li>
