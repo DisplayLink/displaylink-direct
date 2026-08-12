@@ -1484,6 +1484,23 @@
   
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.getElementById('toggleWheelLinks');
+  const container = document.getElementById('wheelLinksContainer');
+
+  button.addEventListener('click', function() {
+    if (container.classList.contains('visible')) {
+      container.classList.remove('visible');
+      button.textContent = "Show python wheel's";
+    } else {
+      container.classList.add('visible');
+      button.textContent = "Hide python wheel's";
+    }
+  });
+});
+</script>
+
 <h1 id="python-bindings">Python Bindings<a class="headerlink" href="#python-bindings" title="Permanent link">&para;</a></h1>
 <p>The Python bindings let you integrate the DisplayLink Direct into your
 Python applications. Pre-built wheels (<code>.whl</code>) for supported Python versions and
@@ -1500,11 +1517,11 @@ architectures are published as <a href="https://github.com/syna-isd/displaylink-
 <p>The wheels are published as assets on the GitHub release page. You can install
 DisplayLink Direct directly from a release tag without downloading the wheel
 manually.</p>
-<p>Use <code>pip</code>'s <code>--find-links</code> flag pointing at the release tag page (here <code>v1.6.0</code>).
+<p>Use <code>pip</code>'s <code>--find-links</code> flag pointing to this page.
 Use <code>--no-index</code> flag to prefer wheels from the <code>--find-links</code> over wheels published on PyPI.
-<code>pip</code> selects the wheel matching your Python version and architecture:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span>--only-binary<span class="w"> </span><span class="s1">&#39;:all:&#39;</span><span class="w"> </span>--find-links<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s1">&#39;https://github.com/syna-isd/displaylink-direct/releases/tag/v1.6.0&#39;</span><span class="w"> </span><span class="s1">&#39;dlsdk==1.6.0&#39;</span>
+<code>pip</code> selects the wheel matching your Python version, architecture and desired package version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--find-links<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s1">&#39;https://miniature-adventure-pzr6znk.pages.github.io/getting-started/python-bindings&#39;</span><span class="w"> </span><span class="s1">&#39;dlsdk==1.6.0&#39;</span>
 </code></pre></div>
 <p>Alternatively, install a specific wheel asset directly by URL:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span><span class="se">\</span>
@@ -1512,16 +1529,49 @@ Use <code>--no-index</code> flag to prefer wheels from the <code>--find-links</c
 </code></pre></div>
 <p>Replace the Python tag (<code>cp312</code>) and platform tag (<code>manylinux_2_31_x86_64</code>) to
 match your interpreter and architecture.</p>
-<p>To install the latest DisplayLink Direct wheel use:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span>--only-binary<span class="w"> </span><span class="s1">&#39;:all:&#39;</span><span class="w"> </span>--find-links<span class="w">  </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="s1">&#39;https://github.com/syna-isd/displaylink-direct/releases/latest&#39;</span><span class="w"> </span>dlsdk
-</code></pre></div></p>
 <h2 id="verify-installation">Verify installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import dlsdk; print(dlsdk.__doc__)&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import dlsdk; print(dlsdk.__doc__)&quot;</span>
 </code></pre></div>
 <h2 id="additional-references">Additional references<a class="headerlink" href="#additional-references" title="Permanent link">&para;</a></h2>
 <p>Use the Linux installation page for host setup details, including USB
 permissions and <code>displaylink-driver</code> service configuration.</p>
+<p><button id="toggleWheelLinks">Show python wheel's</button></p>
+<div id="wheelLinksContainer">
+
+<!-- Wheel download links - hidden by default -->
+<!-- List generated automatically do not edit behind this line -->
+
+
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-macosx_10_9_universal2.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-macosx_10_9_universal2.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-macosx_10_9_universal2.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-macosx_10_9_universal2.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-macosx_10_9_universal2.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-macosx_10_9_universal2.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-macosx_10_9_universal2.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-macosx_10_9_universal2.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-macosx_10_9_universal2.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-macosx_10_9_universal2.whl</a><br>
+
+
+
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-manylinux_2_31_x86_64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-manylinux_2_31_x86_64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-manylinux_2_31_x86_64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-manylinux_2_31_x86_64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-manylinux_2_31_x86_64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-manylinux_2_31_x86_64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-manylinux_2_31_x86_64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-manylinux_2_31_x86_64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-manylinux_2_31_x86_64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-manylinux_2_31_x86_64.whl</a><br>
+
+
+
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-manylinux_2_31_aarch64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-manylinux_2_31_aarch64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-manylinux_2_31_aarch64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-manylinux_2_31_aarch64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-manylinux_2_31_aarch64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-manylinux_2_31_aarch64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-manylinux_2_31_aarch64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-manylinux_2_31_aarch64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-manylinux_2_31_aarch64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-manylinux_2_31_aarch64.whl</a><br>
+
+
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-win_amd64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp310-cp310-win_amd64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-win_amd64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp311-cp311-win_amd64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-win_amd64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp312-cp312-win_amd64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-win_amd64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp313-cp313-win_amd64.whl</a><br>
+<a href="https://github.com/syna-isd/displaylink-direct/releases/download/1.6.0/dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-win_amd64.whl">dlsdk-1.6.0.dev106+g3decd7dd975.build5-cp314-cp314-win_amd64.whl</a>
+
+</div>
 
 
 
