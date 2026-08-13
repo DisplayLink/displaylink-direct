@@ -1646,7 +1646,7 @@
 - Serial number and model name</p>
 <p>This information helps applications and systems understand what a display can do and configure themselves accordingly.</p>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The complete implementation of the Read EDID sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/dl-get-edid.cpp">samples/dl-get-edid.cpp</a>.</p>
+<p>The complete implementation of the Read EDID sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/dl-get-edid/dl-get-edid.cpp">samples/dl-get-edid/dl-get-edid.cpp</a>.</p>
 <h2 id="building-and-running">Building and Running<a class="headerlink" href="#building-and-running" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1656,9 +1656,11 @@
 </ul>
 <h3 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">&para;</a></h3>
 <p>Navigate to the samples directory and build using CMake:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>samples
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cmake<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>/path/to/dlsdk<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># CMAKE_PREFIX_PATH should point to dlsdk directory with libs/, firmware/, include/</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># e.g. to root of this repository</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>samples/dl-get-edid
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>cmake<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span>../../<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build
 </code></pre></div>
 <h3 id="running-the-application">Running the Application<a class="headerlink" href="#running-the-application" title="Permanent link">&para;</a></h3>
 <p>Run the dl-get-edid application to read EDID data:</p>
