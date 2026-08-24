@@ -1413,6 +1413,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#poweronwithtiming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOnWithTiming()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poweroff" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1428,6 +1439,17 @@
     <span class="md-ellipsis">
       
         show()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-dirty-rectangles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        show() (dirty rectangles)
       
     </span>
   </a>
@@ -1583,6 +1605,28 @@
     <span class="md-ellipsis">
       
         detect()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enablevirtualhpdpolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enableVirtualHpdPolling()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disablevirtualhpdpolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disableVirtualHpdPolling()
       
     </span>
   </a>
@@ -2434,6 +2478,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#poweronwithtiming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        powerOnWithTiming()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poweroff" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2449,6 +2504,17 @@
     <span class="md-ellipsis">
       
         show()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-dirty-rectangles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        show() (dirty rectangles)
       
     </span>
   </a>
@@ -2610,6 +2676,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#enablevirtualhpdpolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enableVirtualHpdPolling()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disablevirtualhpdpolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disableVirtualHpdPolling()
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2763,11 +2851,11 @@ Display, then DP AUX.</p>
 <tbody>
 <tr>
 <td><code>firmwarePath</code></td>
-<td>Firmware directory path, used to automatically update the firmware if required. Leave empty to disable automatic firmware update. If automatic firmware update is disabled, user should ensure the firmware on the device is compatible with the SDK version, otherwise the device may not function properly or at all.</td>
+<td>Firmware directory path, used to automatically update the firmware if required. Leave empty to disable automatic firmware update. If automatic firmware update is disabled, user should ensure the firmware on the device is compatible with the DisplayLink Direct version, otherwise the device may not function properly or at all.</td>
 </tr>
 <tr>
 <td><code>embeddedMode</code></td>
-<td>In embedded mode (<code>embeddedMode = true</code>), the SDK will not use dynamic memory at runtime.</td>
+<td>In embedded mode (<code>embeddedMode = true</code>), the DisplayLink Direct will not use dynamic memory at runtime.</td>
 </tr>
 </tbody>
 </table>
@@ -2839,16 +2927,16 @@ Display, then DP AUX.</p>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">};</span>
 </code></pre></div>
 <h4 id="system"><code>System()</code><a class="headerlink" href="#system" title="Permanent link">&para;</a></h4>
-<p>Function used to initialise the internals of the SDK.</p>
-<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<p>Function used to initialise the internals of the DisplayLink Direct.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as a DisplayLink Direct constructor.</p>
 <h4 id="systemconst-config-config"><code>System(const Config&amp; config)</code><a class="headerlink" href="#systemconst-config-config" title="Permanent link">&para;</a></h4>
-<p>Function used to initialise the SDK with a specific configuration.</p>
-<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as an SDK constructor.</p>
+<p>Function used to initialise the DisplayLink Direct with a specific configuration.</p>
+<p><strong>Details:</strong> This method must be called by the user prior to invoking any other functionality. In OO parlance, it can be thought of as a DisplayLink Direct constructor.</p>
 <p><strong>Parameters:</strong>
 - <code>config</code> — The configuration structure containing the firmware path and other settings. See <code>Config</code> for details.</p>
 <h4 id="system_1"><code>~System()</code><a class="headerlink" href="#system_1" title="Permanent link">&para;</a></h4>
 <p>Function used to clean up the SDK internals when a user no longer requires its use.</p>
-<p><strong>Details:</strong> This method must be called by the user prior the application exiting. In OO parlance, it can be thought of as an SDK destructor</p>
+<p><strong>Details:</strong> This method must be called by the user prior the application exiting. In OO parlance, it can be thought of as a DisplayLink Direct destructor</p>
 <h4 id="getdevices"><code>getDevices()</code><a class="headerlink" href="#getdevices" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DeviceHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDevices</span><span class="p">();</span>
 </code></pre></div>
@@ -2924,7 +3012,7 @@ Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">updateFirmware</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to update the firmware of a device.</p>
-<p><strong>Details:</strong> Synchronous function used to update the firmware on a specific device. This function will block until the firmware update process is complete, which may take up to 30seconds on the device. This method must be called by the user to update the firmware on a specific device. This is required when the SDK is initialised with null firmware path, and can be used to update the firmware on demand. It is advised to keep the firmware up to date to ensure the best performance and reliability of the device, as well as access to the latest features. After a successful firmware update, the device or display handle is still valid, but keep in mind that the rendering pipeline must be established and the display has to be powered on again.</p>
+<p><strong>Details:</strong> Synchronous function used to update the firmware on a specific device. This function will block until the firmware update process is complete, which may take up to 30seconds on the device. This method must be called by the user to update the firmware on a specific device. This is required when the DisplayLink Direct is initialised with null firmware path, and can be used to update the firmware on demand. It is advised to keep the firmware up to date to ensure the best performance and reliability of the device, as well as access to the latest features. After a successful firmware update, the device or display handle is still valid, but keep in mind that the rendering pipeline must be established and the display has to be powered on again.</p>
 <p><strong>Parameters:</strong>
 - <code>firmwarePath</code> — The path to the firmware directory provided by DisplayLink. Must be valid and non-NULL.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS on success, otherwise an error code. DLSDK_UNSUCCESSFUL_NO_DEVICE if the device is not found within 15seconds after firmware update.</p>
@@ -2942,12 +3030,14 @@ firmware-related workflows.</p>
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">};</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithTiming</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_timing</span><span class="o">*</span><span class="w"> </span><span class="n">timing</span><span class="p">);</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dlsdk_dirty_rect</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">dirtyRects</span><span class="p">);</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">  </span><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="p">};</span>
 </code></pre></div>
 <h4 id="id_1"><code>id()</code><a class="headerlink" href="#id_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -2996,13 +3086,20 @@ firmware-related workflows.</p>
 <p><strong>Parameters:</strong>
 - <code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified mode, DLSDK_UNSUCCESSFUL if the display failed to power on with the specified mode, DLSDK_INVALID_ARGS if the provided mode is not valid, null, or not supported by the display.</p>
+<h4 id="poweronwithtiming"><code>powerOnWithTiming()</code><a class="headerlink" href="#poweronwithtiming" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithTiming</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_timing</span><span class="o">*</span><span class="w"> </span><span class="n">timing</span><span class="p">);</span>
+</code></pre></div>
+<p>Function used to power on the display with a fully custom video timing.</p>
+<p><strong>Parameters:</strong>
+- <code>timing</code> — Detailed timing to use when powering on the display. Must be valid and non-NULL</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified timing, or an appropriate error code on failure.</p>
 <h4 id="poweroff"><code>powerOff()</code><a class="headerlink" href="#poweroff" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to power off the display.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="show"><code>show()</code><a class="headerlink" href="#show" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 </code></pre></div>
 <p>Function to present the contents of a pixel buffer on the display.</p>
 <p><strong>Details:</strong> This is a non-blocking call and will return before the pixels are displayed. If the user wishes notification of when the pixels have been displayed, they should call <code>DisplayHandle::waitOnShow()</code></p>
@@ -3011,8 +3108,19 @@ firmware-related workflows.</p>
 - <code>pixels</code> — The buffer containing the pixels to be displayed
 - <code>stride</code> — Number of bytes that needed to add to the address of the first pixel of a row in order to go to the address of the first pixel of the next row. If a value of 0 is given then it will be automatically calculated as bytes per pixel * display width</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with <code>DisplayHandle::waitOnShow()</code>.</p>
+<h4 id="show-dirty-rectangles"><code>show()</code> (dirty rectangles)<a class="headerlink" href="#show-dirty-rectangles" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dlsdk_dirty_rect</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">dirtyRects</span><span class="p">);</span>
+</code></pre></div>
+<p>Function to present only the changed areas of a pixel buffer on the display.</p>
+<p><strong>Details:</strong> Behaves like <code>DisplayHandle::show()</code>, but additionally hints which regions of the pixel buffer have changed since the previous frame, allowing implementations that support partial updates to only update those regions. The rectangles must cover everything that changed, as changes outside of them may not be presented on the display. The <code>pixels</code> buffer must still describe the entire display, as the SDK may access regions outside of those given. Rectangles are clipped to the display area, and rectangles that fall entirely outside it are ignored.</p>
+<p><strong>Parameters:</strong>
+- <code>format</code> — The pixel format contained in the pixel buffer
+- <code>pixels</code> — The buffer containing the pixels to be displayed
+- <code>stride</code> — Number of bytes that needed to add to the address of the first pixel of a row in order to go to the address of the first pixel of the next row. If a value of 0 is given then it will be automatically calculated as bytes per pixel * display width
+- <code>dirtyRects</code> — Rectangles describing the areas that changed since the previous frame. If empty, the whole display area is updated. Must contain at most <code>DLSDK_MAX_DIRTY_RECTS</code> rectangles.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. DLSDK_INVALID_ARGS if the number of rectangles exceeds DLSDK_MAX_DIRTY_RECTS. The caller should check the render and frame transmission status with <code>DisplayHandle::waitOnShow()</code>.</p>
 <h4 id="waitonshow"><code>waitOnShow()</code><a class="headerlink" href="#waitonshow" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
 </code></pre></div>
 <p>Function used to block for notification that pixels have been displayed after calling <code>DisplayHandle::show()</code>, with an optional timeout.</p>
 <p><strong>Parameters:</strong>
@@ -3026,11 +3134,11 @@ firmware-related workflows.</p>
 <li>DLSDK_UNSUCCESSFUL on unknown error</li>
 </ul>
 <h4 id="clear"><code>clear()</code><a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to clear the display.</p>
 <h4 id="getdpaux_1"><code>getDpAux()</code><a class="headerlink" href="#getdpaux_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to obtain a handle to the DP AUX channel associated with this display.</p>
 <p><strong>Returns:</strong> A <code>DpAux</code> object, or an invalid one if the display is not connected via DisplayPort</p>
@@ -3039,23 +3147,25 @@ firmware-related workflows.</p>
 access is required beyond the automatic display enumeration.</p>
 <h3 id="dlsdkdpaux"><code>dl::sdk::DpAux</code><a class="headerlink" href="#dlsdkdpaux" title="Permanent link">&para;</a></h3>
 <p>Class methods for the DP AUX channel.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAux</span><span class="w"> </span><span class="k">final</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="p">{</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAux</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
-<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
-<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
-<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
-<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
-<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAux</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="p">{</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAux</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">  </span><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">enableVirtualHpdPolling</span><span class="p">();</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">disableVirtualHpdPolling</span><span class="p">();</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="p">};</span>
 </code></pre></div>
 <h4 id="auxreaddata"><code>auxReadData()</code><a class="headerlink" href="#auxreaddata" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
 <p>Reads a burst of data from native DP AUX registers. This functions performs a single burst read, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong>
@@ -3064,7 +3174,7 @@ access is required beyond the automatic display enumeration.</p>
 - <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</p>
 <p><strong>Returns:</strong> status response from DP peer</p>
 <h4 id="auxwritedata"><code>auxWriteData()</code><a class="headerlink" href="#auxwritedata" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
 <p>Writes a burst of data to native DP AUX registers. This functions performs a single burst write, and is limited to 16 bytes. The function waits for a response (up to 400us).</p>
 <p><strong>Parameters:</strong>
@@ -3073,7 +3183,7 @@ access is required beyond the automatic display enumeration.</p>
 - <code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</p>
 <p><strong>Returns:</strong> status response from DP peer</p>
 <h4 id="auxi2creaddata"><code>auxI2cReadData()</code><a class="headerlink" href="#auxi2creaddata" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
 </code></pre></div>
 <p>Read I2C data by an Aux transaction.</p>
 <p><strong>Parameters:</strong>
@@ -3084,7 +3194,7 @@ access is required beyond the automatic display enumeration.</p>
 - <code>timeout</code> — Allowed timeout per transaction</p>
 <p><strong>Returns:</strong> status response from DP peer</p>
 <h4 id="auxi2cwritedata"><code>auxI2cWriteData()</code><a class="headerlink" href="#auxi2cwritedata" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
 </code></pre></div>
 <p>Write I2C data in an Aux transaction.</p>
 <p><strong>Parameters:</strong>
@@ -3095,7 +3205,7 @@ access is required beyond the automatic display enumeration.</p>
 - <code>timeout</code> — Allowed timeout per transaction</p>
 <p><strong>Returns:</strong> status response from DP peer</p>
 <h4 id="auxi2cwriteandreaddata"><code>auxI2cWriteAndReadData()</code><a class="headerlink" href="#auxi2cwriteandreaddata" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxI2cWriteAndReadData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
 </code></pre></div>
 <p>Write and read I2C data by an Aux transaction.</p>
 <p><strong>Parameters:</strong>
@@ -3107,48 +3217,58 @@ access is required beyond the automatic display enumeration.</p>
 - <code>timeout</code> — Allowed timeout per transaction</p>
 <p><strong>Returns:</strong> status response from DP peer</p>
 <h4 id="beginexclusiveaccess"><code>beginExclusiveAccess()</code><a class="headerlink" href="#beginexclusiveaccess" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">beginExclusiveAccess</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
 </code></pre></div>
 <p>Begin exclusive access to the DP AUX channel.</p>
 <p><strong>Parameters:</strong>
 - <code>timeout</code> — Maximum time to wait to acquire exclusive access</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
 <h4 id="endexclusiveaccess"><code>endExclusiveAccess()</code><a class="headerlink" href="#endexclusiveaccess" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">endExclusiveAccess</span><span class="p">();</span>
 </code></pre></div>
 <p>End exclusive access to the DP AUX channel.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
 <h4 id="detect"><code>detect()</code><a class="headerlink" href="#detect" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">detect</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to detect if a monitor is connected to the DP AUX channel, and force training.</p>
+<h4 id="enablevirtualhpdpolling"><code>enableVirtualHpdPolling()</code><a class="headerlink" href="#enablevirtualhpdpolling" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">enableVirtualHpdPolling</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to enable polling for DP-connected monitors. Useful for detecting hotplug events on monitors that do not support HPD interrupts.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure. If the device does not support virtual HPD polling, the function will return DLSDK_UNSUCCESSFUL.</p>
+<h4 id="disablevirtualhpdpolling"><code>disableVirtualHpdPolling()</code><a class="headerlink" href="#disablevirtualhpdpolling" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">disableVirtualHpdPolling</span><span class="p">();</span>
+</code></pre></div>
+<p>Function used to disable polling for DP-connected monitors.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure. If the device does not support virtual HPD polling, the function will return DLSDK_UNSUCCESSFUL.</p>
 <h3 id="dlsdkdpauxexclusiveaccess"><code>dl::sdk::DpAuxExclusiveAccess</code><a class="headerlink" href="#dlsdkdpauxexclusiveaccess" title="Permanent link">&para;</a></h3>
 <p>RAII helper that begins exclusive access to a <code>DpAux</code> channel on construction and ends it on destruction, if it was successfully acquired.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAuxExclusiveAccess</span><span class="w"> </span><span class="k">final</span>
-<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="p">{</span>
-<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
-<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">  </span><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
-<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
-<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
-<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
-<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
-<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DpAuxExclusiveAccess</span><span class="w"> </span><span class="k">final</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="p">{</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">  </span><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="w">  </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>
+<a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a><span class="p">};</span>
 </code></pre></div>
 <h4 id="dpauxexclusiveaccess"><code>DpAuxExclusiveAccess()</code><a class="headerlink" href="#dpauxexclusiveaccess" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">explicit</span><span class="w"> </span><span class="n">DpAuxExclusiveAccess</span><span class="p">(</span><span class="n">DpAux</span><span class="o">*</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="p">);</span>
 </code></pre></div>
 <p>Calls <code>DpAux::beginExclusiveAccess()</code> on the given <code>dpaux</code> with the given <code>timeout</code>, storing the resulting status for later retrieval via <code>status()</code>.</p>
 <p><strong>Parameters:</strong>
 - <code>dpaux</code> — Pointer to the <code>DpAux</code> channel to acquire exclusive access to.
 - <code>timeout</code> — Maximum time to wait to acquire exclusive access.</p>
 <h4 id="dpauxexclusiveaccess_1"><code>~DpAuxExclusiveAccess()</code><a class="headerlink" href="#dpauxexclusiveaccess_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="o">~</span><span class="n">DpAuxExclusiveAccess</span><span class="p">();</span>
 </code></pre></div>
 <p>Calls <code>DpAux::endExclusiveAccess()</code> on the associated <code>dpaux</code>, if exclusive access was successfully acquired by the constructor.</p>
 <h4 id="status"><code>status()</code><a class="headerlink" href="#status" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">status</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </code></pre></div>
 <p><strong>Returns:</strong> The status returned by <code>DpAux::beginExclusiveAccess()</code> when this object was constructed.</p>
 
