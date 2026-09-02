@@ -2779,10 +2779,11 @@
 <p class="admonition-title">Info</p>
 <p>See <a href="../minimal-example/">Minimal Example</a> for a minimal usage example that powers on a display and presents a solid-color frame.</p>
 </div>
-<p>This file contains the C-API and C++ API wrapper available to display
-a pixel buffer across multiple displays.</p>
+<p>This page documents the C API used to display pixel buffers across multiple
+displays.</p>
 <h2 id="contact-and-support">Contact and Support<a class="headerlink" href="#contact-and-support" title="Permanent link">&para;</a></h2>
-<p>For support please contact your DisplayLink representative or email "technical-enquiries@synaptics.com"</p>
+<p>For support, contact your DisplayLink representative or email
+technical-enquiries@synaptics.com.</p>
 <h2 id="thread-safety">Thread Safety<a class="headerlink" href="#thread-safety" title="Permanent link">&para;</a></h2>
 <p>API calls made on the same handle (e.g. <code>dlsdk_device_handle</code>, <code>dlsdk_display_handle</code>, <code>dlsdk_dpaux_handle</code>) are generally not thread-safe. The user should avoid calling the API with the same handle concurrently from multiple threads, unless the user provides their own synchronization to serialize access to that handle.</p>
 <h2 id="c-api">C API<a class="headerlink" href="#c-api" title="Permanent link">&para;</a></h2>
@@ -2808,11 +2809,11 @@ System, Device, Display, then DP AUX.</p>
 <tbody>
 <tr>
 <td><code>dlsdk_config</code></td>
-<td>Configuration struct used to initialise the DisplayLink Direct with custom options</td>
+<td>Configuration structure used to initialise the DisplayLink Direct with custom options.</td>
 </tr>
 <tr>
 <td><code>dlsdk_rect</code></td>
-<td>An abstract representation of a rectangular area, used for display resolution and size information</td>
+<td>An abstract representation of a rectangular area, used for display resolution and size information.</td>
 </tr>
 <tr>
 <td><code>dlsdk_dirty_rect</code></td>
@@ -2820,7 +2821,7 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 <tr>
 <td><code>dlsdk_display_mode</code></td>
-<td>A display mode represents a specific resolution and refresh rate that a display can operate at</td>
+<td>A display mode represents a specific resolution and refresh rate at which a display can operate.</td>
 </tr>
 <tr>
 <td><code>dlsdk_display_timing</code></td>
@@ -2828,48 +2829,48 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 <tr>
 <td><code>dlsdk_status</code></td>
-<td>API method status return codes</td>
+<td>API method status return codes.</td>
 </tr>
 <tr>
 <td><code>dlsdk_pixel_format</code></td>
-<td>API supported pixel formats</td>
+<td>API-supported pixel formats.</td>
 </tr>
 <tr>
 <td><code>dlsdk_aux_status</code></td>
-<td>DP AUX channel return codes</td>
+<td>DP AUX channel return codes.</td>
 </tr>
 <tr>
 <td><code>dlsdk_hotplug_callback_handle</code></td>
-<td>Opaque handle to a hotplug callback registration, used for unregistering callbacks</td>
+<td>Opaque handle to a hotplug callback registration, used for unregistering callbacks.</td>
 </tr>
 <tr>
 <td><code>dlsdk_display_handle</code></td>
-<td>Opaque handle to a Display object</td>
+<td>Opaque handle to a Display object.</td>
 </tr>
 <tr>
 <td><code>dlsdk_device_handle</code></td>
-<td>Opaque handle to a Device object</td>
+<td>Opaque handle to a Device object.</td>
 </tr>
 <tr>
 <td><code>dlsdk_dpaux_handle</code></td>
-<td>Opaque handle to a DP AUX channel object</td>
+<td>Opaque handle to a DP AUX channel object.</td>
 </tr>
 <tr>
 <td><code>dlsdk_hotplug_event</code></td>
-<td>Hotplug event types</td>
+<td>Hotplug event types.</td>
 </tr>
 <tr>
 <td><code>dlsdk_hotplug_event_data</code></td>
-<td>Data provided to hotplug callbacks when a hotplug event occurs</td>
+<td>Data provided to hotplug callbacks when a hotplug event occurs.</td>
 </tr>
 <tr>
 <td><code>dlsdk_hotplug_callback_fn</code></td>
-<td>Hotplug callback function type</td>
+<td>Hotplug callback function type.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="dlsdk_config"><code>dlsdk_config</code><a class="headerlink" href="#dlsdk_config" title="Permanent link">&para;</a></h4>
-<p>Configuration struct used to initialise the DisplayLink Direct with custom options.</p>
+<p>Configuration structure used to initialise the DisplayLink Direct with custom options.</p>
 <table>
 <thead>
 <tr>
@@ -2880,11 +2881,11 @@ System, Device, Display, then DP AUX.</p>
 <tbody>
 <tr>
 <td><code>size</code></td>
-<td>Size of the struct, should be set to sizeof(dlsdk_config)</td>
+<td>Size of the structure; should be set to <code>sizeof(dlsdk_config)</code>.</td>
 </tr>
 <tr>
 <td><code>firmwarePath</code></td>
-<td>Firmware directory path, used to automatically update the firmware if required. Set to NULL or empty string to disable automatic firmware update. If automatic firmware update is disabled, user should ensure the firmware on the device is compatible with the DisplayLink Direct version, otherwise the device may not function properly or at all.</td>
+<td>Firmware directory path used to update the firmware automatically if required. Set to NULL or an empty string to disable automatic firmware updates. If automatic firmware updates are disabled, the user should ensure that the firmware on the device is compatible with the DisplayLink Direct version; otherwise, the device may not function properly or at all.</td>
 </tr>
 <tr>
 <td><code>embeddedMode</code></td>
@@ -2892,7 +2893,7 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 <tr>
 <td><code>reserved</code></td>
-<td>Reserved for future use, should be set to 0</td>
+<td>Reserved for future use; should be set to 0.</td>
 </tr>
 </tbody>
 </table>
@@ -3042,7 +3043,7 @@ System, Device, Display, then DP AUX.</p>
 </tbody>
 </table>
 <h4 id="dlsdk_pixel_format-pixel-formats"><code>dlsdk_pixel_format</code> pixel formats<a class="headerlink" href="#dlsdk_pixel_format-pixel-formats" title="Permanent link">&para;</a></h4>
-<p>API supported pixel formats.</p>
+<p>API-supported pixel formats.</p>
 <table>
 <thead>
 <tr>
@@ -3145,7 +3146,7 @@ System, Device, Display, then DP AUX.</p>
 <ul>
 <li>On <code>DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED</code>, <code>device</code> is valid during the callback and will remain valid until a corresponding <code>DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED</code> event is received for the same device.</li>
 <li>On <code>DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED</code>, <code>device</code> is informational only and must not be used with device API calls.</li>
-<li>On <code>DLSDK_HOTPLUG_EVENT_DISPLAY_ARRIVED</code>, <code>display</code> is valid during the callback. Will be NULL if the event is not for a display (e.g. device hotplug event).</li>
+<li>On <code>DLSDK_HOTPLUG_EVENT_DISPLAY_ARRIVED</code>, <code>display</code> is valid during the callback. The value is NULL if the event is not for a display (for example, a device hotplug event).</li>
 <li>On <code>DLSDK_HOTPLUG_EVENT_DISPLAY_REMOVED</code>, <code>display</code> is informational only and must not be used with display API calls.</li>
 </ul>
 <table>
@@ -3278,21 +3279,26 @@ System, Device, Display, then DP AUX.</p>
 <h4 id="dlsdk_teardown"><code>dlsdk_teardown</code><a class="headerlink" href="#dlsdk_teardown" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_teardown</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to clean up the DisplayLink Direct internals when a user no longer requires its use.</p>
-<p><strong>Details:</strong> This method must be called by the user prior the application exiting. In OO parlance, it can be thought of as a DisplayLink Direct destructor</p>
+<p>Function used to clean up DisplayLink Direct resources when they are no longer required.</p>
+<p><strong>Details:</strong> This method must be called before the application exits. In OO
+parlance, it can be thought of as an DisplayLink Direct destructor.</p>
 <h4 id="dlsdk_version"><code>dlsdk_version</code><a class="headerlink" href="#dlsdk_version" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">dlsdk_version</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the version of the SDK.</p>
-<p><strong>Returns:</strong> A string containing the DisplayLink Direct version in python PEP 440 specification</p>
+<p><strong>Returns:</strong> A string containing the DisplayLink Direct version in Python PEP 440 format.</p>
 <h4 id="dlsdk_get_devices"><code>dlsdk_get_devices</code><a class="headerlink" href="#dlsdk_get_devices" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_get_devices</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="o">*</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the attached devices.</p>
-<p><strong>Details:</strong> The caller must allocate enough memory to store the device handles (dlsdk_device_handle) before calling this method. If there are more attached devices than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again.</p>
+<p><strong>Details:</strong> The caller must allocate enough memory to store the device handles
+(<code>dlsdk_device_handle</code>) before calling this method. If there are more attached
+devices than the allocated memory can hold, the function returns
+<code>DLSDK_NOT_ENOUGH_SPACE</code>. The user must then allocate memory equal to the
+returned size before calling the function again.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>devices</code> — A pointer to a contiguous piece of memory big enough to store the number of connected device handles. If NULL is passed, the function will only return the number of connected devices in size parameter.</li>
+<li><code>devices</code> — A pointer to a contiguous memory block large enough to store the connected device handles. If NULL is passed, the function returns only the number of connected devices in the <code>size</code> parameter.</li>
 <li><code>size</code> — [in]: the number of device handles that can be stored in the devices parameter. [out]: The number of attached devices.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_NOT_ENOUGH_SPACE if there are more attached devices than allocated memory for storing <code>dlsdk_device_handle</code>.</p>
@@ -3302,7 +3308,7 @@ System, Device, Display, then DP AUX.</p>
 <p>Function used to release a device handle obtained from <code>dlsdk_get_devices()</code>.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="dlsdk_restart_and_free_device"><code>dlsdk_restart_and_free_device</code><a class="headerlink" href="#dlsdk_restart_and_free_device" title="Permanent link">&para;</a></h4>
@@ -3312,12 +3318,12 @@ System, Device, Display, then DP AUX.</p>
 <p><strong>Details:</strong> After calling this function, the device will no longer be accessible through the provided handle and the user must call dlsdk_get_devices() again to obtain a new handle for the restarted device.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
 </ul>
 <h4 id="dlsdk_register_hotplug_callback"><code>dlsdk_register_hotplug_callback</code><a class="headerlink" href="#dlsdk_register_hotplug_callback" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_register_hotplug_callback</span><span class="p">(</span><span class="n">dlsdk_hotplug_callback_fn</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_hotplug_callback_handle</span><span class="o">*</span><span class="w"> </span><span class="n">outHandle</span><span class="p">);</span>
 </code></pre></div>
-<p>Register a hotplug callback function.</p>
+<p>Registers a hotplug callback function.</p>
 <p><strong>Details:</strong> This function registers a callback to be invoked when a hotplug event occurs and returns a registration handle for later unregistration. Only one callback can be registered, and registering a new callback will overwrite the previous one. The callback will be invoked for all hotplug events from the moment the callback is registered. When a system is destroyed, all hotplug callbacks will be automatically unregistered and their handles invalidated.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -3330,7 +3336,10 @@ System, Device, Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_unregister_hotplug_callback</span><span class="p">(</span><span class="n">dlsdk_hotplug_callback_handle</span><span class="w"> </span><span class="n">handle</span><span class="p">);</span>
 </code></pre></div>
 <p>Unregisters a hotplug callback.</p>
-<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callback will not be invoked after this function returns successfully. If the callback is currently running, this function will block until it completes before unregistering and returning.</p>
+<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback.
+The callback will not be invoked after this function returns successfully. If
+the callback is currently running, this function blocks until it completes
+before unregistering and returning.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>handle</code> — The callback registration handle returned during registration.</li>
@@ -3345,7 +3354,7 @@ System, Device, Display, then DP AUX.</p>
 <p><strong>Details:</strong> Based on the device's USB serial number, so the identifier persists across unplugging and power cycling. Example: "USB_6015-10096418", where 6015 is the USB product ID (in hex) and 10096418 is the serial number. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> A string containing the unique device identifier.</p>
 <p><strong>Example:</strong></p>
@@ -3374,18 +3383,25 @@ System, Device, Display, then DP AUX.</p>
 <p>Function used to obtain the firmware version of the device.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> A string containing the firmware version of the device.</p>
 <h4 id="dlsdk_device_get_displays"><code>dlsdk_device_get_displays</code><a class="headerlink" href="#dlsdk_device_get_displays" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_device_get_displays</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_handle</span><span class="o">*</span><span class="w"> </span><span class="n">displays</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the attached displays for a given device.</p>
-<p><strong>Details:</strong> The caller must allocate enough memory to store the display handles (dlsdk_display_handle) before calling this method. If there are more attached displays than memory allocated, the function will return DLSDK_NOT_ENOUGH_SPACE. If this happens, the user must then allocate memory equal to the value of the returned size before calling this function again. Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is released with dlsdk_free_device(), dlsdk_restart_and_free_device() or dlsdk_teardown().</p>
+<p><strong>Details:</strong> The caller must allocate enough memory to store the display handles
+(<code>dlsdk_display_handle</code>) before calling this method. If there are more attached
+displays than the allocated memory can hold, the function returns
+<code>DLSDK_NOT_ENOUGH_SPACE</code>. The user must then allocate memory equal to the
+returned size before calling the function again. Display handles are owned by
+their device and must not be freed by the caller; they remain valid until the
+associated device handle is released with <code>dlsdk_free_device()</code>,
+<code>dlsdk_restart_and_free_device()</code>, or <code>dlsdk_teardown()</code>.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
-<li><code>displays</code> — A pointer to a contiguous piece of memory big enough to store the number of display handles connected to the device. If NULL, the function will only return the number of attached displays in size parameter.</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
+<li><code>displays</code> — A pointer to a contiguous memory block large enough to store the display handles connected to the device. If NULL, the function returns only the number of attached displays in the <code>size</code> parameter.</li>
 <li><code>size</code> — [in]: the number of display handles that can be stored in the displays parameter. [out]: The number of attached displays.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_NOT_ENOUGH_SPACE if there are more attached displays than allocated memory for storing <code>dlsdk_display_handle</code>.</p>
@@ -3393,18 +3409,31 @@ System, Device, Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="nf">dlsdk_device_get_dpaux</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain a handle to the DP AUX channel available on a given device.</p>
-<p><strong>Details:</strong> Some devices may not have a DP AUX channel, in which case this function will return NULL. This function is useful when low-level access to the DP AUX channel is required and display is not enumerated automatically. Otherwise, it is recommended to obtain the DP AUX channel handle via the display object using dlsdk_display_get_dpaux().</p>
+<p><strong>Details:</strong> Some devices may not have a DP AUX channel, in which case this
+function returns NULL. This function is useful when low-level access to the DP
+AUX channel is required and the display is not enumerated automatically.
+Otherwise, obtain the DP AUX channel handle through the display object by using
+<code>dlsdk_display_get_dpaux()</code>.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device</code> — Device handle. Must be valid and non-NULL</li>
-<li><code>output</code> — The output index for which to obtain the DP AUX channel handle</li>
+<li><code>device</code> — Device handle. Must be valid and non-NULL.</li>
+<li><code>output</code> — The output index for which to obtain the DP AUX channel handle.</li>
 </ul>
-<p><strong>Returns:</strong> A handle to the DP AUX channel or NULL if the device does not support it, output is not DP type or it does not exist.</p>
+<p><strong>Returns:</strong> A handle to the DP AUX channel, or NULL if the device does not
+support the channel, the output is not a DisplayPort output, or the output does
+not exist.</p>
 <h4 id="dlsdk_device_update_firmware"><code>dlsdk_device_update_firmware</code><a class="headerlink" href="#dlsdk_device_update_firmware" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_device_update_firmware</span><span class="p">(</span><span class="n">dlsdk_device_handle</span><span class="w"> </span><span class="n">device</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to update the firmware of a device.</p>
-<p><strong>Details:</strong> Synchronous function used to update the firmware on a specific device. This function will block until the firmware update process is complete, which may take up to 30seconds on the device. This method must be called by the user to update the firmware on a specific device. This is required when the DisplayLink Direct is initialised with null firmware path, and can be used to update the firmware on demand. It is advised to keep the firmware up to date to ensure the best performance and reliability of the device, as well as access to the latest features. After a successful firmware update, the device or display handle is still valid, but keep in mind that the rendering pipeline must be established and the display has to be powered on again.</p>
+<p><strong>Details:</strong> This synchronous function updates the firmware on a specific
+device and blocks until the process is complete, which may take up to 30
+seconds. It is required when the DisplayLink Direct is initialised with a null firmware path
+and can also be used to update firmware on demand. Keep the firmware up to date
+to ensure optimal device performance, reliability, and access to the latest
+features. After a successful update, the device and display handles remain
+valid, but the rendering pipeline must be reestablished and the display must be
+powered on again.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>device</code> — The device handle. Must be valid and non-NULL.</li>
@@ -3422,7 +3451,7 @@ firmware-related workflows.</p>
 <p><strong>Details:</strong> Identifies a single output on a device; a device with multiple outputs (e.g. up to 4 HDMI connectors) exposes one identifier per output. Example: "USB_6015-10096418^0", "USB_6015-10096418^1", "USB_6015-10096418^2", "USB_6015-10096418^3", where 6015 is the USB product ID (in hex), 10096418 is the serial number, and the suffix after ^ is the output index. The DisplayLink USB vendor ID (0x17e9) is not included.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> A string containing the device and head identifiers.</p>
 <p><strong>Example:</strong></p>
@@ -3451,59 +3480,62 @@ firmware-related workflows.</p>
 <p>Function used to obtain the resolution of the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
-<p><strong>Returns:</strong> The resolution of the display</p>
+<p><strong>Returns:</strong> The resolution of the display.</p>
 <h4 id="dlsdk_display_edid"><code>dlsdk_display_edid</code><a class="headerlink" href="#dlsdk_display_edid" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_edid</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the EDID of the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 <li><code>data</code> — Buffer to store the EDID data. If null, the function will return the required buffer size in len.</li>
 <li><code>len</code> — Length of the data buffer. On input, should be set to the size of the data buffer. On output, will be set to the actual length of the EDID data written to the buffer, or the required buffer size if buffer is null. If the buffer is too small, the data will be truncated.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS if EDID was successfully obtained, reason for failure otherwise</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the EDID was obtained successfully, or the reason
+for failure otherwise.</p>
 <h4 id="dlsdk_display_modes"><code>dlsdk_display_modes</code><a class="headerlink" href="#dlsdk_display_modes" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_modes</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to retrieve list of supported display modes for the display.</p>
+<p>Function used to retrieve a list of supported display modes for the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 <li><code>modes</code> — Buffer to store the display modes. If null, the function will return the required buffer size in count.</li>
 <li><code>count</code> — Number of display modes that can be stored in the modes buffer. On input, should be set to the size of the modes buffer. On output, will be set to the actual number of display modes written to the buffer, or the required buffer size if buffer is null.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS if display modes were successfully obtained, reason for failure otherwise</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the display modes were obtained successfully, or
+the reason for failure otherwise.</p>
 <h4 id="dlsdk_display_preferred_mode"><code>dlsdk_display_preferred_mode</code><a class="headerlink" href="#dlsdk_display_preferred_mode" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_preferred_mode</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to obtain the preferred display mode for the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
-<li><code>mode</code> — Buffer to store the preferred display mode</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
+<li><code>mode</code> — Buffer to store the preferred display mode.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS if preferred display mode was successfully obtained, reason for failure otherwise</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the preferred display mode was obtained
+successfully, or the reason for failure otherwise.</p>
 <h4 id="dlsdk_display_power_on"><code>dlsdk_display_power_on</code><a class="headerlink" href="#dlsdk_display_power_on" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_power_on</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
 </code></pre></div>
 <p>Function used to power on the display.</p>
-<p><strong>Details:</strong> The display will be powered on with the preferred display mode</p>
+<p><strong>Details:</strong> The display will be powered on with the preferred display mode.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="dlsdk_display_power_on_with_mode"><code>dlsdk_display_power_on_with_mode</code><a class="headerlink" href="#dlsdk_display_power_on_with_mode" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_power_on_with_mode</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to power on the display with specific display mode.</p>
+<p>Function used to power on the display with a specific display mode.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
-<li><code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
+<li><code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified mode, DLSDK_UNSUCCESSFUL if the display failed to power on with the specified mode, DLSDK_INVALID_ARGS if the provided mode is not valid, null, or not supported by the display.</p>
 <h4 id="dlsdk_display_power_on_with_timing"><code>dlsdk_display_power_on_with_timing</code><a class="headerlink" href="#dlsdk_display_power_on_with_timing" title="Permanent link">&para;</a></h4>
@@ -3522,20 +3554,22 @@ firmware-related workflows.</p>
 <p>Function used to power off the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="dlsdk_display_show"><code>dlsdk_display_show</code><a class="headerlink" href="#dlsdk_display_show" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_show</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="n">dlsdk_pixel_format</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pixels</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="p">);</span>
 </code></pre></div>
 <p>Function to present the contents of a pixel buffer on the display.</p>
-<p><strong>Details:</strong> This is a non-blocking call and will return before the pixels are displayed. If the user wishes notification of when the pixels have been displayed, they should call dlsdk_display_wait_on_show()</p>
+<p><strong>Details:</strong> This is a non-blocking call and returns before the pixels are
+displayed. To receive notification when the pixels have been displayed, call
+<code>dlsdk_display_wait_on_show()</code>.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
-<li><code>format</code> — The pixel format contained in the pixel buffer</li>
-<li><code>pixels</code> — The buffer containing the pixels to be displayed</li>
-<li><code>stride</code> — Number of bytes that needed to add to the address of the first pixel of a row in order to go to the address of the first pixel of the next row. If a value of 0 is given then it will be automatically calculated as bytes per pixel * display width</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
+<li><code>format</code> — The pixel format contained in the pixel buffer.</li>
+<li><code>pixels</code> — The buffer containing the pixels to be displayed.</li>
+<li><code>stride</code> — Number of bytes to add to the address of the first pixel in one row to reach the first pixel in the next row. If the value is 0, the stride is calculated automatically as bytes per pixel × display width.</li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with dlsdk_display_wait_on_show().</p>
 <h4 id="dlsdk_display_show_with_dirty_rects"><code>dlsdk_display_show_with_dirty_rects</code><a class="headerlink" href="#dlsdk_display_show_with_dirty_rects" title="Permanent link">&para;</a></h4>
@@ -3559,32 +3593,33 @@ firmware-related workflows.</p>
 <p>Function used to block for notification that pixels have been displayed after calling dlsdk_display_show().</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li>DLSDK_SUCCESS when the pixels have been displayed</li>
-<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready</li>
-<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry dlsdk_display_show() with the frame to be displayed, which will typically involve more aggressive compression, or proceed with new frame if the previous frame is no longer relevant.</li>
-<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out</li>
-<li>DLSDK_UNSUCCESSFUL on unknown error</li>
+<li>DLSDK_SUCCESS when the pixels have been displayed.</li>
+<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready.</li>
+<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry <code>dlsdk_display_show()</code> with the frame to be displayed, which will typically involve more aggressive compression, or proceed with a new frame if the previous frame is no longer relevant.</li>
+<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out.</li>
+<li>DLSDK_UNSUCCESSFUL on unknown error.</li>
 </ul>
 <h4 id="dlsdk_display_wait_on_show_for"><code>dlsdk_display_wait_on_show_for</code><a class="headerlink" href="#dlsdk_display_wait_on_show_for" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_display_wait_on_show_for</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to block for notification that pixels have been displayed after calling dlsdk_display_show(), with timeout option.</p>
+<p>Function used to block until the pixels have been displayed after calling
+<code>dlsdk_display_show()</code>, with a timeout option.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
-<li><code>timeoutMs</code> — Maximum time to wait in milliseconds</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
+<li><code>timeoutMs</code> — Maximum time to wait in milliseconds.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li>DLSDK_SUCCESS when the pixels have been displayed</li>
-<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready</li>
-<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry dlsdk_display_show() with the frame to be displayed, which will typically involve more aggressive compression, or proceed with new frame if the previous frame is no longer relevant.</li>
-<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out</li>
-<li>DLSDK_UNSUCCESSFUL on unknown error</li>
+<li>DLSDK_SUCCESS when the pixels have been displayed.</li>
+<li>DLSDK_UNSUCCESSFUL_NO_MONITOR when display is not ready.</li>
+<li>DLSDK_BUSY when the device aborted a previously submitted frame due to resource constraints. The caller should retry <code>dlsdk_display_show()</code> with the frame to be displayed, which will typically involve more aggressive compression, or proceed with a new frame if the previous frame is no longer relevant.</li>
+<li>DLSDK_TIMEOUT if waiting for the display to be ready timed out.</li>
+<li>DLSDK_UNSUCCESSFUL on unknown error.</li>
 </ul>
 <h4 id="dlsdk_display_clear"><code>dlsdk_display_clear</code><a class="headerlink" href="#dlsdk_display_clear" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dlsdk_display_clear</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
@@ -3592,7 +3627,7 @@ firmware-related workflows.</p>
 <p>Function used to clear the display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
 <h4 id="dlsdk_display_get_dpaux"><code>dlsdk_display_get_dpaux</code><a class="headerlink" href="#dlsdk_display_get_dpaux" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="nf">dlsdk_display_get_dpaux</span><span class="p">(</span><span class="n">dlsdk_display_handle</span><span class="w"> </span><span class="n">display</span><span class="p">);</span>
@@ -3600,102 +3635,104 @@ firmware-related workflows.</p>
 <p>Function used to obtain a handle to the DP AUX channel associated with this display.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>display</code> — Display handle. Must be valid and non-NULL</li>
+<li><code>display</code> — Display handle. Must be valid and non-NULL.</li>
 </ul>
-<p><strong>Returns:</strong> A handle to the DP AUX channel or NULL if the display is not connected via DisplayPort</p>
+<p><strong>Returns:</strong> A handle to the DP AUX channel, or NULL if the display is not
+connected through DisplayPort.</p>
 <h3 id="dp-aux-api">DP AUX API<a class="headerlink" href="#dp-aux-api" title="Permanent link">&para;</a></h3>
 <p>Low-level access to the DisplayPort AUX channel, useful when direct AUX/I2C
 access is required beyond the automatic display enumeration.</p>
 <h4 id="dlsdk_dpaux_read"><code>dlsdk_dpaux_read</code><a class="headerlink" href="#dlsdk_dpaux_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Reads data from native DP AUX registers using 16-byte burst transactions. Larger requests are serviced by chaining multiple burst reads into the provided buffer. The function waits for a response (up to 400us).</p>
+<p>Reads data from native DP AUX registers using 16-byte burst transactions. Larger requests are serviced by chaining multiple burst reads into the provided buffer. The function waits for a response for up to 400 µs.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>auxRegAddress</code> — DP register address</li>
-<li><code>data</code> — Buffer for incoming data</li>
-<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>auxRegAddress</code> — DP register address.</li>
+<li><code>data</code> — Buffer for incoming data.</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256).</li>
 </ul>
-<p><strong>Returns:</strong> status response from DP peer</p>
+<p><strong>Returns:</strong> The status response from the DP peer.</p>
 <h4 id="dlsdk_dpaux_write"><code>dlsdk_dpaux_write</code><a class="headerlink" href="#dlsdk_dpaux_write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Writes data to native DP AUX registers using 16-byte burst transactions. Larger requests are split into multiple burst writes from the provided buffer. The function waits for a response (up to 400us).</p>
+<p>Writes data to native DP AUX registers using 16-byte burst transactions. Larger requests are split into multiple burst writes from the provided buffer. The function waits for a response for up to 400 µs.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>auxRegAddress</code> — DP register address</li>
-<li><code>data</code> — Buffer of write data</li>
-<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>auxRegAddress</code> — DP register address.</li>
+<li><code>data</code> — Buffer of write data.</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256).</li>
 </ul>
-<p><strong>Returns:</strong> status response from DP peer</p>
+<p><strong>Returns:</strong> The status response from the DP peer.</p>
 <h4 id="dlsdk_dpaux_i2c_read"><code>dlsdk_dpaux_i2c_read</code><a class="headerlink" href="#dlsdk_dpaux_i2c_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
 </code></pre></div>
-<p>Read I2C data by an Aux transaction.</p>
+<p>Reads I2C data using an AUX transaction.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
-<li><code>data</code> — Read data buffer</li>
-<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
-<li><code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop</li>
-<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0).</li>
+<li><code>data</code> — Read data buffer.</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256).</li>
+<li><code>mot</code> — A value of 1 indicates the middle of a transaction; a value of 0 terminates the I2C transaction with a stop.</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction.</li>
 </ul>
-<p><strong>Returns:</strong> status response from DP peer</p>
+<p><strong>Returns:</strong> The status response from the DP peer.</p>
 <h4 id="dlsdk_dpaux_i2c_write"><code>dlsdk_dpaux_i2c_write</code><a class="headerlink" href="#dlsdk_dpaux_i2c_write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_write</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mot</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
 </code></pre></div>
-<p>Write I2C data in an Aux transaction.</p>
+<p>Writes I2C data using an AUX transaction.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
-<li><code>data</code> — Write data buffer</li>
-<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256)</li>
-<li><code>mot</code> — mot=1 indicates middle of transaction, mot=0 will terminate the I2C transaction with a stop</li>
-<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0).</li>
+<li><code>data</code> — Write data buffer.</li>
+<li><code>length</code> — Data buffer length (0 &lt;= length &lt; 256).</li>
+<li><code>mot</code> — A value of 1 indicates the middle of a transaction; a value of 0 terminates the I2C transaction with a stop.</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction.</li>
 </ul>
-<p><strong>Returns:</strong> status response from DP peer</p>
+<p><strong>Returns:</strong> The status response from the DP peer.</p>
 <h4 id="dlsdk_dpaux_i2c_write_and_read"><code>dlsdk_dpaux_i2c_write_and_read</code><a class="headerlink" href="#dlsdk_dpaux_i2c_write_and_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_i2c_write_and_read</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">deviceAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">writeData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">writeLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">readData</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">readLength</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
 </code></pre></div>
-<p>Write and read I2C data by an Aux transaction.</p>
+<p>Writes and reads I2C data using an AUX transaction.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>deviceAddress</code> — I2C device address (bits 6:0)</li>
-<li><code>writeData</code> — Write data buffer</li>
-<li><code>writeLength</code> — Write data buffer length (0 &lt;= length &lt; 256)</li>
-<li><code>readData</code> — Read data buffer</li>
-<li><code>readLength</code> — Read data buffer length (0 &lt;= length &lt; 256)</li>
-<li><code>timeoutMs</code> — Allowed timeout per transaction</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>deviceAddress</code> — I2C device address (bits 6:0).</li>
+<li><code>writeData</code> — Write data buffer.</li>
+<li><code>writeLength</code> — Write data buffer length (0 &lt;= length &lt; 256).</li>
+<li><code>readData</code> — Read data buffer.</li>
+<li><code>readLength</code> — Read data buffer length (0 &lt;= length &lt; 256).</li>
+<li><code>timeoutMs</code> — Allowed timeout per transaction.</li>
 </ul>
-<p><strong>Returns:</strong> status response from DP peer</p>
+<p><strong>Returns:</strong> The status response from the DP peer.</p>
 <h4 id="dlsdk_dpaux_begin_exclusive_access"><code>dlsdk_dpaux_begin_exclusive_access</code><a class="headerlink" href="#dlsdk_dpaux_begin_exclusive_access" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_begin_exclusive_access</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timeoutMs</span><span class="p">);</span>
 </code></pre></div>
-<p>Begin exclusive access to the DP AUX channel.</p>
+<p>Begins exclusive access to the DP AUX channel.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
-<li><code>timeoutMs</code> — Maximum time to wait to acquire exclusive access, in milliseconds</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
+<li><code>timeoutMs</code> — Maximum time to wait to acquire exclusive access, in milliseconds.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or the reason for failure.</p>
 <h4 id="dlsdk_dpaux_end_exclusive_access"><code>dlsdk_dpaux_end_exclusive_access</code><a class="headerlink" href="#dlsdk_dpaux_end_exclusive_access" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_end_exclusive_access</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
 </code></pre></div>
-<p>End exclusive access to the DP AUX channel.</p>
+<p>Ends exclusive access to the DP AUX channel.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL</li>
+<li><code>dpaux</code> — DP AUX channel handle. Must be valid and non-NULL.</li>
 </ul>
-<p><strong>Returns:</strong> DLSDK_SUCCESS or reason for failure</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or the reason for failure.</p>
 <h4 id="dlsdk_dpaux_detect"><code>dlsdk_dpaux_detect</code><a class="headerlink" href="#dlsdk_dpaux_detect" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_detect</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to detect if a monitor is connected to the DP AUX channel, and force training.</p>
+<p>Detects whether a monitor is connected to the DP AUX channel and forces link
+training.</p>
 <h4 id="dlsdk_dpaux_enable_virtual_hpd_polling"><code>dlsdk_dpaux_enable_virtual_hpd_polling</code><a class="headerlink" href="#dlsdk_dpaux_enable_virtual_hpd_polling" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">dlsdk_dpaux_enable_virtual_hpd_polling</span><span class="p">(</span><span class="n">dlsdk_dpaux_handle</span><span class="w"> </span><span class="n">dpaux</span><span class="p">);</span>
 </code></pre></div>

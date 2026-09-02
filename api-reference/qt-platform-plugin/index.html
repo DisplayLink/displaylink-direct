@@ -1474,7 +1474,7 @@
 <p>The <code>qdlsdk</code> plugin is a <a href="https://doc.qt.io/qt-6/qpa.html">Qt Platform Abstraction (QPA)</a> plugin that lets an
 unmodified Qt GUI application render directly onto DisplayLink Direct displays, without requiring a Linux graphical
 environment such as X11, Wayland, GNOME, or any other compositor. Qt applications can run directly from a virtual
-terminal (VT) without a GPU. It registers itself under the platform name <code>dlsdk</code> and is selected the same way as any
+terminal (VT) without a GPU. It registers itself under the platform name <code>dlsdk</code> and is selected in the same way as any
 other QPA plugin, via the <code>-platform</code> command-line argument or the <code>QT_QPA_PLATFORM</code> environment variable.</p>
 <div class="admonition note">
 <p class="admonition-title">Distributed separately</p>
@@ -1485,12 +1485,12 @@ CMake target described in <a href="../../getting-started/installation-linux/">Ru
 <!-- TODO: this points at the pre-release source repo; update to the public repo URL once published -->
 <p>Source repository: <a href="https://github.com/syna-isd/displaylink-dlsdk-qt">syna-isd/displaylink-dlsdk-qt</a>.</p>
 <h2 id="input-handling">Input handling<a class="headerlink" href="#input-handling" title="Permanent link">&para;</a></h2>
-<p>Input handling is Qt's responsibility, not DisplayLink Direct's: the plugin does not read input from
-DisplayLink devices or hardware in any way. It simply wires up Qt's existing standard Linux input backends,
+<p>Input handling is Qt's responsibility, not DisplayLink Direct's. The plugin does not read input from
+DisplayLink devices or hardware. It simply wires up Qt's existing standard Linux input backends,
 the same way other Linux QPA plugins (e.g. <code>eglfs</code>, <code>linuxfb</code>) do:</p>
 <ul>
 <li><strong>libinput</strong> is used when Qt was built with libinput support.</li>
-<li>Otherwise the plugin falls back to <strong>evdev</strong> keyboard, mouse and touch managers.</li>
+<li>Otherwise, the plugin falls back to <strong>evdev</strong> keyboard, mouse, and touch managers.</li>
 </ul>
 <h2 id="running-an-application">Running an application<a class="headerlink" href="#running-an-application" title="Permanent link">&para;</a></h2>
 <p>Point <code>QT_PLUGIN_PATH</code> at the plugin's <code>plugins</code> output directory and pass <code>-platform dlsdk</code> to your
@@ -1501,7 +1501,7 @@ application:</p>
 <p class="admonition-title">USB permissions</p>
 <p>Accessing DisplayLink USB devices requires the same permissions described in
 <a href="../../getting-started/installation-linux/#usb-permissions">USB permissions</a>. Without them, the plugin
-may need to be run with <code>sudo</code>, or the running user added to a group with access to
+may need to be run with <code>sudo</code>, or the user may need to be added to a group with access to
 <code>/dev/bus/usb/*</code>.</p>
 </div>
 

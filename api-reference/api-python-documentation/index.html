@@ -2739,7 +2739,7 @@ AUX.</p>
 </tr>
 <tr>
 <td><code>dlsdk.dlsdk_pixel_format</code></td>
-<td>API supported pixel formats.</td>
+<td>API-supported pixel formats.</td>
 </tr>
 <tr>
 <td><code>dlsdk.dlsdk_aux_status</code></td>
@@ -2952,7 +2952,7 @@ AUX.</p>
 </tbody>
 </table>
 <h4 id="dlsdkdlsdk_pixel_format"><code>dlsdk.dlsdk_pixel_format</code><a class="headerlink" href="#dlsdkdlsdk_pixel_format" title="Permanent link">&para;</a></h4>
-<p>API supported pixel formats.</p>
+<p>API-supported pixel formats.</p>
 <table>
 <thead>
 <tr>
@@ -3080,7 +3080,7 @@ AUX.</p>
 </tr>
 <tr>
 <td><code>device_id</code></td>
-<td>The id of the device the event relates to.</td>
+<td>The ID of the device to which the event relates.</td>
 </tr>
 <tr>
 <td><code>display</code></td>
@@ -3088,7 +3088,7 @@ AUX.</p>
 </tr>
 <tr>
 <td><code>display_id</code></td>
-<td>The id of the display the event relates to.</td>
+<td>The ID of the display to which the event relates.</td>
 </tr>
 </tbody>
 </table>
@@ -3101,11 +3101,11 @@ AUX.</p>
 <h4 id="dlsdkdelete_system"><code>dlsdk.delete_system</code><a class="headerlink" href="#dlsdkdelete_system" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">delete_system</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
-<p>Finish the DL SDK and release all resources.</p>
+<p>Shuts down DisplayLink Direct and releases all resources.</p>
 <h4 id="dlsdkget_devices"><code>dlsdk.get_devices</code><a class="headerlink" href="#dlsdkget_devices" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">get_devices</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">]</span>
 </code></pre></div>
-<p>Gets the enumerated DL devices</p>
+<p>Returns the currently enumerated DisplayLink devices.</p>
 <h4 id="dlsdkregister_hotplug_callback"><code>dlsdk.register_hotplug_callback</code><a class="headerlink" href="#dlsdkregister_hotplug_callback" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">register_hotplug_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span>
 </code></pre></div>
@@ -3126,7 +3126,7 @@ AUX.</p>
 <h4 id="firmware_version"><code>firmware_version</code><a class="headerlink" href="#firmware_version" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">firmware_version</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
 </code></pre></div>
-<p>String representation of the device firmware version</p>
+<p>Returns the device firmware version as a string.</p>
 <h4 id="get_displays"><code>get_displays</code><a class="headerlink" href="#get_displays" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">get_displays</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">]</span>
 </code></pre></div>
@@ -3136,15 +3136,15 @@ AUX.</p>
 <h4 id="get_dpaux"><code>get_dpaux</code><a class="headerlink" href="#get_dpaux" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">get_dpaux</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span> <span class="n">arg0</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span>
 </code></pre></div>
-<p>Gets the DpAux associated with this device</p>
+<p>Returns the DP AUX channel associated with this device.</p>
 <h4 id="release"><code>release</code><a class="headerlink" href="#release" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">release</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
-<p>Releases the associated device</p>
+<p>Releases the associated device.</p>
 <h4 id="restart_and_release"><code>restart_and_release</code><a class="headerlink" href="#restart_and_release" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">restart_and_release</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Restarts and releases the associated device</p>
+<p>Restarts and releases the associated device.</p>
 <h2 id="display-api">Display API<a class="headerlink" href="#display-api" title="Permanent link">&para;</a></h2>
 <h3 id="dlsdkdisplay"><code>dlsdk.Display</code><a class="headerlink" href="#dlsdkdisplay" title="Permanent link">&para;</a></h3>
 <p>Methods for manipulating/controlling displays attached to a device.</p>
@@ -3157,27 +3157,27 @@ AUX.</p>
 <h4 id="size"><code>size</code><a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">size</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Rect</span>
 </code></pre></div>
-<p>Get the current resolution of the display</p>
+<p>Returns the current display resolution.</p>
 <h4 id="edid"><code>edid</code><a class="headerlink" href="#edid" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">edid</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span>
 </code></pre></div>
-<p>Get the EDID data of the display</p>
+<p>Returns the display's EDID data.</p>
 <h4 id="modes"><code>modes</code><a class="headerlink" href="#modes" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">modes</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">DisplayMode</span><span class="p">]]</span>
 </code></pre></div>
-<p>Get the supported display modes</p>
+<p>Returns the supported display modes.</p>
 <h4 id="preferred_mode"><code>preferred_mode</code><a class="headerlink" href="#preferred_mode" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">preferred_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span><span class="p">,</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DisplayMode</span><span class="p">]</span>
 </code></pre></div>
-<p>Get the preferred display mode</p>
+<p>Returns the preferred display mode.</p>
 <h4 id="power_on"><code>power_on</code><a class="headerlink" href="#power_on" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">power_on</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Turn on the display, required to show pixels</p>
+<p>Powers on the display so that pixels can be presented.</p>
 <h4 id="power_on_with_mode"><code>power_on_with_mode</code><a class="headerlink" href="#power_on_with_mode" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">power_on_with_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">,</span> <span class="n">arg0</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DisplayMode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Turn on the display with a specific mode</p>
+<p>Powers on the display using a specific mode.</p>
 <h4 id="power_on_with_timing"><code>power_on_with_timing</code><a class="headerlink" href="#power_on_with_timing" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">power_on_with_timing</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">,</span> <span class="n">arg0</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DisplayTiming</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
@@ -3185,24 +3185,25 @@ AUX.</p>
 <h4 id="power_off"><code>power_off</code><a class="headerlink" href="#power_off" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">power_off</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Turn off the display</p>
+<p>Powers off the display.</p>
 <h4 id="show"><code>show</code><a class="headerlink" href="#show" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">show</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_pixel_format</span><span class="p">,</span> <span class="n">pixels</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Annotated</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">typing</span><span class="o">.</span><span class="n">ArrayLike</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">],</span> <span class="n">dirty_rects</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">dlsdk</span><span class="o">.</span><span class="n">DirtyRect</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Starts presenting pixel with given format to the display. When dirty_rects is given, it hints which regions changed since the previous frame so that only those may be updated. The rectangles must cover everything that changed, and pixels must still describe the entire display</p>
+<p>Presents pixels on the display using the specified format.
+When dirty_rects is given, it hints which regions changed since the previous frame so that only those may be updated. The rectangles must cover everything that changed, and pixels must still describe the entire display.</p>
 <h4 id="wait_on_show"><code>wait_on_show</code><a class="headerlink" href="#wait_on_show" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">wait_on_show</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Waits for pixels to be presented</p>
+<p>Waits for the pixels to be presented.</p>
 <p><strong>Notes:</strong> <code>timeout</code> defaults to waiting indefinitely (mirroring the C++ <code>DisplayHandle::waitOnShow()</code> default of <code>std::chrono::milliseconds::max()</code>); pass an explicit <code>datetime.timedelta</code> to wait with a bounded timeout instead.</p>
 <h4 id="clear"><code>clear</code><a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
-<p>Clear the display</p>
+<p>Clears the display.</p>
 <h4 id="getdpaux"><code>getDpAux</code><a class="headerlink" href="#getdpaux" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">getDpAux</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Display</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span>
 </code></pre></div>
-<p>Get the DP Aux channel associated with the display</p>
+<p>Returns the DP AUX channel associated with the display.</p>
 <h2 id="dp-aux-api">DP AUX API<a class="headerlink" href="#dp-aux-api" title="Permanent link">&para;</a></h2>
 <p>Low-level access to the DisplayPort AUX channel, useful when direct AUX/I2C
 access is required beyond the automatic display enumeration.</p>
@@ -3211,35 +3212,36 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="read"><code>read</code><a class="headerlink" href="#read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">aux_reg_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
-<p>Read data from DP Aux channel</p>
+<p>Reads data from the DP AUX channel.</p>
 <h4 id="write"><code>write</code><a class="headerlink" href="#write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">aux_reg_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
-<p>Write data to DP Aux channel</p>
+<p>Writes data to the DP AUX channel.</p>
 <h4 id="i2c_read"><code>i2c_read</code><a class="headerlink" href="#i2c_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">i2c_read</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">device_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">,</span> <span class="n">mot</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
-<p>Read I2C data by an Aux transaction</p>
+<p>Reads I2C data using an AUX transaction.</p>
 <h4 id="i2c_write"><code>i2c_write</code><a class="headerlink" href="#i2c_write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">i2c_write</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">device_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">,</span> <span class="n">mot</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
-<p>Write I2C data by an Aux transaction</p>
+<p>Writes I2C data using an AUX transaction.</p>
 <h4 id="i2c_write_and_read"><code>i2c_write_and_read</code><a class="headerlink" href="#i2c_write_and_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">i2c_write_and_read</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">device_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">write_data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">,</span> <span class="n">read_data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
-<p>Write and read I2C data by an Aux transaction</p>
+<p>Writes and reads I2C data using an AUX transaction.</p>
 <h4 id="begin_exclusive_access"><code>begin_exclusive_access</code><a class="headerlink" href="#begin_exclusive_access" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">begin_exclusive_access</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">arg0</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Begin exclusive access to the DP AUX channel</p>
+<p>Begins exclusive access to the DP AUX channel.</p>
 <h4 id="end_exclusive_access"><code>end_exclusive_access</code><a class="headerlink" href="#end_exclusive_access" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">end_exclusive_access</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>End exclusive access to the DP AUX channel</p>
+<p>Ends exclusive access to the DP AUX channel.</p>
 <h4 id="detect"><code>detect</code><a class="headerlink" href="#detect" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">detect</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Detect if a monitor is connected to the DP AUX channel, and force training.</p>
+<p>Detects whether a monitor is connected to the DP AUX channel and forces link
+training.</p>
 <h4 id="enable_virtual_hpd_polling"><code>enable_virtual_hpd_polling</code><a class="headerlink" href="#enable_virtual_hpd_polling" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">enable_virtual_hpd_polling</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>

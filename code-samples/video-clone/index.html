@@ -1683,30 +1683,33 @@
 <h1 id="video-clone">Video Clone<a class="headerlink" href="#video-clone" title="Permanent link">&para;</a></h1>
 <p><img alt="Video Clone Application" src="../video-clone-image.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Video Clone sample demonstrates how to use the DisplayLink Direct API to display identical content simultaneously across all connected DisplayLink displays. This application showcases the seamless synchronization capabilities of DisplayLink technology, enabling consistent content delivery across multiple monitors. This is ideal for scenarios where the same image or video needs to be shown on all displays without spanning or tiling.</p>
+<p>The Video Clone sample demonstrates how to use the DisplayLink Direct API to
+display identical content simultaneously across all connected DisplayLink
+displays. It is intended for situations in which the same image or video must
+appear on every display without spanning or tiling.</p>
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Synchronized Display</strong>: Shows identical content on all connected monitors simultaneously</li>
-<li><strong>Multi-Device Support</strong>: Manages multiple DisplayLink devices with unified playback control</li>
-<li><strong>Real-time Rendering</strong>: Delivers consistent frame rates across all displays</li>
-<li><strong>Flexible Media Support</strong>: Plays both images and video files in various formats</li>
+<li><strong>Synchronized display</strong>: Shows identical content on all connected monitors simultaneously.</li>
+<li><strong>Multi-device support</strong>: Manages multiple DisplayLink devices with unified playback control.</li>
+<li><strong>Real-time rendering</strong>: Delivers consistent frame rates across all displays.</li>
+<li><strong>Flexible media support</strong>: Plays both images and video files in various formats.</li>
 </ul>
 <h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Presentation Displays</strong>: Show the same content to multiple audiences simultaneously</li>
-<li><strong>Retail Environments</strong>: Display promotions or information on multiple screens at once</li>
-<li><strong>Meeting Rooms</strong>: Mirror content across all wall-mounted displays</li>
-<li><strong>Information Kiosks</strong>: Provide consistent information across multiple display locations</li>
+<li><strong>Presentation displays</strong>: Show the same content to multiple audiences simultaneously.</li>
+<li><strong>Retail environments</strong>: Display promotions or information on multiple screens at once.</li>
+<li><strong>Meeting rooms</strong>: Mirror content across all wall-mounted displays.</li>
+<li><strong>Information kiosks</strong>: Provide consistent information across multiple display locations.</li>
 </ul>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 <p>The complete implementation of the Video Clone sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/video/video-clone.cpp">samples/video/video-clone.cpp</a>.</p>
 <h2 id="building-and-running">Building and Running<a class="headerlink" href="#building-and-running" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>DisplayLink Direct SDK installed</li>
-<li>CMake 3.10 or higher</li>
-<li>C++17 compatible compiler</li>
-<li>VLC or GStreamer libraries (for media playback)</li>
+<li>DisplayLink Direct installed.</li>
+<li>CMake 3.10 or higher.</li>
+<li>C++17-compatible compiler.</li>
+<li>VLC or GStreamer libraries for media playback.</li>
 </ul>
 <h3 id="ubuntu-dependencies">Ubuntu Dependencies<a class="headerlink" href="#ubuntu-dependencies" title="Permanent link">&para;</a></h3>
 <p>Install dependencies for one backend (VLC or GStreamer), depending on how you want to build:</p>
@@ -1756,16 +1759,16 @@
 </code></pre></div>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>filename</strong> (required): Path to the image or video file to display</li>
-<li><strong>rotate</strong> (optional): Add this parameter to enable rotation of the content</li>
-<li><strong>timeout</strong> (optional): Duration in seconds to run the application (if omitted, press Enter to exit)</li>
+<li><strong>filename</strong> (required): Path to the image or video file to display.</li>
+<li><strong>rotate</strong> (optional): Add this parameter to enable rotation of the content.</li>
+<li><strong>timeout</strong> (optional): Duration in seconds to run the application. If omitted, press Enter to exit.</li>
 </ul>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>All monitors must have the same resolution for proper alignment</li>
-<li>The same frame is sent to all connected displays simultaneously</li>
-<li>Use Ctrl+C or the specified timeout to gracefully exit the application</li>
-<li>Audio is not supported in this sample</li>
+<li>All monitors must have the same resolution for proper alignment.</li>
+<li>The same frame is sent to all connected displays simultaneously.</li>
+<li>Use Ctrl+C or the specified timeout to exit the application gracefully.</li>
+<li>Audio is not supported in this sample.</li>
 </ul>
 
 

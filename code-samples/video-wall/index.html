@@ -1639,16 +1639,19 @@
 <h1 id="video-wall">Video Wall<a class="headerlink" href="#video-wall" title="Permanent link">&para;</a></h1>
 <p><img alt="Video Wall Application" src="../video-wall-image.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Video Wall sample demonstrates how to use the DisplayLink Direct API to create a seamless video wall by distributing a single image or video stream across multiple connected DisplayLink displays. This application showcases the capabilities of DisplayLink technology in managing multiple displays simultaneously, enabling impressive visual presentations for applications like digital signage, control centers, and entertainment venues.</p>
+<p>The Video Wall sample demonstrates how to use the DisplayLink Direct API to
+create a video wall by distributing a single image or video stream across
+multiple connected DisplayLink displays. It supports applications such as
+digital signage, control centers, and entertainment venues.</p>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 <p>The complete implementation of the Video Wall sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/video/video-wall.cpp">samples/video/video-wall.cpp</a>.</p>
 <h2 id="building-and-running">Building and Running<a class="headerlink" href="#building-and-running" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>DisplayLink Direct SDK installed</li>
-<li>CMake 3.10 or higher</li>
-<li>C++17 compatible compiler</li>
-<li>VLC or GStreamer libraries (for media playback)</li>
+<li>DisplayLink Direct installed.</li>
+<li>CMake 3.10 or higher.</li>
+<li>C++17-compatible compiler.</li>
+<li>VLC or GStreamer libraries for media playback.</li>
 </ul>
 <h3 id="ubuntu-dependencies">Ubuntu Dependencies<a class="headerlink" href="#ubuntu-dependencies" title="Permanent link">&para;</a></h3>
 <p>Install dependencies for one backend (VLC or GStreamer), depending on how you want to build:</p>
@@ -1698,15 +1701,15 @@
 </code></pre></div>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>filename</strong> (required): Path to the image or video file to display</li>
-<li><strong>rotate</strong> (optional): Add this parameter to enable rotation of the content</li>
-<li><strong>timeout</strong> (optional): Duration in seconds to run the application (if omitted, press Enter to exit)</li>
+<li><strong>filename</strong> (required): Path to the image or video file to display.</li>
+<li><strong>rotate</strong> (optional): Add this parameter to enable rotation of the content.</li>
+<li><strong>timeout</strong> (optional): Duration in seconds to run the application. If omitted, press Enter to exit.</li>
 </ul>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The application supports 2x2 quad layouts (4 displays) or linear arrangements (any number of displays)</li>
-<li>All monitors must have the same resolution for proper alignment</li>
-<li>Use Ctrl+C or the specified timeout to gracefully exit the application</li>
+<li>The application supports 2 × 2 layouts (four displays) or linear arrangements (any number of displays).</li>
+<li>All monitors must have the same resolution for proper alignment.</li>
+<li>Use Ctrl+C or the specified timeout to exit the application gracefully.</li>
 </ul>
 
 

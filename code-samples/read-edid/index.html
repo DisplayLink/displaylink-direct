@@ -1661,28 +1661,35 @@
 <h1 id="read-edid">Read EDID<a class="headerlink" href="#read-edid" title="Permanent link">&para;</a></h1>
 <p><img alt="Read EDID Application" src="../dl-get-edid.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Read EDID sample demonstrates how to use the DisplayLink Direct API to read and retrieve Extended Display Identification Data (EDID) from connected DisplayLink displays. EDID is crucial information stored in every monitor that identifies the display's vendor, model, supported resolutions, refresh rates, color capabilities, and other display characteristics. This sample shows how to access this data using the DP AUX (DisplayPort Auxiliary) channel, which is used to read display capabilities and configuration.</p>
+<p>The Read EDID sample demonstrates how to use the DisplayLink Direct API to
+retrieve Extended Display Identification Data (EDID) from connected DisplayLink
+displays. EDID is data stored in each monitor that identifies the display's
+vendor, model, supported resolutions, refresh rates, color capabilities, and
+other characteristics. This sample shows how to access the data through the DP
+AUX (DisplayPort Auxiliary) channel.</p>
 <div class="admonition warning">
 <p class="admonition-title">Chip Family Compatibility</p>
-<p>This sample is only compatible with <strong>DL-7xxx chip family</strong> DisplayLink devices.</p>
+<p>This sample is compatible only with <strong>DL-7xxx-family</strong> DisplayLink devices.</p>
 </div>
 <h2 id="edid-details">EDID Details<a class="headerlink" href="#edid-details" title="Permanent link">&para;</a></h2>
-<p>EDID (Extended Display Identification Data) is a standard that contains:
-- Vendor ID and product information
-- Supported display resolutions and refresh rates
-- Color depth capabilities
-- Timing information and video modes
-- Display connector type
-- Serial number and model name</p>
+<p>EDID (Extended Display Identification Data) is a standard that contains:</p>
+<ul>
+<li>Vendor ID and product information.</li>
+<li>Supported display resolutions and refresh rates.</li>
+<li>Color depth capabilities.</li>
+<li>Timing information and video modes.</li>
+<li>Display connector type.</li>
+<li>Serial number and model name.</li>
+</ul>
 <p>This information helps applications and systems understand what a display can do and configure themselves accordingly.</p>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 <p>The complete implementation of the Read EDID sample is available in <a href="https://github.com/syna-isd/displaylink-direct/blob/main/samples/dl-get-edid/dl-get-edid.cpp">samples/dl-get-edid/dl-get-edid.cpp</a>.</p>
 <h2 id="building-and-running">Building and Running<a class="headerlink" href="#building-and-running" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>DisplayLink Direct SDK installed</li>
-<li>CMake 3.10 or higher</li>
-<li>C++17 compatible compiler</li>
+<li>DisplayLink Direct installed.</li>
+<li>CMake 3.10 or higher.</li>
+<li>C++17-compatible compiler.</li>
 </ul>
 <h3 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">&para;</a></h3>
 <p>Navigate to the samples directory and build using CMake:</p>
@@ -1708,21 +1715,27 @@
 </code></pre></div>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>-d \&lt;device&gt;</strong>: Device number to query (default: 0). Use 0 to (device count - 1)</li>
-<li><strong>-o \&lt;output&gt;</strong>: Output/display number on the device (default: 0). Use 0 to (output count - 1)</li>
-<li><strong>-q</strong>: Quiet mode - suppresses status messages, useful for scripting</li>
-<li><strong>-h</strong>: Display help message</li>
+<li><strong>-d \&lt;device&gt;</strong>: Device number to query (default: 0). Use 0 through
+  device count minus 1.</li>
+<li><strong>-o \&lt;output&gt;</strong>: Output/display number on the device (default: 0). Use 0
+  through output count minus 1.</li>
+<li><strong>-q</strong>: Quiet mode—suppresses status messages and is useful for scripting.</li>
+<li><strong>-h</strong>: Displays the help message.</li>
 </ul>
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<p>The application prints the raw EDID binary data to standard output. The EDID data is typically 128 bytes (or 256 bytes for extended EDID) and can be:
-- Redirected to a file for analysis
-- Parsed by external tools to extract display information
-- Used for system configuration scripts</p>
+<p>The application prints the raw EDID binary data to standard output. The EDID
+data is typically 128 bytes (or 256 bytes for extended EDID) and can be:</p>
+<ul>
+<li>Redirected to a file for analysis.</li>
+<li>Parsed by external tools to extract display information.</li>
+<li>Used in system configuration scripts.</li>
+</ul>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>All connected monitors must be powered on to read their EDID</li>
-<li>Use Ctrl+C to exit the application</li>
-<li>For parsing and analyzing EDID data, various online tools and specifications are available</li>
+<li>All connected monitors must be powered on to read their EDID.</li>
+<li>Use Ctrl+C to exit the application.</li>
+<li>Various online tools and specifications are available for parsing and
+  analyzing EDID data.</li>
 <li>On Ubuntu systems, you can install and use the <code>read-edid</code> package to decode the EDID data:
   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>read-edid
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>./build/dl-get-edid<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>parse-edid

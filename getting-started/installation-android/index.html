@@ -1700,7 +1700,7 @@
 <li><strong>API level</strong>: <code>android-21</code></li>
 </ul>
 <h2 id="modes-of-operation">Modes of operation<a class="headerlink" href="#modes-of-operation" title="Permanent link">&para;</a></h2>
-<p>DisplayLink Direct on Android can be integrated in two modes.</p>
+<p>DisplayLink Direct on Android can be integrated using two modes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The difference between rooted and unrooted Android USB integration modes is described in the libusb Android README:
@@ -1709,18 +1709,20 @@
 <h3 id="rooted-device-mode">Rooted device mode<a class="headerlink" href="#rooted-device-mode" title="Permanent link">&para;</a></h3>
 <p>This mode uses native USB access directly from <code>libusb</code> on device nodes.</p>
 <ul>
-<li>Requires root shell (<code>adb root</code> or user 'rw' access to usb device)</li>
+<li>Requires a root shell (<code>adb root</code>) or read/write access to the USB device.</li>
 </ul>
 <h3 id="unrooted-device-mode">Unrooted device mode<a class="headerlink" href="#unrooted-device-mode" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Unrooted device mode is currently not supported.
-Please contact <a href="../../troubleshooting/">support</a> for guidance on this integration</p>
+Please contact <a href="../../troubleshooting/">support</a> for guidance on this
+integration.</p>
 </div>
 <p>This mode requires integrating <code>libusb</code> with an Android USB native handle provided by Java <code>UsbManager</code>.</p>
 <ul>
 <li>Requires app-side Java/Kotlin USB permission and device-handle handoff to native code</li>
-<li>Requires passing the device-handle to DisplayLink direct, which is not available at the moment.</li>
+<li>Requires passing the device handle to DisplayLink Direct, which is not
+  currently available.</li>
 </ul>
 <h2 id="prerequisites-rooted-mode">Prerequisites (rooted mode)<a class="headerlink" href="#prerequisites-rooted-mode" title="Permanent link">&para;</a></h2>
 <ul>

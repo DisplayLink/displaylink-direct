@@ -1608,7 +1608,7 @@ meets the minimum C runtime and library requirements before installation.</p>
 <li><strong>libc6 &gt;= 2.31</strong> — C runtime library</li>
 </ul>
 <p>These libraries are typically pre-installed on most Linux distributions. If your
-system is missing them, install using your distribution's package manager:</p>
+system is missing them, install them using your distribution's package manager:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian/Ubuntu</label><label for="__tabbed_1_2">RHEL/CentOS/Fedora</label><label for="__tabbed_1_3">Alpine</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1647,8 +1647,8 @@ installation.</p>
 <h2 id="running-applications">Running applications<a class="headerlink" href="#running-applications" title="Permanent link">&para;</a></h2>
 <h3 id="disable-the-standard-displaylink-driver">Disable the standard DisplayLink driver<a class="headerlink" href="#disable-the-standard-displaylink-driver" title="Permanent link">&para;</a></h3>
 <p>If the standard DisplayLink driver (<code>displaylink-driver</code>) is installed on your
-system, it must be stopped and masked before using DisplayLink Direct, as both
-cannot manage the device simultaneously:</p>
+system, it must be stopped and masked before using DisplayLink Direct because
+the driver and DisplayLink Direct cannot both manage the device simultaneously:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>displaylink-driver
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>mask<span class="w"> </span>displaylink-driver
 </code></pre></div>
