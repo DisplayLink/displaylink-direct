@@ -1667,7 +1667,7 @@ system is missing them, install them using your distribution's package manager:<
 <h2 id="building-with-cmake">Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permanent link">&para;</a></h2>
 <p>To integrate the SDK into your CMake project, use <code>find_package</code> to locate the
 SDK and link against the <code>dlsdk::dlsdk</code> target:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">dlsdk</span><span class="w"> </span><span class="s">1.6.0</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">dlsdk</span><span class="w"> </span><span class="s">2.0.0</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">my-app</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">my-app</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">dlsdk::dlsdk</span><span class="p">)</span>

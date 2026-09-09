@@ -1621,6 +1621,12 @@
 <p>For proper operation, the DisplayLink device firmware must be kept up to date.
 DisplayLink Direct is validated against the firmware versions listed in the
 release notes for each release.</p>
+<div class="admonition note">
+<p class="admonition-title">Embedded mode</p>
+<p>Firmware updates are <strong>not available in embedded mode</strong>.
+Ensure the device is running compatible firmware before using embedded mode.</p>
+<p>To update firmware, perform the update in non-embedded mode first.</p>
+</div>
 <h2 id="firmware-packages">Firmware packages<a class="headerlink" href="#firmware-packages" title="Permanent link">&para;</a></h2>
 <p>Firmware is distributed as pre-built binary packages (<code>.spkg</code> files) via GitHub
 Release Assets. Download the firmware package <code>firmware.zip</code> from the
@@ -1711,12 +1717,6 @@ matching firmware package from that directory.</p>
 </div>
 <p>There are two ways to update firmware: <strong>automatic</strong> update at initialization,
 or <strong>manual</strong> update on demand.</p>
-<div class="admonition note">
-<p class="admonition-title">Embedded mode</p>
-<p>Automatic and manual firmware updates are <strong>not available in embedded mode</strong>.
-Ensure the device is running compatible firmware before using embedded mode.</p>
-<p>To update firmware, perform the update in non-embedded mode first.</p>
-</div>
 <h3 id="automatic-firmware-update">Automatic firmware update<a class="headerlink" href="#automatic-firmware-update" title="Permanent link">&para;</a></h3>
 <p>When the system is initialized with a valid firmware path, the SDK
 automatically updates any connected device whose firmware differs from the
