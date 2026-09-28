@@ -1334,7 +1334,7 @@
   <span class="md-ellipsis">
     
   
-    Screensaver (python)
+    Screensaver (Python)
   
 
     
@@ -1584,19 +1584,19 @@ architectures are published as <a href="https://github.com/syna-isd/displaylink-
 <code>pip</code> selects the wheel matching your Python version, architecture, and desired
 package version:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--find-links<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s1">&#39;https://miniature-adventure-pzr6znk.pages.github.io/pip-index&#39;</span><span class="w"> </span><span class="s1">&#39;dlsdk&#39;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s1">'https://miniature-adventure-pzr6znk.pages.github.io/pip-index'</span><span class="w"> </span><span class="s1">'dlsdk'</span>
 </code></pre></div>
 <p>Use the <code>--no-index</code> flag to prefer wheels from <code>--find-links</code> over wheels
 published on PyPI.</p>
 <p>Alternatively, install a specific wheel asset directly from a release tag by URL:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="s1">&#39;https://github.com/syna-isd/displaylink-direct/releases/download/v2.0.0/dlsdk-2.0.0-cp312-cp312-manylinux_2_31_x86_64.whl&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="s1">'https://github.com/syna-isd/displaylink-direct/releases/download/v2.0.0/dlsdk-2.0.0-cp312-cp312-manylinux_2_31_x86_64.whl'</span>
 </code></pre></div>
 <p>Replace the Python tag (<code>cp312</code>) and platform tag (<code>manylinux_2_31_x86_64</code>)
 with values that match your interpreter and architecture.</p>
 <p><a href="../../pip-index/" hidden aria-hidden="true" tabindex="-1"></a></p>
 <h2 id="verify-installation">Verify installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import dlsdk; help(dlsdk)&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import dlsdk; help(dlsdk)"</span>
 </code></pre></div>
 <h2 id="additional-references">Additional references<a class="headerlink" href="#additional-references" title="Permanent link">&para;</a></h2>
 <p>Use the Linux installation page for host setup details, including USB

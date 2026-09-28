@@ -1373,7 +1373,7 @@
   <span class="md-ellipsis">
     
   
-    Screensaver (python)
+    Screensaver (Python)
   
 
     
@@ -1694,7 +1694,7 @@ applications without root, set up udev rules to grant access to users in the
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>displaylink
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>displaylink<span class="w"> </span><span class="nv">$USER</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;SUBSYSTEM==&quot;usb&quot;, MODE=&quot;0660&quot;, GROUP=&quot;displaylink&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/00-usb-permissions.rules
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'SUBSYSTEM=="usb", MODE="0660", GROUP="displaylink"'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/00-usb-permissions.rules
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </code></pre></div>
 <p>Log out and log back in for group membership changes to take effect. Then you
