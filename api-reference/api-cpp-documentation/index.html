@@ -1369,6 +1369,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcapabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getCapabilities()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1402,21 +1413,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#poweronwithmode" class="md-nav__link">
+  <a href="#poweronconst-dlsdk_display_power_on_options-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        powerOnWithMode()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poweronwithtiming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        powerOnWithTiming()
+        powerOn(const dlsdk_display_power_on_options&amp; options)
       
     </span>
   </a>
@@ -2480,6 +2480,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcapabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getCapabilities()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2513,21 +2524,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#poweronwithmode" class="md-nav__link">
+  <a href="#poweronconst-dlsdk_display_power_on_options-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        powerOnWithMode()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poweronwithtiming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        powerOnWithTiming()
+        powerOn(const dlsdk_display_power_on_options&amp; options)
       
     </span>
   </a>
@@ -2850,7 +2850,14 @@ objects, which in turn expose their attached <code>dl::sdk::DisplayHandle</code>
 objects. This page documents the API in that same order: System, Device,
 Display, then DP AUX.</p>
 <h2 id="thread-safety">Thread Safety<a class="headerlink" href="#thread-safety" title="Permanent link">&para;</a></h2>
-<p>API calls made on the same handle object (e.g. <code>dl::sdk::DeviceHandle</code>, <code>dl::sdk::DisplayHandle</code>, <code>dl::sdk::DpAux</code>) are generally not thread-safe. The user should avoid calling the API with the same handle concurrently from multiple threads, unless the user provides their own synchronization to serialize access to that handle.</p>
+<p>The API is thread-safe: it may be called concurrently from multiple threads, including on the same handle object (e.g. <code>dl::sdk::DeviceHandle</code>, <code>dl::sdk::DisplayHandle</code>, <code>dl::sdk::DpAux</code>), without external locking. Concurrent calls on the same handle are serialised internally, so a long-running call such as <code>DeviceHandle::updateFirmware()</code> will block other threads until it completes.</p>
+<p>The following remain the caller's responsibility:</p>
+<ul>
+<li><code>dl::sdk::System</code> construction and destruction are not thread-safe. Perform them from a single thread, and ensure no other API call is in progress when the <code>System</code> object is destroyed.</li>
+<li>All handles are owned by the DisplayLink Direct and are invalidated when the <code>System</code> object is destroyed; they must not be used after that point.</li>
+<li>Serialization of concurrent calls on the same handle is handled internally, but the order is time-dependent. Callers must still sequence dependent operations.</li>
+<li>A hotplug callback must not call <code>System::registerHotplugCallback()</code> or <code>System::unregisterHotplugCallback()</code>, as this will deadlock.</li>
+</ul>
 <h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
 <p>Custom types used across the C++ API wrapper.</p>
 <table>
@@ -3105,11 +3112,11 @@ firmware-related workflows.</p>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="n">Rect</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">edid</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithTiming</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_timing</span><span class="o">*</span><span class="w"> </span><span class="n">timing</span><span class="p">);</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">getCapabilities</span><span class="p">(</span><span class="n">dlsdk_display_capabilities</span><span class="o">*</span><span class="w"> </span><span class="n">capabilities</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_power_on_options</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
 <a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_frame</span><span class="o">&amp;</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span>
 <a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
@@ -3139,8 +3146,16 @@ firmware-related workflows.</p>
 - <code>len</code> — Length of the data buffer. On input, should be set to the size of the data buffer. On output, will be set to the actual length of the EDID data written to the buffer, or the required buffer size if buffer is null. If the buffer is too small, the data will be truncated.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the EDID was obtained successfully, or the reason
 for failure otherwise.</p>
+<h4 id="getcapabilities"><code>getCapabilities()</code><a class="headerlink" href="#getcapabilities" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">getCapabilities</span><span class="p">(</span><span class="n">dlsdk_display_capabilities</span><span class="o">*</span><span class="w"> </span><span class="n">capabilities</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</code></pre></div>
+<p>Function used to obtain signal mode and pixel format capabilities for the display.</p>
+<p><strong>Details:</strong> Initialise <code>capabilities</code> with <code>DLSDK_DISPLAY_CAPABILITIES_INIT(&amp;capabilities)</code> before calling this function; the macro sets <code>capabilities-&gt;size</code> to <code>sizeof(dlsdk_display_capabilities)</code>. The <code>signalModeMask</code> uses the value of <code>dlsdk_display_signal_mode</code> as its bit index. The <code>pixelFormatMask</code> uses the value of <code>dlsdk_pixel_format</code> as its bit index.</p>
+<p><strong>Parameters:</strong>
+- <code>capabilities</code> — Buffer to store the display capabilities. Must be valid and non-NULL.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if the capabilities were obtained successfully, or the reason for failure otherwise.</p>
 <h4 id="modes"><code>modes()</code><a class="headerlink" href="#modes" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">modes</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">modes</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </code></pre></div>
 <p>Function used to retrieve a list of supported display modes for the display.</p>
 <p><strong>Parameters:</strong>
@@ -3149,7 +3164,7 @@ for failure otherwise.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the display modes were obtained successfully, or
 the reason for failure otherwise.</p>
 <h4 id="preferredmode"><code>preferredMode()</code><a class="headerlink" href="#preferredmode" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">preferredMode</span><span class="p">(</span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </code></pre></div>
 <p>Function used to obtain the preferred display mode for the display.</p>
 <p><strong>Parameters:</strong>
@@ -3157,25 +3172,19 @@ the reason for failure otherwise.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the preferred display mode was obtained
 successfully, or the reason for failure otherwise.</p>
 <h4 id="poweron"><code>powerOn()</code><a class="headerlink" href="#poweron" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">();</span>
 </code></pre></div>
-<p>Function used to power on the display.</p>
-<p><strong>Details:</strong> The display will be powered on with the preferred display mode.</p>
+<p>Function used to power on the display in its preferred mode and SDR signal mode.</p>
+<p><strong>Details:</strong> This is equivalent to calling <code>powerOn(const dlsdk_display_power_on_options&amp; options)</code> with an options structure initialised by <code>DLSDK_DISPLAY_POWER_ON_OPTIONS_INIT(&amp;options)</code>.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
-<h4 id="poweronwithmode"><code>powerOnWithMode()</code><a class="headerlink" href="#poweronwithmode" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithMode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_mode</span><span class="o">*</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+<h4 id="poweronconst-dlsdk_display_power_on_options-options"><code>powerOn(const dlsdk_display_power_on_options&amp; options)</code><a class="headerlink" href="#poweronconst-dlsdk_display_power_on_options-options" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_power_on_options</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
 </code></pre></div>
-<p>Function used to power on the display with a specific display mode.</p>
+<p>Function used to power on the display with custom options.</p>
+<p><strong>Details:</strong> The display is powered on using the preferred display mode when <code>options.mode</code> and <code>options.timing</code> are null. When <code>options.signalMode</code> is <code>DLSDK_DISPLAY_SIGNAL_MODE_HDR10</code>, you must use <code>DLSDK_PIXEL_FORMAT_RGB10</code> or <code>DLSDK_PIXEL_FORMAT_XBGR16F</code> in <code>DisplayHandle::show()</code>.</p>
 <p><strong>Parameters:</strong>
-- <code>mode</code> — Display mode to use when powering on the display. Must be valid and non-NULL.</p>
-<p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified mode, DLSDK_UNSUCCESSFUL if the display failed to power on with the specified mode, DLSDK_INVALID_ARGS if the provided mode is not valid, null, or not supported by the display.</p>
-<h4 id="poweronwithtiming"><code>powerOnWithTiming()</code><a class="headerlink" href="#poweronwithtiming" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOnWithTiming</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_display_timing</span><span class="o">*</span><span class="w"> </span><span class="n">timing</span><span class="p">);</span>
-</code></pre></div>
-<p>Function used to power on the display with a fully custom video timing.</p>
-<p><strong>Parameters:</strong>
-- <code>timing</code> — Detailed timing to use when powering on the display. Must be valid and non-NULL</p>
-<p><strong>Returns:</strong> DLSDK_SUCCESS if the display was successfully powered on with the specified timing, or an appropriate error code on failure.</p>
+- <code>options</code> — Power-on options. Must be valid. Initialise it with <code>DLSDK_DISPLAY_POWER_ON_OPTIONS_INIT(&amp;options)</code> before setting optional fields. The mode and timing pointers are mutually exclusive.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="poweroff"><code>powerOff()</code><a class="headerlink" href="#poweroff" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
 </code></pre></div>
@@ -3187,9 +3196,12 @@ successfully, or the reason for failure otherwise.</p>
 <p>Function to present the contents of a frame on the display.</p>
 <p><strong>Details:</strong> This is a non-blocking call and returns before the pixels are
 displayed. To receive notification when the pixels have been displayed, call
-<code>DisplayHandle::waitOnShow()</code>.</p>
+<code>DisplayHandle::waitOnShow()</code>. The frame can describe either a full-screen
+update or a partial update using dirty rectangles. Its pixel buffer must
+describe the entire display, and its optional static HDR metadata is applied
+synchronously with the frame.</p>
 <p><strong>Parameters:</strong>
-- <code>frame</code> — Frame descriptor containing the pixel format, pixel buffer, optional stride override, and optional dirty rectangles.</p>
+- <code>frame</code> — Frame descriptor containing the pixel format, pixel buffer, optional stride override, optional dirty rectangles, and optional static HDR metadata. Initialise it with <code>DLSDK_FRAME_INIT(&amp;frame, FORMAT, PIXELS, PIXELS_SIZE)</code> before calling this method. The pixel buffer must be non-null and large enough for the display height and effective stride; a 64-byte alignment of the pixel buffer address and stride is preferred. When using a <code>signalMode</code> of <code>DLSDK_DISPLAY_SIGNAL_MODE_HDR10</code>, you must use <code>DLSDK_PIXEL_FORMAT_RGB10</code> or <code>DLSDK_PIXEL_FORMAT_XBGR16F</code> in <code>DisplayHandle::show()</code>.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with <code>DisplayHandle::waitOnShow()</code>.</p>
 <h4 id="waitonshow"><code>waitOnShow()</code><a class="headerlink" href="#waitonshow" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
