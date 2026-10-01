@@ -32,4 +32,4 @@ if ! command -v mkdocs >/dev/null 2>&1; then
 fi
 
 # Build the docs and force-push them to the gh-pages branch.
-exec mkdocs gh-deploy -r syna-isd --clean "$@"
+exec mkdocs gh-deploy --clean "$@"
