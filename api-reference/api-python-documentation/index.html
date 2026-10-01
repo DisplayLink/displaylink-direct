@@ -2933,7 +2933,7 @@ AUX.</p>
 <tbody>
 <tr>
 <td><code>dlsdk.Config</code></td>
-<td>Configuration for initializing the DL SDK.</td>
+<td>Configuration for initialising DisplayLink Direct.</td>
 </tr>
 <tr>
 <td><code>dlsdk.Rect</code></td>
@@ -3004,7 +3004,7 @@ AUX.</p>
 <h4 id="dlsdkconfig"><code>dlsdk.Config</code><a class="headerlink" href="#dlsdkconfig" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Config</span><span class="p">(</span><span class="n">firmware_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="n">embedded_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<p>Configuration for initializing the DL SDK.</p>
+<p>Configuration for initialising DisplayLink Direct.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>firmware_path</code> — Path to the firmware directory used by the SDK.</li>
@@ -3511,11 +3511,11 @@ AUX.</p>
 <h4 id="dlsdkcreate_system"><code>dlsdk.create_system</code><a class="headerlink" href="#dlsdkcreate_system" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">create_system</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Config</span> <span class="o">=</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">Config</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_status</span>
 </code></pre></div>
-<p>Initialises the DL SDK with the given configuration.</p>
+<p>Initialises DisplayLink Direct with the given configuration.</p>
 <h4 id="dlsdkdelete_system"><code>dlsdk.delete_system</code><a class="headerlink" href="#dlsdkdelete_system" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">delete_system</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
-<p>Finish the DL SDK and release all resources.</p>
+<p>Finish DisplayLink Direct and release all resources.</p>
 <h4 id="dlsdkget_devices"><code>dlsdk.get_devices</code><a class="headerlink" href="#dlsdkget_devices" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">get_devices</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">dl</span><span class="p">::</span><span class="n">sdk</span><span class="p">::</span><span class="n">DeviceHandle</span><span class="p">]</span>
 </code></pre></div>
@@ -3645,10 +3645,14 @@ access is required beyond the automatic display enumeration.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">aux_reg_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
 <p>Read data from DP AUX channel</p>
+<p><strong>Notes:</strong> The underlying API uses 16-byte burst transactions. Larger requests are serviced by
+chaining multiple burst reads into the provided buffer.</p>
 <h4 id="write"><code>write</code><a class="headerlink" href="#write" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">aux_reg_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>
 <p>Write data to DP AUX channel</p>
+<p><strong>Notes:</strong> The underlying API uses 16-byte burst transactions. Larger requests are split into
+multiple burst writes from the provided buffer.</p>
 <h4 id="i2c_read"><code>i2c_read</code><a class="headerlink" href="#i2c_read" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">i2c_read</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">DpAux</span><span class="p">,</span> <span class="n">device_address</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span> <span class="o">|</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsIndex</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Buffer</span><span class="p">,</span> <span class="n">mot</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">dlsdk</span><span class="o">.</span><span class="n">dlsdk_aux_status</span>
 </code></pre></div>

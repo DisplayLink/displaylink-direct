@@ -1036,6 +1036,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dlsdk_config_flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_config_flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dlsdk_config" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dlsdk_config_flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dlsdk_config_flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dlsdk_config" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3033,7 +3055,7 @@ ABI-stable interface exposed by DisplayLink Direct. The C++ helper classes
 thin wrappers around these same functions.</p>
 <p>All functions are exported via <code>DLSDK_EXPORT</code> and are safe to call from C or
 C++ (the header wraps declarations in <code>extern "C"</code>).</p>
-<p>Objects are created in the following order: a <code>System</code> is initialized first,
+<p>Objects are created in the following order: a <code>System</code> is initialised first,
 which is then used to enumerate <code>Device</code>s, which in turn expose their
 attached <code>Display</code>s. This section documents the API in that same order:
 System, Device, Display, then DP AUX.</p>
@@ -3047,6 +3069,10 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>dlsdk_config_flags</code></td>
+<td>Configuration flags used to initialise the DisplayLink Direct.</td>
+</tr>
 <tr>
 <td><code>dlsdk_config</code></td>
 <td>Configuration structure used to initialise the DisplayLink Direct with custom options.</td>
@@ -3145,6 +3171,22 @@ System, Device, Display, then DP AUX.</p>
 </tr>
 </tbody>
 </table>
+<h4 id="dlsdk_config_flags"><code>dlsdk_config_flags</code><a class="headerlink" href="#dlsdk_config_flags" title="Permanent link">&para;</a></h4>
+<p>Configuration flags used to initialise the DisplayLink Direct.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DLSDK_CONFIG_FLAG_EMBEDDED_MODE</code></td>
+<td>In embedded mode, DisplayLink Direct will not use dynamic memory at runtime.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="dlsdk_config"><code>dlsdk_config</code><a class="headerlink" href="#dlsdk_config" title="Permanent link">&para;</a></h4>
 <p>Configuration structure used to initialise the DisplayLink Direct with custom options.</p>
 <table>
@@ -3157,20 +3199,20 @@ System, Device, Display, then DP AUX.</p>
 <tbody>
 <tr>
 <td><code>size</code></td>
-<td>Size of the structure; should be set to <code>sizeof(dlsdk_config)</code>.</td>
+<td>Size of the structure; is set by <code>DLSDK_CONFIG_INIT(&amp;config)</code>.</td>
+</tr>
+<tr>
+<td><code>flags</code></td>
+<td>Combination of <code>dlsdk_config_flags</code> values.</td>
 </tr>
 <tr>
 <td><code>firmwarePath</code></td>
 <td>Firmware directory path used to update the firmware automatically if required. Set to NULL or an empty string to disable automatic firmware updates. If automatic firmware updates are disabled, the user should ensure that the firmware on the device is compatible with the DisplayLink Direct version; otherwise, the device may not function properly or at all.</td>
 </tr>
-<tr>
-<td><code>embeddedMode</code></td>
-<td>In embedded mode (embeddedMode=1), the DisplayLink Direct will not use dynamic memory at runtime.</td>
-</tr>
 </tbody>
 </table>
 <p><code>DLSDK_CONFIG_INIT()</code> is the default initializer for <code>dlsdk_config</code>.</p>
-<p><strong>Details:</strong> Initializes the required fields and zero-initializes optional fields. After using this macro, callers may set <code>firmwarePath</code> and <code>embeddedMode</code> as needed.</p>
+<p><strong>Details:</strong> Zero-initialises the complete structure, and initialises the size field. After using this macro, callers may set <code>firmwarePath</code> and <code>flags</code> as needed.</p>
 <h4 id="dlsdk_rect"><code>dlsdk_rect</code><a class="headerlink" href="#dlsdk_rect" title="Permanent link">&para;</a></h4>
 <p>An abstract representation of a rectangular area, used for display resolution and size information.</p>
 <table>
@@ -3735,7 +3777,7 @@ System, Device, Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">dlsdk_hotplug_callback_fn</span><span class="p">)(</span><span class="n">dlsdk_hotplug_event_data</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
 <p>Hotplug callback function type.</p>
-<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callbacks are invoked on an internal DisplayLink Direct worker thread. Callbacks are serialized and delivered in event order.</p>
+<p><strong>Details:</strong> You must not register or unregister callbacks from within a callback. Callbacks are invoked on an internal DisplayLink Direct worker thread. Callbacks are serialised and delivered in event order.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>data</code> — Non-null pointer to a struct containing event data.</li>
@@ -4123,7 +4165,11 @@ successfully, or the reason for failure otherwise.</p>
 - If <code>frame-&gt;dirtyRects</code> is NULL, a full-screen update is assumed.
 - <code>frame-&gt;dirtyRectCount</code> must be &lt;= <code>DLSDK_MAX_DIRTY_RECTS</code>.
 - If <code>frame-&gt;dirtyRectCount</code> is non-zero, <code>frame-&gt;dirtyRects</code> must be non-NULL.</p>
-<p>When using a <code>signalMode</code> of <code>DLSDK_DISPLAY_SIGNAL_MODE_HDR10</code>, you must use <code>DLSDK_PIXEL_FORMAT_RGB10</code> or <code>DLSDK_PIXEL_FORMAT_XBGR16F</code> in <code>dlsdk_display_show()</code>. If <code>frame-&gt;staticMetadata</code> is non-NULL, initialise it with <code>DLSDK_HDR_STATIC_METADATA_INIT(&amp;metadata)</code>, then its metadata is applied synchronously with the frame.</p>
+<p>When the display is powered on in HDR10 mode, the frame format must provide at
+least 10 bits per channel of source precision and be supported by the display
+capabilities. If <code>frame-&gt;staticMetadata</code> is non-NULL, initialise it with
+<code>DLSDK_HDR_STATIC_METADATA_INIT(&amp;metadata)</code>, then its metadata is applied synchronously
+with the frame.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with dlsdk_display_wait_on_show(). DLSDK_INVALID_ARGS for invalid frame parameters.</p>

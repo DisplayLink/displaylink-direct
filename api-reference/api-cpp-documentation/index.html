@@ -2845,7 +2845,7 @@
 and are provided as example code, built directly on top of the same
 <code>dlsdk_*</code> functions documented there.</p>
 <p>Objects are created in the following order: a <code>dl::sdk::System</code> is
-initialized first, which is then used to enumerate <code>dl::sdk::DeviceHandle</code>
+initialised first, which is then used to enumerate <code>dl::sdk::DeviceHandle</code>
 objects, which in turn expose their attached <code>dl::sdk::DisplayHandle</code>
 objects. This page documents the API in that same order: System, Device,
 Display, then DP AUX.</p>
@@ -2888,6 +2888,26 @@ Display, then DP AUX.</p>
 <td><code>dl::sdk::CallbackFn</code></td>
 <td><code>std::function</code> signature used for hotplug callbacks</td>
 </tr>
+<tr>
+<td><code>dl::sdk::DpAux</code></td>
+<td>Wrapper for a DP AUX channel</td>
+</tr>
+<tr>
+<td><code>dl::sdk::DpAuxExclusiveAccess</code></td>
+<td>RAII helper for exclusive access to a DP AUX channel</td>
+</tr>
+<tr>
+<td><code>dl::sdk::System</code></td>
+<td>Wrapper for system-level initialization, enumeration, and hotplug callbacks</td>
+</tr>
+<tr>
+<td><code>dl::sdk::DeviceHandle</code></td>
+<td>Wrapper for an attached device</td>
+</tr>
+<tr>
+<td><code>dl::sdk::DisplayHandle</code></td>
+<td>Wrapper for a display attached to a device</td>
+</tr>
 </tbody>
 </table>
 <h4 id="dlsdkrect"><code>dl::sdk::Rect</code><a class="headerlink" href="#dlsdkrect" title="Permanent link">&para;</a></h4>
@@ -2898,10 +2918,10 @@ Display, then DP AUX.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="k">final</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">Config</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">Config</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">embeddedMode</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">Config</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">firmwarePath</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">embeddedMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">};</span>
 </code></pre></div>
 <p>Configuration struct used to construct a <code>dl::sdk::System</code> with custom options.</p>
@@ -2918,8 +2938,8 @@ Display, then DP AUX.</p>
 <td>Firmware directory path used to update the firmware automatically if required. Leave empty to disable automatic firmware updates. If automatic firmware updates are disabled, the user should ensure that the firmware on the device is compatible with the DisplayLink Direct version; otherwise, the device may not function properly or at all.</td>
 </tr>
 <tr>
-<td><code>embeddedMode</code></td>
-<td>In embedded mode (<code>embeddedMode = true</code>), the DisplayLink Direct will not use dynamic memory at runtime.</td>
+<td><code>flags</code></td>
+<td>Combination of <code>dlsdk_config_flags</code> values. Set <code>DLSDK_CONFIG_FLAG_EMBEDDED_MODE</code> to enable embedded mode, in which the DisplayLink Direct will not use dynamic memory at runtime.</td>
 </tr>
 </tbody>
 </table>
@@ -3018,7 +3038,7 @@ parlance, it can be thought of as an DisplayLink Direct destructor.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">registerHotplugCallback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CallbackFn</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cb</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackHandle</span><span class="o">*</span><span class="w"> </span><span class="n">outHandle</span><span class="p">);</span>
 </code></pre></div>
 <p>Registers a hotplug callback function.</p>
-<p><strong>Details:</strong> This function registers a callback to be invoked when a hotplug event occurs and returns a registration handle for later unregistration. Only one callback can be registered, and registering a new callback will overwrite the previous one. The callback will be invoked for all hotplug events from the moment the callback is registered. When a system is destroyed, all hotplug callbacks will be automatically unregistered and their handles invalidated.</p>
+<p><strong>Details:</strong> This function registers a callback to be invoked when a hotplug event occurs and returns a registration handle for later unregistration. Only one callback can be registered, and registering a new callback will overwrite the previous one. The callback will be invoked for all devices and displays currently connected and for all subsequent hotplug events from the moment the callback is registered. All callbacks are invoked on an internal DisplayLink Direct worker thread. When a system is destroyed, all hotplug callbacks will be automatically unregistered and their handles invalidated.</p>
 <p><strong>Parameters:</strong>
 - <code>cb</code> — the function to be invoked when a hotplug event occurs. Must be non-NULL.
 - <code>outHandle</code> — Callback registration handle. Must be non-NULL. On success, receives a non-NULL handle.</p>
@@ -3051,8 +3071,10 @@ before unregistering and returning.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">restart</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to restart a device.</p>
-<p><strong>Details:</strong> After calling this function, the user must call
-<code>System::getDevices()</code> again to obtain a new handle for the restarted device.</p>
+<p><strong>Details:</strong> On calling this function, the device will be restarted. The device and display
+handles remain valid after restart, but the rendering pipeline must be reestablished and any
+displays must be powered on again. In embedded mode, the device and displays will no longer be
+accessible through their handles and the user must reinitialise the system to obtain new handles.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="id"><code>id()</code><a class="headerlink" href="#id" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">id</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -3069,7 +3091,7 @@ before unregistering and returning.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DisplayHandle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDisplays</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to obtain the attached displays for a given device.</p>
-<p><strong>Details:</strong> Display handles are owned by their device and must not be freed by the caller; they remain valid until the associated device handle is restarted with <code>DeviceHandle::restart()</code> or until the DisplayLink Direct system is torn down.</p>
+<p><strong>Details:</strong> Display handles are owned by their device and must not be freed by the caller; they remain valid until the DisplayLink Direct system is torn down. In embedded mode, the device and displays become inaccessible through their handles after the device is restarted.</p>
 <p><strong>Returns:</strong> A <code>std::vector</code> of <code>DisplayHandle</code> objects, one for each display currently attached to the device.</p>
 <h4 id="getdpaux"><code>getDpAux()</code><a class="headerlink" href="#getdpaux" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
@@ -3120,7 +3142,7 @@ firmware-related workflows.</p>
 <a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">powerOff</span><span class="p">();</span>
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dlsdk_frame</span><span class="o">&amp;</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span>
 <a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
 <a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">  </span><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
 <a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">getBrightness</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">brightness</span><span class="p">);</span>
 <a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">  </span><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">setBrightness</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">brightness</span><span class="p">);</span>
@@ -3201,7 +3223,7 @@ update or a partial update using dirty rectangles. Its pixel buffer must
 describe the entire display, and its optional static HDR metadata is applied
 synchronously with the frame.</p>
 <p><strong>Parameters:</strong>
-- <code>frame</code> — Frame descriptor containing the pixel format, pixel buffer, optional stride override, optional dirty rectangles, and optional static HDR metadata. Initialise it with <code>DLSDK_FRAME_INIT(&amp;frame, FORMAT, PIXELS, PIXELS_SIZE)</code> before calling this method. The pixel buffer must be non-null and large enough for the display height and effective stride; a 64-byte alignment of the pixel buffer address and stride is preferred. When using a <code>signalMode</code> of <code>DLSDK_DISPLAY_SIGNAL_MODE_HDR10</code>, you must use <code>DLSDK_PIXEL_FORMAT_RGB10</code> or <code>DLSDK_PIXEL_FORMAT_XBGR16F</code> in <code>DisplayHandle::show()</code>.</p>
+- <code>frame</code> — Frame descriptor containing the pixel format, pixel buffer, optional stride override, optional dirty rectangles, and optional static HDR metadata. Initialise it with <code>DLSDK_FRAME_INIT(&amp;frame, FORMAT, PIXELS, PIXELS_SIZE)</code> before calling this method. The pixel buffer must be non-null and large enough for the display height and effective stride; a 64-byte alignment of the pixel buffer address and stride is preferred. When the display is powered on in HDR10 mode, the frame format must provide at least 10 bits per channel of source precision and be supported by the display capabilities.</p>
 <p><strong>Returns:</strong> DLSDK_SUCCESS if the frame was successfully submitted for rendering, or an error code on failure. The caller should check the render and frame transmission status with <code>DisplayHandle::waitOnShow()</code>.</p>
 <h4 id="waitonshow"><code>waitOnShow()</code><a class="headerlink" href="#waitonshow" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">waitOnShow</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">::</span><span class="n">max</span><span class="p">());</span>
@@ -3218,9 +3240,10 @@ synchronously with the frame.</p>
 <li>DLSDK_UNSUCCESSFUL on unknown error.</li>
 </ul>
 <h4 id="clear"><code>clear()</code><a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">clear</span><span class="p">();</span>
 </code></pre></div>
 <p>Function used to clear the display.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS or an appropriate error code on failure.</p>
 <h4 id="getdpaux_1"><code>getDpAux()</code><a class="headerlink" href="#getdpaux_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">DpAux</span><span class="w"> </span><span class="nf">getDpAux</span><span class="p">();</span>
 </code></pre></div>
@@ -3266,9 +3289,9 @@ access is required beyond the automatic display enumeration.</p>
 <h4 id="auxreaddata"><code>auxReadData()</code><a class="headerlink" href="#auxreaddata" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxReadData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Reads a burst of data from native DP AUX registers. This function performs a
-single burst read and is limited to 16 bytes. The function waits for a response
-for up to 400 µs.</p>
+<p>Reads data from native DP AUX registers using 16-byte burst transactions. Larger
+requests are serviced by chaining multiple burst reads into the provided buffer.
+The function waits for a response for up to 400 µs.</p>
 <p><strong>Parameters:</strong>
 - <code>auxRegAddress</code> — DP register address.
 - <code>data</code> — Buffer for incoming data.
@@ -3277,9 +3300,9 @@ for up to 400 µs.</p>
 <h4 id="auxwritedata"><code>auxWriteData()</code><a class="headerlink" href="#auxwritedata" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">dlsdk_aux_status</span><span class="w"> </span><span class="nf">auxWriteData</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">auxRegAddress</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
 </code></pre></div>
-<p>Writes a burst of data to native DP AUX registers. This function performs a
-single burst write and is limited to 16 bytes. The function waits for a response
-for up to 400 µs.</p>
+<p>Writes data to native DP AUX registers using 16-byte burst transactions. Larger
+requests are split into multiple burst writes from the provided buffer. The
+function waits for a response for up to 400 µs.</p>
 <p><strong>Parameters:</strong>
 - <code>auxRegAddress</code> — DP register address.
 - <code>data</code> — Buffer of write data.
@@ -3336,6 +3359,8 @@ for up to 400 µs.</p>
 </code></pre></div>
 <p>Detects whether a monitor is connected to the DP AUX channel and forces link
 training.</p>
+<p><strong>Returns:</strong> DLSDK_SUCCESS if a monitor is detected, DLSDK_UNSUCCESSFUL_NO_MONITOR if no monitor
+is detected, or another error code on failure.</p>
 <h4 id="enablevirtualhpdpolling"><code>enableVirtualHpdPolling()</code><a class="headerlink" href="#enablevirtualhpdpolling" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">dlsdk_status</span><span class="w"> </span><span class="nf">enableVirtualHpdPolling</span><span class="p">();</span>
 </code></pre></div>
