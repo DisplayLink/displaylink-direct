@@ -1,0 +1,124 @@
+# ==============================================================================
+# 1. CORE BINARIES & COMPILED ARTIFACTS (Critical for closed-source core)
+# ==============================================================================
+# C/C++ Libraries and Objects
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Swift & Apple Frameworks / Binaries
+*.xcframework
+*.framework
+*.app
+*.dSYM
+
+# Release artifacts
+*.tar.gz
+*.zip
+
+# Python Packages & Distributions
+*.whl
+*.egg
+*.egg-info/
+dist/
+build/
+sdist/
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Firmware
+*.spkg
+
+# Do not commit generated documentation or site files
+docs/doxygen/
+docs/html/
+site/
+
+# ==============================================================================
+# 2. C++ BUILD SYSTEMS & TEMPORARY FILES
+# ==============================================================================
+# CMake outputs
+CMakeCache.txt
+CMakeFiles/
+CMakeOutput.log
+CMakeError.log
+cmake-build-*/
+_build/
+bin/
+lib/
+
+# Visual Studio / MSBuild
+.vs/
+*.vcxproj.user
+*.suo
+Debug/
+Release/
+x64/
+x86/
+
+# Ninja / Make
+.ninja_deps
+.ninja_log
+
+# ==============================================================================
+# 3. SWIFT & XCODE ARTIFACTS
+# ==============================================================================
+# Swift Package Manager build output
+.build/
+.swiftpm/
+
+# Xcode temporary files
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+DerivedData/
+*.moved-aside
+
+# ==============================================================================
+# 4. PYTHON ENVIRONMENTS & CACHE
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# 5. OS & IDE TEMP FILES
+# ==============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editors (VS Code, CLion, etc.)
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*~
+
+.github/copilot*
+
+# Do not commit SonarQube scanner property file
+sonar-project.properties

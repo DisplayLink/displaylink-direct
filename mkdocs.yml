@@ -1,0 +1,102 @@
+site_name: DisplayLink Direct
+site_description: Documentation for DisplayLink Direct — connect and drive multiple displays over USB using DisplayLink technology.
+site_url: https://displaylink.github.io/displaylink-direct
+repo_url: https://github.com/displaylink/displaylink-direct
+repo_name: displaylink/displaylink-direct
+docs_dir: docs
+copyright: Copyright &copy; Synaptics Incorporated
+
+extra:
+  main_branch: main
+  latest_version: 2.0.0
+  full_latest_version: 2.0.0+g287e926058.build4
+  qt_plugin_repo_url: https://github.com/displaylink/displaylink-direct-qt
+  qt_plugin_repo_name: displaylink/displaylink-direct-qt
+
+theme:
+  name: material
+  logo: dl_logo.svg
+  favicon: dl_logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - macros
+
+nav:
+  - Introduction:
+      - index.md
+      - Key Features: introduction/key-features.md
+      - Supported Platforms: introduction/supported-platforms.md
+      - Why DisplayLink Direct?: introduction/problems-solved.md
+      - Applications: applications.md
+      - Embedded Mode: embedded-mode.md
+      - Supported Devices: requirements/device-requirements.md
+      - Host Requirements: requirements/host-requirements.md
+      - Qt Platform Plugin: qt-platform-plugin.md
+      - Yocto Linux meta-layer: yocto-linux-meta-layer.md
+  - Getting Started:
+      - getting-started/index.md
+      - Running on Linux: getting-started/installation-linux.md
+      - Running on Android: getting-started/installation-android.md
+      - Firmware Update: getting-started/firmware-update.md
+      - Python Bindings: getting-started/python-bindings.md
+  - API Reference:
+      - api-reference/api-documentation.md
+      - C++ API Documentation: api-reference/api-cpp-documentation.md
+      - Python API Documentation: api-reference/api-python-documentation.md
+      - Minimal Example: api-reference/minimal-example.md
+  - Code Samples:
+      - code-samples/index.md
+      - Video Wall: code-samples/video-wall.md
+      - Video Clone: code-samples/video-clone.md
+      - Read EDID: code-samples/read-edid.md
+      - Screensaver (Python): code-samples/screensaver.md
+  - Contact & Support:
+      - support/index.md
+      - FAQ: support/faq.md

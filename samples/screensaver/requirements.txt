@@ -1,0 +1,4 @@
+--find-links https://displaylink.github.io/displaylink-direct/getting-started/python-bindings
+PySDL2
+numpy
+dlsdk

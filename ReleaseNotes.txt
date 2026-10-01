@@ -1,0 +1,154 @@
+=============================================================================
+=============================================================================
+
+DisplayLink Direct Release Notes
+Version: 2.0.0+g287e926058.build4
+
+DL-7xxx firmware version: 12.4.11.97c74651
+DL-6xxx firmware version: 12.3.37.1d17011d
+DL-4xxx firmware version: 12.3.37.1d17011d
+DL-3xxx firmware version: 12.3.37.1d17011d
+
+Date: 1st October 2026
+
+=============================================================================
+=============================================================================
+
+
+Introduction
+===============
+
+DisplayLink Direct is a developer toolkit that provides C/C++ APIs,
+libraries, and headers for presenting pixel buffers across multiple DisplayLink displays.
+
+Documentation is available at:
+https://displaylink.github.io/displaylink-direct
+
+
+Changelog
+==============================
+
+Changes in the 2.0.0+g287e926058.build4 release
+-------------------------------------------
+- First public release
+- Improve inline documentation
+- Add thread-safety support
+- Add HDR API support
+- Add APIs to enable and disable virtual HPD polling on the DP AUX interface
+- Add display brightness API
+- Make dlsdk_initialise and dlsdk_display_clear return status codes
+- Improve the frame presentation API
+- Improve the dlsdk_display_power_on API
+- Rename dlsdk_update_firmware to dlsdk_device_update_firmware
+- Rename the AuxStatus enum to dlsdk_aux_status_t
+- Rename dlsdk_restart_and_free_device to dlsdk_restart_device
+- Remove dlsdk_free_device
+
+Changes in the 1.5.3.post4+gc7e3611c2c3.build4 release
+-------------------------------------------
+- Add an Android arm64 build to the SDK package
+
+Changes in the 1.5.2.post3+ga39ced7b244.build8 release
+-------------------------------------------
+- Avoid continually resubmitting interrupt read requests (SYNAP-33)
+- Add the dlsdk_dpaux_enable_virtual_hpd_polling and
+  dlsdk_dpaux_disable_virtual_hpd_polling functions (SYNAP-4)
+
+Changes in the 1.5.1.post12+g873f87913e4.build11 release
+-------------------------------------------
+- Support display hotplug on boards without a DP HPD signal (SYNAP-4, SYNAP-19)
+
+Changes in the 1.5.1.post6+g3be7bb8c2e4.build6 release
+-------------------------------------------
+- Return EBUSY when device-resource constraints require the user to resend the
+  frame for redrawing (PS-5868)
+
+Changes in the 1.5.0.post120+gf837c2af6ff.build156 release
+-------------------------------------------
+- Add an idiomatic API and support for synchronous firmware upgrades (SYNAP-21, SYNAP-22)
+- Introduce a hotplug API that notifies clients of hotplug events (SYNAP-4)
+- Log tokenised firmware traces to dlsdk-fw.log in embedded mode
+- Add a macOS build to the SDK package, including Swift bindings, Python wheels,
+  and an Xcode framework
+- Add support for CMake find_package with the DisplayLink SDK
+
+Changes in the 1.4.3+gdec5b13395c.build3 release
+-------------------------------------------
+- Fix dlsdk_dpaux_i2c_write_and_read
+
+Changes in the 1.4.2.post10+g176aa2e0278.build2 release
+-------------------------------------------
+- Improve device discovery reliability
+- Add the dlsdk_restart_and_free_device function (VIFR-7514)
+- Fix a dl_mfg_test failure that reports 'Get flash info failed' (VIFR-6928)
+
+Changes in the 1.4.1+gb15d9b9c3e4.build15 release
+-------------------------------------------
+- Add support for DLSDK_PIXEL_FORMAT_XBGR in embedded mode
+- Move embedded-mode logging to /var/log/displaylink/dlsdk.log
+
+Changes in the 1.4.0-83af813fc5d2 release
+-------------------------------------------
+- Add embedded mode without dynamic memory allocation at runtime (VIFR-7516)
+
+Changes in the 1.3.2+gb8e567f465e.build34 release
+-------------------------------------------
+- Enable the multithreaded encoder on the arm64 platform (VIFR-7463)
+
+Changes in the 1.3.1.post10+gd9a229a5373.build31 release
+-------------------------------------------
+- Add a dedicated LogDecrypter for the DisplayLink SDK
+
+Changes in the 1.3.1+gc6ff0e3c0da.build25 release
+-------------------------------------------
+- Fix a crash in dlsdk_display_show when the number of distinct surfaces exceeds
+  255 (VIFR-7444)
+
+Changes in the 1.3.0.post9+g313f9ef935d.build23 release
+-------------------------------------------
+- Fix an intermittent SDK crash when calling dlsdk_display_show (VIFR-7444)
+
+Changes in the 1.3.0.post4+g2ebee6277c0.build21 release
+-------------------------------------------
+- Fix intermittent SDK lockups after a dlsdk_display_wait_on_show timeout
+- Fix intermittent SDK lockups after a dlsdk_display_clear call
+
+Changes in the 1.3.0+g8638e19119c.build20 release
+-------------------------------------------
+- Upgrade device firmware when a directory containing a firmware spkg is provided
+- Do not list devices with incompatible firmware
+- Add the dlsdk_version function
+- Fix rendering from multiple frame surfaces (VIFR-7438)
+- Other stability fixes
+
+Changes in the 1.2.2.post0+g368627291e6.build.362 release
+-------------------------------------------
+- Fix locking in dlsdk_dpaux_begin_exclusive_access
+- Update the Python bindings with the DP AUX API
+- Add Python bindings for the aarch64 architecture
+- Add a dlsdk_display_wait_on_show function variant with a timeout parameter
+
+Changes in the 1.2.1-gb5e455b3db6 release
+-------------------------------------------
+- Add the dlsdk_dpaux_detect method to the DP AUX interface to detect connected DisplayPort displays
+
+Changes in the 1.2.0-g47d9144be99 release
+-------------------------------------------
+- Add the dlsdk_dpaux_begin_exclusive_access and
+  dlsdk_dpaux_end_exclusive_access methods to the DP AUX interface to support
+  exclusive access to the AUX channel
+- Get a DpAux instance from dlsdk_device
+- Improve API robustness and error handling
+
+Changes in the 1.1.0 release
+-------------------------------------------
+- Initial release of the DisplayLink SDK for Linux with DP AUX read/write functionality
+
+Changes in the 1.0.0 release
+-------------------------------------------
+- Initial release of the DisplayLink SDK for Linux
+
+Known Issues
+==============================
+
+- After a firmware update, Android devices require replugging before they are usable again. (VIFR-7926)
