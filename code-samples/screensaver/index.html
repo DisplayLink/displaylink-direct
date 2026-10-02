@@ -1626,7 +1626,7 @@
 <h1 id="screensaver">Screensaver<a class="headerlink" href="#screensaver" title="Permanent link">&para;</a></h1>
 <p><img alt="Screensaver Application" class="sample-screenshot-frame" src="../screensaver-screenshot.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Screensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses Pygame to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.</p>
+<p>The Screensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses PySDL2 to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.</p>
 <p>This sample is useful for validating end-to-end Python rendering performance, checking display connectivity, and learning how to push RGB frame buffers from Python.</p>
 <h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 <p>The complete implementation of the Screensaver sample is available in <a href="https://github.com/displaylink/displaylink-direct/blob/main/samples/screensaver/screensaver.py">samples/screensaver/screensaver.py</a>.</p>
@@ -1634,7 +1634,6 @@
 <ul>
 <li>DisplayLink Direct Python wheel installed (from the <code>python/</code> directory in this repository).</li>
 <li>Python 3.10 or later.</li>
-<li>Linux runtime dependencies required by CairoSVG and Pygame.</li>
 </ul>
 <h2 id="setup-and-running">Setup and Running<a class="headerlink" href="#setup-and-running" title="Permanent link">&para;</a></h2>
 <p>Create a virtual environment and install dependencies:</p>
