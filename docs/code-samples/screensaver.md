@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Screensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses Pygame to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.
+The Screensaver sample demonstrates how to use the DisplayLink Direct Python bindings to render animated content on a connected display. The app uses PySDL2 to render a bouncing DisplayLink logo and streams each frame to the device using the DisplayLink Direct Python module.
 
 This sample is useful for validating end-to-end Python rendering performance, checking display connectivity, and learning how to push RGB frame buffers from Python.
 
@@ -16,7 +16,6 @@ The complete implementation of the Screensaver sample is available in [samples/s
 
 - DisplayLink Direct Python wheel installed (from the `python/` directory in this repository).
 - Python 3.10 or later.
-- Linux runtime dependencies required by CairoSVG and Pygame.
 
 ## Setup and Running
 
