@@ -1475,24 +1475,24 @@ from the <a href="https://github.com/displaylink/displaylink-direct/releases/lat
 or a <a href="https://github.com/displaylink/displaylink-direct/releases">specific release tag</a>.</p>
 <p>The repository provides:</p>
 <ul>
-<li><strong>Source code</strong>: C/C++ headers (<a href="https://github.com/displaylink/displaylink-direct/tree/pre-main/include"><code>include/</code></a>), supporting files (license, third-party licenses, CMake config files), release notes, and package metadata.</li>
-<li><strong>Core libraries</strong>: Proprietary pre-built binaries distributed via GitHub Release Assets (download into <a href="https://github.com/displaylink/displaylink-direct/tree/pre-main/libs"><code>libs/</code></a>).</li>
-<li><strong>Firmware</strong>: DisplayLink device firmware packages distributed via GitHub Release Assets (download into <a href="https://github.com/displaylink/displaylink-direct/tree/pre-main/firmware"><code>firmware/</code></a>). See <a href="firmware-update/">Firmware Update</a> for the update process.</li>
+<li><strong>Source code</strong>: C/C++ headers (<a href="https://github.com/displaylink/displaylink-direct/tree/main/include"><code>include/</code></a>), supporting files (license, third-party licenses, CMake config files), release notes, and package metadata.</li>
+<li><strong>Core libraries</strong>: Proprietary pre-built binaries distributed via GitHub Release Assets (download into <a href="https://github.com/displaylink/displaylink-direct/tree/main/libs"><code>libs/</code></a>).</li>
+<li><strong>Firmware</strong>: DisplayLink device firmware packages distributed via GitHub Release Assets (download into <a href="https://github.com/displaylink/displaylink-direct/tree/main/firmware"><code>firmware/</code></a>). See <a href="firmware-update/">Firmware Update</a> for the update process.</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Download source code archive</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/displaylink/displaylink-direct/archive/refs/tags/v2.0.0.tar.gz<span class="w"> </span>-o<span class="w"> </span>displaylink-direct.tar.gz
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-sL<span class="w"> </span>https://github.com/displaylink/displaylink-direct/archive/refs/tags/v2.0.0.tar.gz<span class="w"> </span>-o<span class="w"> </span>displaylink-direct.tar.gz
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>displaylink-direct.tar.gz
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Download and extract core libraries</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/displaylink/displaylink-direct/releases/download/v2.0.0/binaries.tar.gz<span class="w"> </span>-o<span class="w"> </span>binaries.tar.gz
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>binaries.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct/libs/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>curl<span class="w"> </span>-sL<span class="w"> </span>https://github.com/displaylink/displaylink-direct/releases/download/v2.0.0/binaries.tar.gz<span class="w"> </span>-o<span class="w"> </span>binaries.tar.gz
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>binaries.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct-2.0.0/libs/
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Download and extract firmware</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/displaylink/displaylink-direct/releases/download/v2.0.0/firmware.tar.gz<span class="w"> </span>-o<span class="w"> </span>firmware.tar.gz
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>firmware.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct/firmware/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>curl<span class="w"> </span>-sL<span class="w"> </span>https://github.com/displaylink/displaylink-direct/releases/download/v2.0.0/firmware.tar.gz<span class="w"> </span>-o<span class="w"> </span>firmware.tar.gz
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>firmware.tar.gz<span class="w"> </span>-C<span class="w"> </span>displaylink-direct-2.0.0/firmware/
 </code></pre></div>
 </div>
 </div>
