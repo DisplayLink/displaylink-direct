@@ -1,17 +1,19 @@
 site_name: DisplayLink Direct
 site_description: Documentation for DisplayLink Direct — connect and drive multiple displays over USB using DisplayLink technology.
 site_url: https://displaylink.github.io/displaylink-direct
-repo_url: https://github.com/displaylink/displaylink-direct
+repo_url: https://github.com/DisplayLink/displaylink-direct
 repo_name: displaylink/displaylink-direct
 docs_dir: docs
 copyright: Copyright &copy; Synaptics Incorporated
 
 extra:
   main_branch: main
-  latest_version: 2.0.0
-  full_latest_version: 2.0.0+g287e926058.build4
-  qt_plugin_repo_url: https://github.com/displaylink/displaylink-direct-qt
+  latest_version: 2.1.0
+  full_latest_version: 2.1.0.post12+gaf68714964.build9
+  qt_plugin_repo_url: https://github.com/DisplayLink/displaylink-direct-qt
   qt_plugin_repo_name: displaylink/displaylink-direct-qt
+  yocto_layer_repo_url: https://github.com/DisplayLink/meta-displaylink-direct
+  yocto_layer_repo_name: displaylink/meta-displaylink-direct
 
 theme:
   name: material
@@ -79,13 +81,14 @@ nav:
       - Supported Devices: requirements/device-requirements.md
       - Host Requirements: requirements/host-requirements.md
       - Qt Platform Plugin: qt-platform-plugin.md
-      - Yocto Linux meta-layer: yocto-linux-meta-layer.md
+      - Yocto Project Layer: yocto-project-layer.md
   - Getting Started:
       - getting-started/index.md
       - Running on Linux: getting-started/installation-linux.md
       - Running on Android: getting-started/installation-android.md
       - Firmware Update: getting-started/firmware-update.md
       - Python Bindings: getting-started/python-bindings.md
+      - Logging: getting-started/logging.md
   - API Reference:
       - api-reference/api-documentation.md
       - C++ API Documentation: api-reference/api-cpp-documentation.md
@@ -94,6 +97,7 @@ nav:
   - Code Samples:
       - code-samples/index.md
       - Video Wall: code-samples/video-wall.md
+      - Android Video Wall: code-samples/android-video-wall.md
       - Video Clone: code-samples/video-clone.md
       - Read EDID: code-samples/read-edid.md
       - Screensaver (Python): code-samples/screensaver.md

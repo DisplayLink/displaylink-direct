@@ -2,7 +2,7 @@
 
 The Python bindings let you integrate DisplayLink Direct into your
 Python applications. Pre-built wheels (`.whl`) for supported Python versions and
-architectures are published as [GitHub Release Assets](https://github.com/displaylink/displaylink-direct/releases/).
+architectures are published as [GitHub Release Assets](https://github.com/DisplayLink/displaylink-direct/releases/).
 
 ## Documentation
 

@@ -46,6 +46,7 @@ Custom types used across the API.
 | ---- | ----------- |
 | `dlsdk_config_flags` | Configuration flags used to initialise the DisplayLink Direct. |
 | `dlsdk_config` | Configuration structure used to initialise the DisplayLink Direct with custom options. |
+| `dlsdk_usb_device_params` | Identification of a USB device that is opened and owned by the application. |
 | `dlsdk_rect` | An abstract representation of a rectangular area, used for display resolution and size information. |
 | `dlsdk_dirty_rect` | A rectangular area of a pixel buffer, relative to its top-left corner |
 | `dlsdk_display_mode` | A display mode represents a specific resolution and refresh rate at which a display can operate. |
@@ -77,6 +78,7 @@ Configuration flags used to initialise the DisplayLink Direct.
 | Value | Description |
 | ----- | ----------- |
 | `DLSDK_CONFIG_FLAG_EMBEDDED_MODE` | In embedded mode, DisplayLink Direct will not use dynamic memory at runtime. |
+| `DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES` | DisplayLink Direct will not enumerate the USB bus itself. Devices are supplied by the application with `dlsdk_usb_attach_device()`. Required on platforms where the process has no permission to scan the USB bus, such as a non-rooted Android application that obtains devices through `android.hardware.usb.UsbManager`. Only honoured on Linux and Android. On Windows and macOS the flag is ignored, the USB bus is enumerated normally and `dlsdk_usb_attach_device()` returns `DLSDK_NOT_IMPLEMENTED`. |
 
 #### `dlsdk_config`
 
@@ -91,6 +93,26 @@ Configuration structure used to initialise the DisplayLink Direct with custom op
 `DLSDK_CONFIG_INIT()` is the default initializer for `dlsdk_config`.
 
 **Details:** Zero-initialises the complete structure, and initialises the size field. After using this macro, callers may set `firmwarePath` and `flags` as needed.
+
+#### `dlsdk_usb_device_params`
+
+Identification of a USB device that is opened and owned by the application.
+
+**Details:** Used with `dlsdk_usb_attach_device()` when DisplayLink Direct is initialised with `DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES`. Initialise this structure with `DLSDK_USB_DEVICE_PARAMS_INIT()`.
+
+On Android the values are obtained from `android.hardware.usb` as follows:
+
+- `fileDescriptor`: `UsbDeviceConnection.getFileDescriptor()`, returned by `UsbManager.openDevice()` after the user has granted permission for the device.
+- `busNumber` and `deviceAddress`: the two trailing components of `UsbDevice.getDeviceName()`, which has the form `"/dev/bus/usb/<bus>/<address>"`.
+
+| Field | Description |
+| ----- | ----------- |
+| `size` | Size of this structure, in bytes. Initialise using `DLSDK_USB_DEVICE_PARAMS_INIT()`. |
+| `fileDescriptor` | Open file descriptor of the USB device node. The descriptor stays owned by the caller and must remain open and unused by the caller until the device is detached. |
+| `busNumber` | USB bus number the device is attached to. |
+| `deviceAddress` | USB address of the device on that bus. |
+
+`DLSDK_USB_DEVICE_PARAMS_INIT(VALUE, FILE_DESCRIPTOR, BUS_NUMBER, DEVICE_ADDRESS)` initialises `dlsdk_usb_device_params` with the device identification and its descriptor.
 
 #### `dlsdk_rect`
 
@@ -499,6 +521,60 @@ Function used to restart a device.
 **Parameters:**
 
 - `device` — Device handle. Must be valid and non-NULL.
+
+#### `dlsdk_usb_attach_device`
+
+```c
+dlsdk_status dlsdk_usb_attach_device(const dlsdk_usb_device_params* params);
+```
+
+Hands an application-owned USB device over to DisplayLink Direct.
+
+**Details:** This function lets an application that already holds an open USB device supply it to DisplayLink Direct instead of relying on the SDK to enumerate the USB bus. It is the entry point for environments without privileged USB access, such as a non-rooted Android application that opens the device through `android.hardware.usb.UsbManager.openDevice()`.
+
+DisplayLink Direct must have been initialised with `dlsdk_initialise_with_config()` and the `DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES` flag set; otherwise this function returns `DLSDK_UNSUCCESSFUL`. With that flag set, `dlsdk_get_devices()` only reports devices that have been attached with this function.
+
+The call only hands the device over; enumeration of the device and its displays completes asynchronously. Wait for `DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED` through `dlsdk_register_hotplug_callback()`, or poll `dlsdk_get_devices()`, to obtain the device handle.
+
+File descriptor ownership stays with the caller. The descriptor must remain open and must not be used by the caller for USB transfers until `dlsdk_usb_detach_device()` returns, or until `dlsdk_teardown()` completes. On Android this means that the `UsbDeviceConnection` must not be closed while the device is attached.
+
+Attaching the same bus number and device address twice returns `DLSDK_INVALID_ARGS`.
+
+**Parameters:**
+
+- `params` — Device identification and its file descriptor. Must be non-NULL and initialised with `DLSDK_USB_DEVICE_PARAMS_INIT()`.
+
+**Returns:**
+
+- DLSDK_SUCCESS if the device was handed over successfully.
+- DLSDK_INVALID_ARGS if params are invalid or the device is already attached.
+- DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+- DLSDK_UNSUCCESSFUL_NO_DEVICE if the descriptor does not refer to a usable USB device.
+- DLSDK_UNSUCCESSFUL on any other failure.
+
+#### `dlsdk_usb_detach_device`
+
+```c
+dlsdk_status dlsdk_usb_detach_device(uint16_t busNumber, uint16_t deviceAddress);
+```
+
+Takes an application-owned USB device back from DisplayLink Direct.
+
+**Details:** Call this before the application closes the file descriptor of a device previously handed over with `dlsdk_usb_attach_device()`, for example when Android reports `ACTION_USB_DEVICE_DETACHED` or before closing the `UsbDeviceConnection`.
+
+Device and display handles belonging to the device are invalidated and must not be used after this function returns. A `DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED` event is reported to any registered hotplug callback.
+
+**Parameters:**
+
+- `busNumber` — USB bus number used when the device was attached.
+- `deviceAddress` — USB device address used when the device was attached.
+
+**Returns:**
+
+- DLSDK_SUCCESS if the device was detached successfully.
+- DLSDK_INVALID_ARGS if no device is attached with the given bus number and address.
+- DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+- DLSDK_UNSUCCESSFUL on any other failure.
 
 #### `dlsdk_register_hotplug_callback`
 

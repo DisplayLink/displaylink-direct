@@ -5,6 +5,7 @@ Practical, ready-to-run examples demonstrating how to use the DisplayLink Direct
 ## Available Samples
 
 - **Video Wall Sample**: Distribute a single image or video across multiple displays in a seamless grid layout.
+- **Android Video Wall Sample**: A non-rooted Android application that spreads an MP4 or image across the wall using ExoPlayer, OpenGL ES and `UsbManager`.
 - **Video Clone Sample**: Display identical content simultaneously on all connected DisplayLink displays.
 - **Read EDID Sample**: Query and retrieve display identification data from connected monitors (DL-7xxx devices only).
 - **Screensaver Sample (Python)**: Render a bouncing DisplayLink logo and stream frames to a connected display using Python bindings.

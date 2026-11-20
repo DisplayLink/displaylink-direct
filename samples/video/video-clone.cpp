@@ -1,7 +1,10 @@
+#include <cstdlib>
 #include <dlsdk/dlsdk.h>
 #include <atomic>
 #include <csignal>
 #include "common.hpp"
+#include <optional>
+#include <iostream>
 
 #ifndef USE_GSTREAMER
 #include "common_vlc.hpp"
@@ -42,18 +45,14 @@ static void EnumerateDisplays()
   std::cout << "Found " << g_displays.size() << " connected monitors" << std::endl;
 }
 
-static auto GetResolution()
+static std::optional<dl::sdk::Rect> GetResolution()
 {
   // NOTE: This works assuming all the monitors have the same resolution
-
-  if (g_displays.size() == 0) {
-    ExitFail("No monitors available");
-  }
 
   const auto size = g_displays.at(0).size();
   for (const auto& d : g_displays) {
     if (d.size().width != size.width || d.size().height != size.height) {
-      ExitFail("This app only supports monitor with the same resolution");
+      return std::nullopt;
     }
   }
 
@@ -103,7 +102,19 @@ int main(int argc, const char* argv[])
   int timeout = (argc > 3) ? atoi(argv[3]) : 60;
 
   EnumerateDisplays();
-  const auto size = GetResolution();
+  if (g_displays.empty()) {
+    std::cout << "Error: No monitors available\nProgram terminating" << std::endl;
+    return EXIT_FAILURE;
+  }
+
+  const auto maybeSize = GetResolution();
+  if (!maybeSize.has_value())
+  {
+    std::cout << "Error: All monitors must have the same resolution\nProgram terminating" << std::endl;
+    return EXIT_FAILURE;
+  }
+  const auto size = maybeSize.value();
+
   std::cout << "Resolution " << size.width << " x " << size.height << std::endl;
 
   std::vector<uint8_t> frameBuffer;
@@ -111,6 +122,11 @@ int main(int argc, const char* argv[])
   frameBuffer.resize(size.width * size.height * BytesPerPixel);
 
   auto* player = RunPlayer(filename, frameBuffer.data(), size.width, size.height, BytesPerPixel, rotate, OnDisplay);
+  if (!player)
+  {
+    std::cout << "Error: Failed to run video player\nProgram terminating";
+    return EXIT_FAILURE;
+  }
 
   std::cout << "Program will terminate in " << timeout <<  " seconds."
     "\nYou can also press ctrl+c to terminate the program early" << std::endl;
@@ -121,12 +137,5 @@ int main(int argc, const char* argv[])
   }
 
   StopPlayer(player);
-
-  g_displays.clear();
-  g_devices.clear();
-
-  system.unregisterHotplugCallback(callbackHandle);
-  dlsdk_teardown();
-
   return 0;
 }

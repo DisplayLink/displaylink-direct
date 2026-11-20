@@ -35,5 +35,6 @@ The repository provides:
 
 - [Running on Linux](installation-linux.md)
 - [Running on Android](installation-android.md)
+- [Logging](logging.md)
 - [Firmware Update](firmware-update.md)
 - [Python Bindings](python-bindings.md)

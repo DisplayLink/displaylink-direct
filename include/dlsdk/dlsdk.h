@@ -77,6 +77,19 @@ typedef enum dlsdk_config_flags_t
 {
   DLSDK_CONFIG_FLAG_EMBEDDED_MODE = 1U << 0,  /**< In embedded mode, DisplayLink Direct will not use
                                                    dynamic memory at runtime. */
+  DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES = 1U << 1, /**< DisplayLink Direct will not enumerate the
+                                                         USB bus itself. Devices are supplied by the
+                                                         application with dlsdk_usb_attach_device().
+                                                         Required on platforms where the process has
+                                                         no permission to scan the USB bus, such as
+                                                         a non-rooted Android application that
+                                                         obtains devices through
+                                                         android.hardware.usb.UsbManager.
+                                                         Only honoured on Linux and Android. On
+                                                         Windows and macOS the flag is ignored, the
+                                                         USB bus is enumerated normally and
+                                                         dlsdk_usb_attach_device() returns
+                                                         DLSDK_NOT_IMPLEMENTED. */
 } dlsdk_config_flags;
 
 /**
@@ -105,6 +118,42 @@ typedef struct dlsdk_config
   do {                                     \
     memset((VALUE), 0, sizeof(*(VALUE)));  \
     (VALUE)->size = sizeof(*(VALUE));      \
+  } while (0)
+
+/**
+ * \brief Identification of a USB device that is opened and owned by the application.
+ *
+ * \details Used with dlsdk_usb_attach_device() when DisplayLink Direct is initialised with
+ *          DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES. Initialise this structure with
+ *          DLSDK_USB_DEVICE_PARAMS_INIT().
+ *
+ *          On Android the values are obtained from android.hardware.usb as follows:
+ *          \li fileDescriptor: UsbDeviceConnection.getFileDescriptor(), returned by
+ *              UsbManager.openDevice() after the user has granted permission for the device.
+ *          \li busNumber and deviceAddress: the two trailing components of
+ *              UsbDevice.getDeviceName(), which has the form "/dev/bus/usb/<bus>/<address>".
+ */
+typedef struct dlsdk_usb_device_params
+{
+  uint32_t size;           /**< Size of this structure, in bytes.
+                                Initialise using DLSDK_USB_DEVICE_PARAMS_INIT(). */
+  int fileDescriptor;      /**< Open file descriptor of the USB device node. The descriptor stays
+                                owned by the caller and must remain open and unused by the caller
+                                until the device is detached. */
+  uint16_t busNumber;      /**< USB bus number the device is attached to. */
+  uint16_t deviceAddress;  /**< USB address of the device on that bus. */
+} dlsdk_usb_device_params;
+
+/**
+ * \brief Initialises dlsdk_usb_device_params with the device identification and its descriptor.
+ */
+#define DLSDK_USB_DEVICE_PARAMS_INIT(VALUE, FILE_DESCRIPTOR, BUS_NUMBER, DEVICE_ADDRESS)  \
+  do {                                                                                    \
+    memset((VALUE), 0, sizeof(*(VALUE)));                                                 \
+    (VALUE)->size = sizeof(*(VALUE));                                                     \
+    (VALUE)->fileDescriptor = (int)(FILE_DESCRIPTOR);                                     \
+    (VALUE)->busNumber = (uint16_t)(BUS_NUMBER);                                          \
+    (VALUE)->deviceAddress = (uint16_t)(DEVICE_ADDRESS);                                  \
   } while (0)
 
 /**
@@ -1038,6 +1087,62 @@ DLSDK_EXPORT dlsdk_status dlsdk_get_devices(dlsdk_device_handle* devices, unsign
 DLSDK_EXPORT dlsdk_status dlsdk_restart_device(dlsdk_device_handle device);
 
 /**
+ * \brief Hands an application-owned USB device over to DisplayLink Direct.
+ *
+ * \details This function lets an application that already holds an open USB device supply it to
+ *          DisplayLink Direct instead of relying on the SDK to enumerate the USB bus. It is the
+ *          entry point for environments without privileged USB access, such as a non-rooted
+ *          Android application that opens the device through
+ *          android.hardware.usb.UsbManager.openDevice().
+ *
+ *          DisplayLink Direct must have been initialised with dlsdk_initialise_with_config() and
+ *          the DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES flag set; otherwise this function returns
+ *          DLSDK_UNSUCCESSFUL. With that flag set, dlsdk_get_devices() only reports devices that
+ *          have been attached with this function.
+ *
+ *          The call only hands the device over; enumeration of the device and its displays
+ *          completes asynchronously. Wait for DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED through
+ *          dlsdk_register_hotplug_callback(), or poll dlsdk_get_devices(), to obtain the device
+ *          handle.
+ *
+ *          File descriptor ownership stays with the caller. The descriptor must remain open and
+ *          must not be used by the caller for USB transfers until dlsdk_usb_detach_device()
+ *          returns, or until dlsdk_teardown() completes. On Android this means that the
+ *          UsbDeviceConnection must not be closed while the device is attached.
+ *
+ *          Attaching the same bus number and device address twice returns DLSDK_INVALID_ARGS.
+ *
+ * \param[in] params Device identification and its file descriptor. Must be non-NULL and
+ *                   initialised with DLSDK_USB_DEVICE_PARAMS_INIT().
+ * \return DLSDK_SUCCESS if the device was handed over successfully.
+ * \return DLSDK_INVALID_ARGS if params are invalid or the device is already attached.
+ * \return DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+ * \return DLSDK_UNSUCCESSFUL_NO_DEVICE if the descriptor does not refer to a usable USB device.
+ * \return DLSDK_UNSUCCESSFUL on any other failure.
+ */
+DLSDK_EXPORT dlsdk_status dlsdk_usb_attach_device(const dlsdk_usb_device_params* params);
+
+/**
+ * \brief Takes an application-owned USB device back from DisplayLink Direct.
+ *
+ * \details Call this before the application closes the file descriptor of a device previously
+ *          handed over with dlsdk_usb_attach_device(), for example when Android reports
+ *          ACTION_USB_DEVICE_DETACHED or before closing the UsbDeviceConnection.
+ *
+ *          Device and display handles belonging to the device are invalidated and must not be used
+ *          after this function returns. A DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED event is reported to
+ *          any registered hotplug callback.
+ *
+ * \param[in] busNumber USB bus number used when the device was attached.
+ * \param[in] deviceAddress USB device address used when the device was attached.
+ * \return DLSDK_SUCCESS if the device was detached successfully.
+ * \return DLSDK_INVALID_ARGS if no device is attached with the given bus number and address.
+ * \return DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+ * \return DLSDK_UNSUCCESSFUL on any other failure.
+ */
+DLSDK_EXPORT dlsdk_status dlsdk_usb_detach_device(uint16_t busNumber, uint16_t deviceAddress);
+
+/**
  * \brief Registers a hotplug callback function.
  *
  * \details This function registers a callback to be invoked when a hotplug event occurs and
@@ -1469,6 +1574,20 @@ struct System final
     } while (status == DLSDK_NOT_ENOUGH_SPACE);
     devices.resize(count);
     return devices;
+  }
+
+  //! For more information, please refer to dlsdk_usb_attach_device()
+  dlsdk_status attachUsbDevice(int fileDescriptor, uint16_t busNumber, uint16_t deviceAddress)
+  {
+    dlsdk_usb_device_params params;
+    DLSDK_USB_DEVICE_PARAMS_INIT(&params, fileDescriptor, busNumber, deviceAddress);
+    return dlsdk_usb_attach_device(&params);
+  }
+
+  //! For more information, please refer to dlsdk_usb_detach_device()
+  dlsdk_status detachUsbDevice(uint16_t busNumber, uint16_t deviceAddress)
+  {
+    return dlsdk_usb_detach_device(busNumber, deviceAddress);
   }
 
   //! For more information, please refer to dlsdk_register_hotplug_callback()

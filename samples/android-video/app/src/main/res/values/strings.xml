@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayLink Video</string>
+    <string name="header_title">DisplayLink Video</string>
+    <string name="header_subtitle">Wall • Clone</string>
+
+    <!-- Media Selection -->
+    <string name="section_media">Media Source</string>
+    <string name="btn_select_media">Choose Video / Image</string>
+    <string name="no_media_selected">No media selected. Choose a video or image file to output to DisplayLink displays.</string>
+    <string name="file_name_format">Name: %1$s</string>
+    <string name="file_type_format">Type: %1$s • Size: %2$s</string>
+    <string name="file_resolution_format">Resolution: %1$s</string>
+
+    <!-- Display Mode -->
+    <string name="section_mode">Display Mode</string>
+    <string name="mode_wall">Wall</string>
+    <string name="mode_clone">Clone</string>
+
+    <!-- Timeout -->
+    <string name="section_timeout">Session Timeout</string>
+    <string name="timeout_1_min">1 minute (Default)</string>
+    <string name="timeout_10_min">10 minutes</string>
+    <string name="timeout_60_min">60 minutes</string>
+    <string name="timeout_10_hr">10 hours</string>
+    <string name="timeout_remaining_format">Remaining: %1$s</string>
+
+    <!-- Playback / Controls -->
+    <string name="section_playback">Session Controls</string>
+    <string name="btn_start_session">Start Session</string>
+    <string name="btn_stop_session">Stop Session</string>
+    <string name="switch_loop">Loop Playback</string>
+
+    <!-- Status -->
+    <string name="status_idle">Status: Idle • Select media, mode, and timeout</string>
+    <string name="status_active">Status: Session Running (%1$s)</string>
+    <string name="status_timeout_expired">Status: Session completed (Timeout expired)</string>
+    <string name="status_usb_attached">Status: %1$d DisplayLink adapter(s) attached</string>
+    <string name="status_waiting_for_usb">Waiting for USB permission. Approve the dialog, then the session starts automatically.</string>
+    <string name="status_wall_ready">Status: Wall running on %1$d display(s) in a %2$d×%3$d grid • Composite %4$d×%5$d</string>
+    <string name="status_still_shown">Status: Still image shown on the wall</string>
+
+    <!-- Errors -->
+    <string name="error_no_media">Please choose a video or image file first.</string>
+    <string name="error_mode_not_supported">%1$s mode is not implemented yet. Use Wall mode.</string>
+    <string name="error_sdk_not_ready">DisplayLink Direct is not ready yet.</string>
+    <string name="error_native_library">DisplayLink Direct native library could not be loaded: %1$s</string>
+    <string name="error_init_sdk">DisplayLink Direct failed to initialise: %1$s</string>
+    <string name="error_no_usb_device">No DisplayLink adapter found. Connect one and try again.</string>
+    <string name="error_usb_open_failed">Could not open the DisplayLink adapter.</string>
+    <string name="error_usb_attach_failed">Could not hand the adapter to DisplayLink Direct: %1$s</string>
+    <string name="error_usb_permission_denied">USB permission denied for the DisplayLink adapter.</string>
+    <string name="error_device_removed">DisplayLink adapter removed.</string>
+    <string name="error_open_wall">Could not open the wall: %1$s</string>
+    <string name="error_mixed_resolutions">All monitors must run at the same resolution to form a wall.</string>
+    <string name="error_start_pipeline">Could not start the GPU compositor.</string>
+    <string name="error_playback">Playback failed: %1$s</string>
+    <string name="error_decode_image">Could not decode the selected image.</string>
+    <string name="error_show_frame">Could not show the frame on the wall.</string>
+</resources>

@@ -14,13 +14,13 @@ libvlc_media_player_t* RunPlayer(const char* path, unsigned char* fb, unsigned w
 
   libvlc_instance_t* const library = libvlc_new(argc, argv);
   if (!library) {
-    ExitFail("Unable to create library");
+    return nullptr;
   }
 
   libvlc_media_t* const media = libvlc_media_new_path(library, path);
   if (!media) {
     libvlc_release(library);
-    ExitFail("Unable to load media");
+    return nullptr;
   }
 
   libvlc_media_add_option(media, "input-repeat=65535");
@@ -28,7 +28,7 @@ libvlc_media_player_t* RunPlayer(const char* path, unsigned char* fb, unsigned w
   libvlc_media_release(media);
   if (!player) {
     libvlc_release(library);
-    ExitFail("Unable to start player");
+    return nullptr;
   }
 
   libvlc_video_set_callbacks(player, OnLock, nullptr, onDisplay, fb);

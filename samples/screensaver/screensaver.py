@@ -4,6 +4,7 @@ import datetime
 import os
 import random
 import pathlib
+import socket
 import time
 import sdl2
 import sdl2.ext
@@ -11,6 +12,25 @@ import sdl2.sdlimage
 import sdl2.sdlttf
 import numpy
 import dlsdk
+
+
+def get_local_ip() -> str | None:
+    for family, address in (
+        (socket.AF_INET, ("8.8.8.8", 80)),
+        (socket.AF_INET6, ("2001:4860:4860::8888", 80)),
+    ):
+        try:
+            # Ask the OS which local IP it would use to reach a public address. This doesn't actually send any datagram.
+            # This won't work if there's no route to either probe (e.g., no default route), but I think that's a fair
+            # tradeoff for the portability
+            with socket.socket(family, socket.SOCK_DGRAM) as sock:
+                sock.connect(address)
+                local_ip = sock.getsockname()[0]
+                if local_ip and not local_ip.startswith("127.") and local_ip != "::1":
+                    return local_ip
+        except OSError:
+            continue
+    return None
 
 class Clock:
     def __init__(self) -> None:
@@ -199,6 +219,7 @@ class LogoGame:
     def _open_font(self, size: int) -> ctypes.c_void_p:
         font_candidates = [
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/DejaVuSans.ttf",
             "/usr/share/fonts/TTF/DejaVuSans.ttf",
             "/usr/share/fonts/dejavu/DejaVuSans.ttf",
         ]
@@ -293,6 +314,7 @@ class LogoGame:
         self.sdl2_init()
         self.display = DisplayLinkDisplay(prefer_1080p=self.args.prefer_1080p, embedded_mode=self.args.embedded_mode)
         self.clock = Clock()
+        local_ip = get_local_ip()
 
         try:
             self.font = self._open_font(28)
@@ -305,9 +327,11 @@ class LogoGame:
             )
             self.logo_velocity = self.get_random_velocity()
             fps_text_time = 0.0
+            ip_refresh_time = 0.0
             fps_text = ""
             previous_logo_rect = self._copy_rect(self.logo_rect)
             previous_fps_rect = None
+            first_frame_rect = sdl2.SDL_Rect(0, 0, self.display.width, self.display.height)
 
             while not self.should_quit():
                 self.clock.tick()
@@ -321,9 +345,14 @@ class LogoGame:
                 surface = self.display.surface()
                 self._draw_background(surface)
                 self._draw_logo(surface)
+                ip_refresh_time += self.clock.get_delta_time()
+                if ip_refresh_time >= 10.0:
+                    local_ip = get_local_ip()
+                    ip_refresh_time = 0.0
                 fps_text_time += self.clock.get_delta_time()
                 if fps_text_time >= 0.25 or not fps_text: # Update FPS text every 0.25 seconds or if it's not set
-                    fps_text = f"Mode: {self.display.mode_string()} FPS: {self.clock.get_fps():5.1f}"
+                    ip_text = f" IP: {local_ip} " if local_ip else ""
+                    fps_text = f"{ip_text}Mode: {self.display.mode_string()} FPS: {self.clock.get_fps():5.1f}"
                     fps_text_time = 0.0
                 current_fps_rect = self._draw_fps_text(surface, fps_text, self.fps_text_color, 12, 12)
 
@@ -332,6 +361,11 @@ class LogoGame:
                     self._dirty_rect(self.logo_rect),
                     self._dirty_rect(current_fps_rect),
                 ]
+
+                if first_frame_rect is not None:
+                    dirty_rects.append(self._dirty_rect(first_frame_rect))
+                    first_frame_rect = None
+
                 if previous_fps_rect is not None:
                     dirty_rects.append(self._dirty_rect(previous_fps_rect))
                 self.display.show(dirty_rects)

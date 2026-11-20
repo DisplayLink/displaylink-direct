@@ -32,6 +32,7 @@ Custom types used across the Python API.
 | Type | Description |
 | ---- | ----------- |
 | `dlsdk.Config` | Configuration for initialising DisplayLink Direct. |
+| `dlsdk.dlsdk_config_flags` | Configuration flags used to initialise DisplayLink Direct. |
 | `dlsdk.Rect` | An abstract representation of a rectangular area, used for display resolution and size information. |
 | `dlsdk.DirtyRect` | A rectangular area of a pixel buffer, relative to its top-left corner. |
 | `dlsdk.DisplayMode` | A display mode represents a specific resolution and refresh rate that a display can operate at. |
@@ -52,17 +53,32 @@ Custom types used across the Python API.
 #### `dlsdk.Config`
 
 ```python
-Config(firmware_path: str = ..., embedded_mode: bool = False)
+Config()
+Config(firmware_path: str)
+Config(firmware_path: str, flags: typing.SupportsInt | typing.SupportsIndex)
 ```
 
 Configuration for initialising DisplayLink Direct.
 
-**Parameters:**
+- `Config()` — Create a Config with the default firmware path discovered from the active Python site-packages.
+- `Config(firmware_path)` — Create a Config with a firmware path.
+- `Config(firmware_path, flags)` — Create a Config with a firmware path and flags.
 
-- `firmware_path` — Path to the firmware directory used by the SDK.
-- `embedded_mode` — When `True`, the SDK avoids dynamic memory allocations at runtime.
+| Field | Description |
+| ----- | ----------- |
+| `firmware_path` | Path to the firmware directory used by the SDK. |
+| `flags` | Combination of `dlsdk.dlsdk_config_flags` values. |
+| `embedded_mode` | When `True`, the SDK avoids dynamic memory allocations at runtime. |
 
 **Notes:** The default constructor discovers the firmware path from the active Python site-packages installation and falls back to an empty path if no matching package directory is found.
+
+#### `dlsdk.dlsdk_config_flags`
+
+Configuration flags used to initialise DisplayLink Direct.
+
+| Value | Description |
+| ----- | ----------- |
+| `DLSDK_CONFIG_FLAG_EMBEDDED_MODE` | In embedded mode, DisplayLink Direct will not use dynamic memory at runtime. |
 
 #### `dlsdk.Rect`
 

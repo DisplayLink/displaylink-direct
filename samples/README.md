@@ -47,6 +47,7 @@ In addition to the media and utility samples, this repository also includes mini
 - `samples/minimal-c/minimal-example.c`
 - `samples/minimal-c++/minimal-example.cpp`
 - `samples/minimal-python/minimal-example.py`
+- `samples/android-video`: Non-rooted Android video wall sample driven by ExoPlayer, OpenGL ES and `UsbManager` (Android 16+)
 
 Documentation versions of these snippets are available at:
 
@@ -106,6 +107,18 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python screensaver.py
+```
+
+### Android sample: DisplayLink Video (`android-video`)
+
+Requires `libdlsdk.so` and `libusb-1.0.so` for `arm64-v8a` in
+`libs/android-21/arm64-v8a/`. See
+[samples/android-video/README.md](android-video/README.md).
+
+```bash
+cd samples/android-video
+./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ## USB permissions (run without sudo)

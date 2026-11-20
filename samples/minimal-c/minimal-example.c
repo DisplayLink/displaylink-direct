@@ -1,5 +1,4 @@
 #include <dlsdk/dlsdk.h>
-#include <assert.h>
 #include <stdint.h>
 #include <stdlib.h>
 #ifdef _WIN32
@@ -14,11 +13,17 @@ int main(void)
 
   dlsdk_device_handle device;
   unsigned int device_count = 1;
-  assert(dlsdk_get_devices(&device, &device_count) == DLSDK_SUCCESS && device_count == 1); /* exactly one device connected */
+  if (dlsdk_get_devices(&device, &device_count) != DLSDK_SUCCESS || device_count != 1) { /* exactly one device connected */
+    dlsdk_teardown();
+    return EXIT_FAILURE;
+  }
 
   dlsdk_display_handle display;
   unsigned int display_count = 1;
-  assert(dlsdk_device_get_displays(device, &display, &display_count) == DLSDK_SUCCESS && display_count == 1); /* exactly one display connected */
+  if (dlsdk_device_get_displays(device, &display, &display_count) != DLSDK_SUCCESS || display_count != 1) { /* exactly one display connected */
+    dlsdk_teardown();
+    return EXIT_FAILURE;
+  }
 
   dlsdk_display_power_on(display);
 

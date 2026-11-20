@@ -16,6 +16,13 @@ The complete implementation of the Screensaver sample is available in [samples/s
 
 - DisplayLink Direct Python wheel installed (from the `python/` directory in this repository).
 - Python 3.10 or later.
+- SDL2 library
+
+```bash
+#Install dependencies for PySDL2
+sudo apt update
+sudo apt install -y libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-ttf-2.0-0
+```
 
 ## Setup and Running
 

@@ -2,18 +2,17 @@
 =============================================================================
 
 DisplayLink Direct Release Notes
-Version: 2.0.0+g287e926058.build4
+Version: 2.1.0.post12+gaf68714964.build9
 
-DL-7xxx firmware version: 12.4.11.97c74651
-DL-6xxx firmware version: 12.3.37.1d17011d
-DL-4xxx firmware version: 12.3.37.1d17011d
-DL-3xxx firmware version: 12.3.37.1d17011d
+DL-7xxx firmware version: 12.4.23.b83d1cf4
+DL-6xxx firmware version: 12.4.23.b83d1cf4
+DL-4xxx firmware version: 12.4.23.b83d1cf4
+DL-3xxx firmware version: 12.4.23.b83d1cf4
 
-Date: 1st October 2026
+Date: 16th November 2026
 
 =============================================================================
 =============================================================================
-
 
 Introduction
 ===============
@@ -24,9 +23,18 @@ libraries, and headers for presenting pixel buffers across multiple DisplayLink 
 Documentation is available at:
 https://displaylink.github.io/displaylink-direct
 
-
 Changelog
 ==============================
+
+Changes in the 2.1.0.post12+gaf68714964.build9 release
+-------------------------------------------
+- Support non-rooted Android devices
+- Add a video sample APK for Android
+- Support Python 3.15
+- Fix crash during initialization of the SDK
+- Fix monitor detection when virtual HPD polling is enabled
+- Fix device detection after unsuccessful device firmware update
+- Fix dlsdk_device_firmware_version returning old version (VIFR-8176)
 
 Changes in the 2.0.0+g287e926058.build4 release
 -------------------------------------------
@@ -50,13 +58,13 @@ Changes in the 1.5.3.post4+gc7e3611c2c3.build4 release
 
 Changes in the 1.5.2.post3+ga39ced7b244.build8 release
 -------------------------------------------
-- Avoid continually resubmitting interrupt read requests (SYNAP-33)
+- Avoid continually resubmitting interrupt read requests
 - Add the dlsdk_dpaux_enable_virtual_hpd_polling and
-  dlsdk_dpaux_disable_virtual_hpd_polling functions (SYNAP-4)
+  dlsdk_dpaux_disable_virtual_hpd_polling functions
 
 Changes in the 1.5.1.post12+g873f87913e4.build11 release
 -------------------------------------------
-- Support display hotplug on boards without a DP HPD signal (SYNAP-4, SYNAP-19)
+- Support display hotplug on boards without a DP HPD signal
 
 Changes in the 1.5.1.post6+g3be7bb8c2e4.build6 release
 -------------------------------------------
@@ -65,8 +73,8 @@ Changes in the 1.5.1.post6+g3be7bb8c2e4.build6 release
 
 Changes in the 1.5.0.post120+gf837c2af6ff.build156 release
 -------------------------------------------
-- Add an idiomatic API and support for synchronous firmware upgrades (SYNAP-21, SYNAP-22)
-- Introduce a hotplug API that notifies clients of hotplug events (SYNAP-4)
+- Add an idiomatic API and support for synchronous firmware upgrades
+- Introduce a hotplug API that notifies clients of hotplug events
 - Log tokenised firmware traces to dlsdk-fw.log in embedded mode
 - Add a macOS build to the SDK package, including Swift bindings, Python wheels,
   and an Xcode framework
@@ -151,4 +159,4 @@ Changes in the 1.0.0 release
 Known Issues
 ==============================
 
-- After a firmware update, Android devices require replugging before they are usable again. (VIFR-7926)
+- On Android, after a firmware update, device require replug to be detected. (VIFR-7926)

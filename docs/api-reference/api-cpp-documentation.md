@@ -69,7 +69,7 @@ Configuration struct used to construct a `dl::sdk::System` with custom options.
 | Field | Description |
 | ----- | ----------- |
 | `firmwarePath` | Firmware directory path used to update the firmware automatically if required. Leave empty to disable automatic firmware updates. If automatic firmware updates are disabled, the user should ensure that the firmware on the device is compatible with the DisplayLink Direct version; otherwise, the device may not function properly or at all. |
-| `flags` | Combination of `dlsdk_config_flags` values. Set `DLSDK_CONFIG_FLAG_EMBEDDED_MODE` to enable embedded mode, in which the DisplayLink Direct will not use dynamic memory at runtime. |
+| `flags` | Combination of `dlsdk_config_flags` values. Set `DLSDK_CONFIG_FLAG_EMBEDDED_MODE` to enable embedded mode, in which the DisplayLink Direct will not use dynamic memory at runtime. Set `DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES` so that DisplayLink Direct will not enumerate the USB bus itself; devices are then supplied by the application with `System::attachUsbDevice()`. |
 
 #### `dl::sdk::HotplugEventData`
 
@@ -125,6 +125,8 @@ struct System final
 
   dlsdk_status initialised();
   std::vector<DeviceHandle> getDevices();
+  dlsdk_status attachUsbDevice(int fileDescriptor, uint16_t busNumber, uint16_t deviceAddress);
+  dlsdk_status detachUsbDevice(uint16_t busNumber, uint16_t deviceAddress);
   dlsdk_status registerHotplugCallback(const CallbackFn& cb, CallbackHandle* outHandle);
   dlsdk_status unregisterHotplugCallback(CallbackHandle handle);
 };
@@ -172,6 +174,63 @@ std::vector<DeviceHandle> getDevices();
 Function used to obtain the attached devices.
 
 **Returns:** A `std::vector` of `DeviceHandle` objects, one for each device currently attached.
+
+#### `attachUsbDevice()`
+
+```cpp
+dlsdk_status attachUsbDevice(int fileDescriptor, uint16_t busNumber, uint16_t deviceAddress);
+```
+
+Hands an application-owned USB device over to DisplayLink Direct.
+
+**Details:** This function lets an application that already holds an open USB device supply it to DisplayLink Direct instead of relying on the SDK to enumerate the USB bus. It is the entry point for environments without privileged USB access, such as a non-rooted Android application that opens the device through `android.hardware.usb.UsbManager.openDevice()`.
+
+DisplayLink Direct must have been initialised with `System(const Config& config)` and the `DLSDK_CONFIG_FLAG_EXTERNAL_USB_DEVICES` flag set; otherwise this function returns `DLSDK_UNSUCCESSFUL`. With that flag set, `getDevices()` only reports devices that have been attached with this function.
+
+The call only hands the device over; enumeration of the device and its displays completes asynchronously. Wait for `DLSDK_HOTPLUG_EVENT_DEVICE_ARRIVED` through `registerHotplugCallback()`, or poll `getDevices()`, to obtain the device handle.
+
+File descriptor ownership stays with the caller. The descriptor must remain open and must not be used by the caller for USB transfers until `detachUsbDevice()` returns, or until `~System()` completes. On Android this means that the `UsbDeviceConnection` must not be closed while the device is attached.
+
+Attaching the same bus number and device address twice returns `DLSDK_INVALID_ARGS`.
+
+On Android the values are obtained from `android.hardware.usb` as follows:
+
+- `fileDescriptor`: `UsbDeviceConnection.getFileDescriptor()`, returned by `UsbManager.openDevice()` after the user has granted permission for the device.
+- `busNumber` and `deviceAddress`: the two trailing components of `UsbDevice.getDeviceName()`, which has the form `"/dev/bus/usb/<bus>/<address>"`.
+
+**Parameters:**
+- `fileDescriptor` — Open file descriptor of the USB device node. The descriptor stays owned by the caller and must remain open and unused by the caller until the device is detached.
+- `busNumber` — USB bus number the device is attached to.
+- `deviceAddress` — USB address of the device on that bus.
+
+**Returns:**
+- DLSDK_SUCCESS if the device was handed over successfully.
+- DLSDK_INVALID_ARGS if params are invalid or the device is already attached.
+- DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+- DLSDK_UNSUCCESSFUL_NO_DEVICE if the descriptor does not refer to a usable USB device.
+- DLSDK_UNSUCCESSFUL on any other failure.
+
+#### `detachUsbDevice()`
+
+```cpp
+dlsdk_status detachUsbDevice(uint16_t busNumber, uint16_t deviceAddress);
+```
+
+Takes an application-owned USB device back from DisplayLink Direct.
+
+**Details:** Call this before the application closes the file descriptor of a device previously handed over with `attachUsbDevice()`, for example when Android reports `ACTION_USB_DEVICE_DETACHED` or before closing the `UsbDeviceConnection`.
+
+Device and display handles belonging to the device are invalidated and must not be used after this function returns. A `DLSDK_HOTPLUG_EVENT_DEVICE_REMOVED` event is reported to any registered hotplug callback.
+
+**Parameters:**
+- `busNumber` — USB bus number used when the device was attached.
+- `deviceAddress` — USB device address used when the device was attached.
+
+**Returns:**
+- DLSDK_SUCCESS if the device was detached successfully.
+- DLSDK_INVALID_ARGS if no device is attached with the given bus number and address.
+- DLSDK_NOT_IMPLEMENTED if the platform does not support externally supplied devices.
+- DLSDK_UNSUCCESSFUL on any other failure.
 
 #### `registerHotplugCallback()`
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Monitor 1: Top Left -->
+    <path
+        android:fillColor="#0081C6"
+        android:pathData="M24,24 h28 v28 h-28 z" />
+    <!-- Monitor 2: Top Right -->
+    <path
+        android:fillColor="#00C4D9"
+        android:pathData="M56,24 h28 v28 h-28 z" />
+    <!-- Monitor 3: Bottom Left -->
+    <path
+        android:fillColor="#00C4D9"
+        android:pathData="M24,56 h28 v28 h-28 z" />
+    <!-- Monitor 4: Bottom Right -->
+    <path
+        android:fillColor="#0081C6"
+        android:pathData="M56,56 h28 v28 h-28 z" />
+</vector>

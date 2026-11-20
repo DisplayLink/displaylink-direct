@@ -27,7 +27,7 @@ We welcome:
 - **Sample code** — improvements or new examples under [samples/](samples/).
 - **Suggestions and feedback** — share ideas for new features, better APIs, or
   clearer documentation through
-  [GitHub Issues](https://github.com/displaylink/displaylink-direct/issues).
+  [GitHub Issues](https://github.com/DisplayLink/displaylink-direct/issues).
 
 Please note: because the core libraries are proprietary, we **cannot accept code
 changes to the closed-source core**. Bindings and headers track the shipped
@@ -48,7 +48,7 @@ Pull requests for the hosted documentation and samples are especially welcome!
 
 ## Reporting bugs and requesting features
 
-Use [GitHub Issues](https://github.com/displaylink/displaylink-direct/issues) and
+Use [GitHub Issues](https://github.com/DisplayLink/displaylink-direct/issues) and
 include as much detail as possible: the platform, device, SDK version, and steps
 to reproduce. See the
 [Troubleshooting guide](https://displaylink.github.io/displaylink-direct/support/faq) for more information.
